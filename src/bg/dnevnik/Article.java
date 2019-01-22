@@ -13,4 +13,9 @@ public class Article {
 	private Collection<Comment> comments;
 	private Collection<String> keywords;
 	private int numberOfViews;
+	
+	
+	void addComment (Comment comment) {
+		this.comments.add(comment);
+	}
 }
