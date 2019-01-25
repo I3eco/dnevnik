@@ -28,7 +28,4 @@ public class WrongInputException extends Exception {
 		super(cause);
 		// TODO Auto-generated constructor stub
 	}
-	
-	
-
 }
