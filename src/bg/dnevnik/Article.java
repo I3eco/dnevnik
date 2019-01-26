@@ -1,22 +1,23 @@
 package bg.dnevnik;
 
-import java.time.LocalDateTime;
 import java.util.Collection;
 
-public class Article {
+import bg.dnevnik.exceptions.WrongInputException;
+
+public class Article extends Post {
 	
 	private final String title;
-	private final LocalDateTime timeOfPosting;
 	private String category;
 	private String mainPictureUrl;
-	private String content;
 	private Collection<Comment> comments;
 	private Collection<String> keywords;
 	private int numberOfViews;
 	
-	public Article(String title, String category, String content, Collection<String> keywords) {
+	public Article(User poster, String title, String category, String content, Collection<String> keywords) throws WrongInputException {
+		super(poster, content);
+		
+		// TODO add validation; decide on the type of collections that should be used
 		this.title = title;
-		this.timeOfPosting = LocalDateTime.now();
 		this.keywords = keywords;
 	}
 	

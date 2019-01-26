@@ -8,6 +8,11 @@ public class User {
 	private Collection<Comment> commentHistory;
 	private String email;
 	private String pasword;
+	private boolean isOnline;
+	
+	public void addToCommentHistory(Comment comment) {
+		this.commentHistory.add(comment);
+	}
 	
 	
 }
