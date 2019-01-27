@@ -5,7 +5,7 @@ import java.time.LocalDateTime;
 import bg.dnevnik.exceptions.WrongInputException;
 import bg.dnevnik.utility.Validation;
 
-public class Post {
+public abstract class Post {
 
 	private final User poster;
 	private final LocalDateTime timeOfPosting;
@@ -14,7 +14,7 @@ public class Post {
 	private int downvotesCount;
 	
 	protected Post(User poster, String content) throws WrongInputException {
-		Validation.checkIfNull(poster);
+		Validation.throwIfNull(poster);
 		
 		if (content == null)
 			content = "";

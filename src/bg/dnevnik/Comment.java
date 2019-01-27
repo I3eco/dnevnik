@@ -19,12 +19,15 @@ public class Comment extends Post {
 	
 	
 	public static void postTo(Article article, User poster, String content, Mood mood) {
-		// Added wrapper to the comment constructor to divide responsibilities between creating and adding to the article
-		// Also it deals with exception handling in one place, instead of having to try/catch every time a comment is added
+		// Added wrapper to the constructor, 
+		// to divide responsibilities between creating and adding to the article
+		// Also it deals with exception handling in one place, 
+		// instead of having to try/catch every time a comment is added
 		Comment comment = null;
 		try {
 			comment = new Comment(poster, content, mood);
 		} catch (WrongInputException e) {
+			System.err.println("Could not create comment!");
 			e.printStackTrace();
 		}
 		article.addComment(comment);
