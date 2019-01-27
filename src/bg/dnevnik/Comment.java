@@ -5,9 +5,9 @@ import bg.dnevnik.exceptions.WrongInputException;
 
 public class Comment extends Post {
 	
-	enum Mood {
+	public enum Mood {
 		// Apparently this exists in the website..
-		NEUTRAL, CHEERFUL, CURIOUS, SAD, ANGRY
+		NEUTRAL, CHEERFUL, CURIOUS, SAD, ANGRY;
 	}
 	
 	private final Mood mood;
@@ -34,4 +34,8 @@ public class Comment extends Post {
 		poster.addToCommentHistory(comment);
 	}
 
+	public Mood getMood() {
+		return this.mood;
+	}
+	
 }

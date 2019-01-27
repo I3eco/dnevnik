@@ -13,7 +13,6 @@ public class Site {
 	private Collection<User> users;
 	private Map<String, Collection<Article>> articlesByCategory;
 
-	
 	static {
 		// static block added for the possibility of adding additional logic later
 		
@@ -50,6 +49,11 @@ public class Site {
 			}
 		}
 		throw new UserDoesNotExistException("There is no user with that email or password!");
+	}
+	
+	public String getName() {
+		return this.name;
+		
 	}
 	
 }

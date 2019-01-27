@@ -118,12 +118,37 @@ public class Main {
 					currentUser.goOffline();
 					currentUser = null;
 				}
-				else System.out.println("You are not logged in");
+				else System.out.println("You are not signed in");
 				
 				break;
 				
 			case "comment":
-				Comment.postTo(currentArticle, currentUser, "random comment", Comment.Mood.CHEERFUL);
+				if (currentUser == null) {
+					System.out.println("You are not signed in!");
+					break;
+				}
+				
+				System.out.print("Message: ");
+				String content = scanner.nextLine();
+				System.out.print("Mood (neutral/cheerful/curious/sad/angry): ");
+				Comment.Mood mood = null;
+				
+				while(true) {
+					boolean caughtException = false;
+					try { 
+						mood = Comment.Mood.valueOf(scanner.nextLine().trim().toUpperCase()); 
+					}
+					
+					catch (IllegalArgumentException e) {
+						System.out.println("That mood does not exist!");
+						caughtException = true;
+					}
+					
+					if (!caughtException) {
+						break;
+					}
+				}
+				Comment.postTo(currentArticle, currentUser, content, mood);
 				break;
 				
 			default:
@@ -134,8 +159,6 @@ public class Main {
 		}
 		
 		scanner.close();
-		
-		
 	}
 
 }
