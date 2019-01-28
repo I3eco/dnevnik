@@ -69,7 +69,7 @@ public class Article extends Post {
 		this.keywords = keywords;
 	}
 
-	void addComment(User poster, String content, Article.CommentMood mood) {
+	void writeComment(User poster, String content, Article.CommentMood mood) {
 		Comment comment = null;
 		try {
 			comment = new Comment(poster, content, mood);

@@ -73,6 +73,7 @@ public class ConsoleCommandsManager {
 	private void commentCommand() {
 		if (this.currentUser == null) {
 			System.out.println("You are not signed in!");
+			return;
 		}
 		
 		System.out.print("Message: ");
@@ -83,13 +84,13 @@ public class ConsoleCommandsManager {
 		while(true) {
 			try { 
 				mood = Article.CommentMood.valueOf(scanner.nextLine().trim().toUpperCase()); 
+				this.currentArticle.writeComment(this.currentUser, content, mood);
 			}
 			catch (IllegalArgumentException e) {
 				System.out.println("That mood does not exist!");
-				break;
 			}
 		}
-		this.currentArticle.addComment(this.currentUser, content, mood);
+		
 	}
 	
 	private void showHelpCommand() {
