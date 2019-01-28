@@ -87,7 +87,7 @@ public class Main {
 				running = false;
 				break;
 				
-			case "info":
+			case "help":
 				System.out.println(commandInfo);
 				break;
 				
@@ -131,12 +131,12 @@ public class Main {
 				System.out.print("Message: ");
 				String content = scanner.nextLine();
 				System.out.print("Mood (neutral/cheerful/curious/sad/angry): ");
-				Comment.Mood mood = null;
+				Article.Mood mood = null;
 				
 				while(true) {
 					boolean caughtException = false;
 					try { 
-						mood = Comment.Mood.valueOf(scanner.nextLine().trim().toUpperCase()); 
+						mood = Article.Mood.valueOf(scanner.nextLine().trim().toUpperCase()); 
 					}
 					
 					catch (IllegalArgumentException e) {
@@ -148,7 +148,7 @@ public class Main {
 						break;
 					}
 				}
-				Comment.postTo(currentArticle, currentUser, content, mood);
+				currentArticle.addComment(currentUser, content, mood);
 				break;
 				
 			default:

@@ -10,7 +10,7 @@ public class User {
 	private final String name;
 	private String email;
 	private String password;
-	private Collection<Comment> commentHistory;
+	private Collection<Article.Comment> commentHistory;
 
 	// TODO this is just an idea, but instead of a boolean we could add a state enum ONLINE/OFFLINE/AWAY,
 	// and have a thread loop through all users, and if they haven't done anything in a few minutes,
@@ -43,7 +43,7 @@ public class User {
 		Site.getInstance().addUser(user);
 	}
 	
-	public void addToCommentHistory(Comment comment) {
+	public void addToCommentHistory(Article.Comment comment) {
 		this.commentHistory.add(comment);
 	}
 
