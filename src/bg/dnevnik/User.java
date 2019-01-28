@@ -1,11 +1,37 @@
 package bg.dnevnik;
 
+import java.util.ArrayList;
 import java.util.Collection;
 
+import bg.dnevnik.User.Author;
 import bg.dnevnik.exceptions.WrongInputException;
 import bg.dnevnik.utility.Validation;
 
 public class User {
+	
+	public static class Author extends User {
+		private Collection<Article> writtenArticles;
+		private Author(String name, String email, String password) throws WrongInputException {
+			super(name, email, password);
+			this.writtenArticles = new ArrayList<Article>();
+		}
+	}
+	
+	public static class Admin extends Author {
+		private Collection<Article> writtenArticles;
+		private Admin(String name, String email, String password) throws WrongInputException {
+			super(name, email, password);
+			this.writtenArticles = new ArrayList<Article>();
+		}
+		
+		public void makeUserAuthor (User user) throws WrongInputException {
+			Site site = Site.getInstance();
+			Author author = new Author(user.name, user.email, user.password);
+			
+			site.addUser(author);
+		}
+		
+	}
 	
 	private final String name;
 	private String email;
@@ -31,16 +57,19 @@ public class User {
 		
 	}
 	
-	public static void signUp(String username, String email, String password) {
+	public static void signUp(String username, String email, String password, boolean isAuthor) {
 		User user = null;
 		try {
-			user = new User(username, email, password);
+			if (isAuthor) {
+				user = new Author(username, email, password);
+			} else {
+				user = new User(username, email, password);
+			}
+			Site.getInstance().addUser(user);
 		} catch (WrongInputException e) {
 			System.err.println("Could not sign up!");
 			e.printStackTrace();
 		}
-		
-		Site.getInstance().addUser(user);
 	}
 	
 	public void addToCommentHistory(Article.Comment comment) {
@@ -54,6 +83,25 @@ public class User {
 		return false;
 	}
 	
+
+
+	@Override
+	public int hashCode() {
+		return this.email.hashCode();
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (!(obj instanceof User))
+			return false;
+		User other = (User) obj;
+		return this.equals(obj);
+	}
+
 	public String getName() {
 		return this.name;
 	}

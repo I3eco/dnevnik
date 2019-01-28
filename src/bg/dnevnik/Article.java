@@ -2,6 +2,7 @@ package bg.dnevnik;
 
 import java.util.Collection;
 
+import bg.dnevnik.User.Author;
 import bg.dnevnik.exceptions.WrongInputException;
 import bg.dnevnik.utility.Validation;
 
@@ -55,7 +56,7 @@ public class Article extends Post {
 	private Collection<String> keywords;
 	private int numberOfViews;
 
-	public Article(User author, String title, String category, String content, Collection<String> keywords)
+	public Article(Author author, String title, String category, String content, Collection<String> keywords)
 			throws WrongInputException {
 		super(author, content);
 

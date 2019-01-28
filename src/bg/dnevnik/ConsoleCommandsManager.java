@@ -48,7 +48,8 @@ public class ConsoleCommandsManager {
 		System.out.print("Password: ");
 		String password = scanner.nextLine();
 		
-		User.signUp(username, email, password);
+		//TODO Add a check up for author and user validation
+		User.signUp(username, email, password, false);
 	}
 	
 	private void signInCommand() {
