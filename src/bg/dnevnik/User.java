@@ -3,31 +3,40 @@ package bg.dnevnik;
 import java.util.ArrayList;
 import java.util.Collection;
 
-import bg.dnevnik.exceptions.WrongInputException;
+import bg.dnevnik.exceptions.IncorrectInputException;
 import bg.dnevnik.utility.Validation;
 
 public class User {
 	
 	public static class Author extends User {
 		private Collection<Article> writtenArticles;
-		private Author(String name, String email, String password) throws WrongInputException {
+		
+		private Author(String name, String email, String password) throws IncorrectInputException {
 			super(name, email, password);
 			this.writtenArticles = new ArrayList<Article>();
 		}
 		
-		public void writeArticle(String title, String category, String content, Collection<String> keywords) throws WrongInputException {
-			Article article = new Article(this, title, category, content, keywords);
-			Site.getInstance().addArticle(article);
-			this.writtenArticles.add(article);
+		public void writeArticle(String title, String category, String content, Collection<String> keywords) {
+			Article article;
+			try {
+				article = new Article(this, title, content, keywords);
+				Site.getInstance().addArticle(article, category);
+				this.writtenArticles.add(article);
+			} 
+			catch (IncorrectInputException e) {
+				System.err.println("Incorrect input, could not write article!");
+				e.printStackTrace();
+			}
+			
 		}
 	}
 	
 	public static class Admin extends Author {
-		private Admin(String name, String email, String password) throws WrongInputException {
+		private Admin(String name, String email, String password) throws IncorrectInputException {
 			super(name, email, password);
 		}
 		
-		public void makeUserAuthor (User user) throws WrongInputException {
+		public void makeUserAuthor (User user) throws IncorrectInputException {
 			Site site = Site.getInstance();
 			Author author = new Author(user.name, user.email, user.password);
 			
@@ -46,12 +55,12 @@ public class User {
 	// it sets their state to AWAY
 	private boolean isOnline;
 	
-	private User(String name, String email, String password) throws WrongInputException {
+	private User(String name, String email, String password) throws IncorrectInputException {
 		Validation.throwIfNull(name, email, password);
 		Validation.throwIfEmpty(name, email, password);
 		
 		if (!email.trim().matches("[\\w-]+@([\\w-]+\\.)+[\\w-]+")) {
-			throw new WrongInputException("Email is incorrect!");
+			throw new IncorrectInputException("Email is incorrect!");
 		}
 		
 		this.email = email;
@@ -60,18 +69,22 @@ public class User {
 		
 	}
 	
-	public static void signUp(String username, String email, String password, boolean isAuthor) {
+	public static void signUp(String username, String email, String password, String rights) {
+		rights = rights.trim().toLowerCase();
 		User user = null;
+		
 		try {
-			if (isAuthor) {
-				user = new Author(username, email, password);
-			} else {
-				user = new User(username, email, password);
+			switch (rights) {
+				case "user": user = new User(username, email, password); break;
+				case "author": user = new Author(username, email, password); break;
+				case "admin": user = new Admin(username, email, password); break;
+				
+				default: System.err.println("The input for the rights is incorrect!"); break;
 			}
 			Site.getInstance().addUser(user);
-		} catch (WrongInputException e) {
+		} 
+		catch (IncorrectInputException e) {
 			System.err.println("Could not sign up!");
-			e.printStackTrace();
 		}
 	}
 	

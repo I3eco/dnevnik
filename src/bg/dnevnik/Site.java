@@ -40,16 +40,14 @@ public class Site {
 		throw new UserDoesNotExistException("There is no user with that email or password!");
 	}
 
+	public void addArticle(Article article, String category) {
+		if (!this.articlesByCategory.containsKey(category)) {
+			this.articlesByCategory.put(category, new HashSet<Article>());
+		}
+		this.articlesByCategory.get(category).add(article);		
+	}
+
 	public String getName() {
 		return this.name;
-
 	}
-
-	public void addArticle(Article article) {
-		if (!this.articlesByCategory.containsKey(article.getTitle())) {
-			this.articlesByCategory.put(article.getTitle(), new HashSet<Article>());
-		}
-		this.articlesByCategory.get(article.getTitle()).add(article);		
-	}
-
 }

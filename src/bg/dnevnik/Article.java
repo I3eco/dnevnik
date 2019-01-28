@@ -3,7 +3,7 @@ package bg.dnevnik;
 import java.util.Collection;
 
 import bg.dnevnik.User.Author;
-import bg.dnevnik.exceptions.WrongInputException;
+import bg.dnevnik.exceptions.IncorrectInputException;
 import bg.dnevnik.utility.Validation;
 
 public class Article extends Post {
@@ -16,20 +16,27 @@ public class Article extends Post {
 		private String title;
 		private String url;
 		
-		private Picture(String url) throws WrongInputException {
+		private Picture(String url) throws IncorrectInputException {
 			Validation.throwIfNull(url);
 			Validation.throwIfEmpty(url);
 
 			this.url = url;
 		}
 		
-		private Picture(String title, String url) throws WrongInputException {
+		private Picture(String title, String url) throws IncorrectInputException {
 			this(url);
-			
 			Validation.throwIfNull(title);
 			Validation.throwIfEmpty(title);
 			
 			this.title = title;
+		}
+
+		public String getTitle() {
+			return this.title;
+		}
+
+		public String getUrl() {
+			return url;
 		}
 	}
 
@@ -37,7 +44,7 @@ public class Article extends Post {
 
 		private final CommentMood mood;
 
-		private Comment(User author, String content, CommentMood mood) throws WrongInputException {
+		private Comment(User author, String content, CommentMood mood) throws IncorrectInputException {
 			super(author, content);
 			this.mood = mood;
 		}
@@ -49,13 +56,12 @@ public class Article extends Post {
 	}
 
 	private final String title;
-	private String category;
 	private Picture mainPicture;
 	private Collection<Comment> comments;
 	private Collection<String> keywords;
 	private int numberOfViews;
 
-	public Article(Author author, String title, String category, String content, Collection<String> keywords) throws WrongInputException {
+	public Article(Author author, String title, String content, Collection<String> keywords) throws IncorrectInputException {
 		super(author, content);
 
 		// TODO add validation; decide on the type of collections that should be used
@@ -70,17 +76,21 @@ public class Article extends Post {
 			this.comments.add(comment);
 			poster.addToCommentHistory(comment);
 		} 
-		catch (WrongInputException e) {
+		catch (IncorrectInputException e) {
 			System.err.println("Could not create comment!");
 			e.printStackTrace();
 		}
 	}
 	
-	void addMainPicture (String title, String url) throws WrongInputException {
-		this.mainPicture = new Article.Picture(title, url);
+	void addMainPicture (String title, String url) {
+		try {
+			this.mainPicture = new Article.Picture(title, url);
+		} catch (IncorrectInputException e) {
+			System.err.println("Picture could not be created!");
+		}
 	}
 	
-	void addPictureInContent (int position, String url) throws WrongInputException {
+	void addPictureInContent (int position, String url)  {
 		StringBuilder content = new StringBuilder(this.getContent());
 		
 		content.insert(position, "/n" + url + "/n");
@@ -88,9 +98,15 @@ public class Article extends Post {
 		
 	}
 	
-	void addPicture (String title, String url, Collection<Article.Picture> pictures) throws WrongInputException {
+	void addPicture (String title, String url, Collection<Article.Picture> pictures) {
+		try {
 		pictures.add(new Article.Picture(title, url));
-	}
+		}
+		catch (IncorrectInputException e) {
+			System.err.println("Picture could not be created!");
+		}
+	}		
+		
 
 	public String getTitle() {
 		return this.title;
