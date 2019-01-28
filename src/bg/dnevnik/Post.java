@@ -31,4 +31,24 @@ public abstract class Post {
 	public void setContent(String content) {
 		this.content = content;
 	}
+	
+	public LocalDateTime getTimeOfPosting() {
+		return this.timeOfPosting;
+	}
+
+	public int getUpvotesCount() {
+		return this.upvotesCount;
+	}
+
+	public int getDownvotesCount() {
+		return this.downvotesCount;
+	}
+	
+	public void upvote() {
+		this.upvotesCount++;
+	}
+	
+	public void downvote() {
+		this.downvotesCount++;
+	}
 }

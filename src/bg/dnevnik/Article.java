@@ -9,7 +9,6 @@ import bg.dnevnik.utility.Validation;
 public class Article extends Post {
 
 	public enum CommentMood {
-		// Apparently this exists in the website..
 		NEUTRAL, CHEERFUL, CURIOUS, SAD, ANGRY;
 	}
 	
@@ -56,8 +55,7 @@ public class Article extends Post {
 	private Collection<String> keywords;
 	private int numberOfViews;
 
-	public Article(Author author, String title, String category, String content, Collection<String> keywords)
-			throws WrongInputException {
+	public Article(Author author, String title, String category, String content, Collection<String> keywords) throws WrongInputException {
 		super(author, content);
 
 		// TODO add validation; decide on the type of collections that should be used
@@ -69,13 +67,13 @@ public class Article extends Post {
 		Comment comment = null;
 		try {
 			comment = new Comment(poster, content, mood);
-		} catch (WrongInputException e) {
+			this.comments.add(comment);
+			poster.addToCommentHistory(comment);
+		} 
+		catch (WrongInputException e) {
 			System.err.println("Could not create comment!");
 			e.printStackTrace();
 		}
-		this.comments.add(comment);
-		poster.addToCommentHistory(comment);
-
 	}
 	
 	void addMainPicture (String title, String url) throws WrongInputException {
@@ -86,7 +84,6 @@ public class Article extends Post {
 		StringBuilder content = new StringBuilder(this.getContent());
 		
 		content.insert(position, "/n" + url + "/n");
-		
 		this.setContent(content.toString());
 		
 	}
