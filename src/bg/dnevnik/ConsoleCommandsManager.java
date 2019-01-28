@@ -80,12 +80,12 @@ public class ConsoleCommandsManager {
 		System.out.print("Message: ");
 		String content = scanner.nextLine();
 		System.out.print("Mood (neutral/cheerful/curious/sad/angry): ");
-		Article.Mood mood = null;
+		Article.CommentMood mood = null;
 		
 		while(true) {
 			boolean caughtException = false;
 			try { 
-				mood = Article.Mood.valueOf(scanner.nextLine().trim().toUpperCase()); 
+				mood = Article.CommentMood.valueOf(scanner.nextLine().trim().toUpperCase()); 
 			}
 			
 			catch (IllegalArgumentException e) {
