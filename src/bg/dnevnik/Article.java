@@ -3,24 +3,46 @@ package bg.dnevnik;
 import java.util.Collection;
 
 import bg.dnevnik.exceptions.WrongInputException;
+import bg.dnevnik.utility.Validation;
 
 public class Article extends Post {
 
-	public enum Mood {
+	public enum CommentMood {
 		// Apparently this exists in the website..
 		NEUTRAL, CHEERFUL, CURIOUS, SAD, ANGRY;
+	}
+	
+	public class Picture {
+		private String title;
+		private String url;
+		
+		private Picture(String url) throws WrongInputException {
+			Validation.throwIfNull(url);
+			Validation.throwIfEmpty(url);
+
+			this.url = url;
+		}
+		
+		private Picture(String title, String url) throws WrongInputException {
+			this(url);
+			
+			Validation.throwIfNull(title);
+			Validation.throwIfEmpty(title);
+			
+			this.title = title;
+		}
 	}
 
 	public class Comment extends Post {
 
-		private final Mood mood;
+		private final CommentMood mood;
 
-		private Comment(User poster, String content, Mood mood) throws WrongInputException {
-			super(poster, content);
+		private Comment(User author, String content, CommentMood mood) throws WrongInputException {
+			super(author, content);
 			this.mood = mood;
 		}
 
-		public Mood getMood() {
+		public CommentMood getMood() {
 			return this.mood;
 		}
 
@@ -28,21 +50,21 @@ public class Article extends Post {
 
 	private final String title;
 	private String category;
-	private String mainPictureUrl;
+	private Picture mainPicture;
 	private Collection<Comment> comments;
 	private Collection<String> keywords;
 	private int numberOfViews;
 
-	public Article(User poster, String title, String category, String content, Collection<String> keywords)
+	public Article(User author, String title, String category, String content, Collection<String> keywords)
 			throws WrongInputException {
-		super(poster, content);
+		super(author, content);
 
 		// TODO add validation; decide on the type of collections that should be used
 		this.title = title;
 		this.keywords = keywords;
 	}
 
-	void addComment(User poster, String content, Article.Mood mood) {
+	void addComment(User poster, String content, Article.CommentMood mood) {
 		Comment comment = null;
 		try {
 			comment = new Comment(poster, content, mood);
@@ -54,4 +76,22 @@ public class Article extends Post {
 		poster.addToCommentHistory(comment);
 
 	}
+	
+	void addMainPicture (String title, String url) throws WrongInputException {
+		this.mainPicture = new Article.Picture(title, url);
+	}
+	
+	void addPictureInContent (int position, String url) throws WrongInputException {
+		StringBuilder content = new StringBuilder(this.getContent());
+		
+		content.insert(position, "/n" + url + "/n");
+		
+		this.setContent(content.toString());
+		
+	}
+	
+	void addPicture (String title, String url, Collection<Article.Picture> pictures) throws WrongInputException {
+		pictures.add(new Article.Picture(title, url));
+	}
+	
 }

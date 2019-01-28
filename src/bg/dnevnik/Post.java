@@ -7,7 +7,7 @@ import bg.dnevnik.utility.Validation;
 
 public abstract class Post {
 
-	private final User poster;
+	private final User author;
 	private final LocalDateTime timeOfPosting;
 	private String content;
 	private int upvotesCount;
@@ -20,7 +20,15 @@ public abstract class Post {
 			content = "";
 		
 		this.content = content;
-		this.poster = poster;
+		this.author = poster;
 		this.timeOfPosting = LocalDateTime.now();
+	}
+
+	public String getContent() {
+		return content;
+	}
+
+	public void setContent(String content) {
+		this.content = content;
 	}
 }
