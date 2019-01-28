@@ -5,9 +5,7 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-import bg.dnevnik.User.Author;
 import bg.dnevnik.exceptions.UserDoesNotExistException;
-import bg.dnevnik.exceptions.WrongInputException;
 
 public class Site {
 	private static Site instance;
@@ -42,18 +40,16 @@ public class Site {
 		throw new UserDoesNotExistException("There is no user with that email or password!");
 	}
 
-	public void addArticle(Author author, String title, String category, String content, Collection<String> keywords)
-			throws WrongInputException {
-		Article article = new Article(author, title, category, content, keywords);
-		if (!this.articlesByCategory.containsKey(title)) {
-			this.articlesByCategory.put(title, new HashSet<Article>());
-		}
-		this.articlesByCategory.get(title).add(article);
-	}
-
 	public String getName() {
 		return this.name;
 
+	}
+
+	public void addArticle(Article article) {
+		if (!this.articlesByCategory.containsKey(article.getTitle())) {
+			this.articlesByCategory.put(article.getTitle(), new HashSet<Article>());
+		}
+		this.articlesByCategory.get(article.getTitle()).add(article);		
 	}
 
 }

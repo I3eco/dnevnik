@@ -91,5 +91,9 @@ public class Article extends Post {
 	void addPicture (String title, String url, Collection<Article.Picture> pictures) throws WrongInputException {
 		pictures.add(new Article.Picture(title, url));
 	}
+
+	public String getTitle() {
+		return this.title;
+	}
 	
 }

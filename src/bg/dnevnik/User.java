@@ -3,7 +3,6 @@ package bg.dnevnik;
 import java.util.ArrayList;
 import java.util.Collection;
 
-import bg.dnevnik.User.Author;
 import bg.dnevnik.exceptions.WrongInputException;
 import bg.dnevnik.utility.Validation;
 
@@ -15,13 +14,17 @@ public class User {
 			super(name, email, password);
 			this.writtenArticles = new ArrayList<Article>();
 		}
+		
+		public void writeArticle(String title, String category, String content, Collection<String> keywords) throws WrongInputException {
+			Article article = new Article(this, title, category, content, keywords);
+			Site.getInstance().addArticle(article);
+			this.writtenArticles.add(article);
+		}
 	}
 	
 	public static class Admin extends Author {
-		private Collection<Article> writtenArticles;
 		private Admin(String name, String email, String password) throws WrongInputException {
 			super(name, email, password);
-			this.writtenArticles = new ArrayList<Article>();
 		}
 		
 		public void makeUserAuthor (User user) throws WrongInputException {
@@ -83,8 +86,6 @@ public class User {
 		return false;
 	}
 	
-
-
 	@Override
 	public int hashCode() {
 		return this.email.hashCode();
@@ -99,7 +100,7 @@ public class User {
 		if (!(obj instanceof User))
 			return false;
 		User other = (User) obj;
-		return this.equals(obj);
+		return this.equals(other);
 	}
 
 	public String getName() {
