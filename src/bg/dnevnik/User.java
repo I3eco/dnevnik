@@ -3,6 +3,7 @@ package bg.dnevnik;
 import java.util.ArrayList;
 import java.util.Collection;
 
+import bg.dnevnik.Article.Comment;
 import bg.dnevnik.exceptions.IncorrectInputException;
 import bg.dnevnik.utility.Validation;
 
@@ -25,7 +26,6 @@ public class User {
 			} 
 			catch (IncorrectInputException e) {
 				System.err.println("Incorrect input, could not write article!");
-				e.printStackTrace();
 			}
 			
 		}
@@ -57,7 +57,7 @@ public class User {
 	
 	private User(String name, String email, String password) throws IncorrectInputException {
 		Validation.throwIfNull(name, email, password);
-		Validation.throwIfEmpty(name, email, password);
+		Validation.throwIfNullOrEmpty(name, email, password);
 		
 		if (!email.trim().matches("[\\w-]+@([\\w-]+\\.)+[\\w-]+")) {
 			throw new IncorrectInputException("Email is incorrect!");
@@ -88,8 +88,22 @@ public class User {
 		}
 	}
 	
+	public void writeComment(Article article, String content, Article.CommentMood mood) {
+		// just like writeArticle() is in Author, it would make sense for writeComment to be in User too
+		Comment comment = null;
+		try {
+			comment = article.new Comment(this, content, mood);
+			this.addToCommentHistory(comment);
+		} 
+		catch (IncorrectInputException e) {
+			System.err.println("Could not create comment!");
+		}
+	}
+	
 	public void addToCommentHistory(Article.Comment comment) {
-		this.commentHistory.add(comment);
+		if (comment != null) {
+			this.commentHistory.add(comment);
+		}
 	}
 
 	public boolean loginInfoMatches(String email, String password) {

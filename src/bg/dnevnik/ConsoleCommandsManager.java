@@ -1,5 +1,7 @@
 package bg.dnevnik;
 
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Scanner;
 
 import bg.dnevnik.exceptions.UserDoesNotExistException;
@@ -17,9 +19,13 @@ public class ConsoleCommandsManager {
 	public void start() {
 		boolean running = true;
 		
+		// Even though it's repetitive,
+		// all of the methods have 'command' in their name to avoid confusion
+		// with the actual methods that they call, such as signUp()
+		
 		while(running) {
 			System.out.print("Enter a command, or 'help' for info: ");
-			String input = scanner.nextLine();
+			String input = scanner.nextLine().trim().toLowerCase();
 			
 			switch (input) {
 				case "exit": running = false; break;
@@ -28,13 +34,62 @@ public class ConsoleCommandsManager {
 				case "sign in": signInCommand(); break;
 				case "sign out": signOutCommand(); break;
 				case "comment": commentCommand(); break;
-					
-				default: System.out.println("That command does not exist"); break;
+				case "write article": writeArticleCommand(); break;
+				case "show categories": Site.getInstance().showCategories(); break;
+				case "show category": showCategoryCommand(); break;
+				
+				default: System.err.println("That command does not exist"); break;
 			}
 			System.out.println();
 		}
 	}
 	
+	private void showCategoryCommand() {
+		System.out.print("Category name: ");
+		String category = this.scanner.nextLine().trim();
+		Site.getInstance().showCategory(category);
+	}
+
+	private void writeArticleCommand() {
+		// This could have been done with polymorphism, instead of casting,
+		// by adding an empty writeArticle() in user.
+		// But the problem with that is that you will learn that you don't have the rights
+		// only after you write the whole article, which will be annoying.
+		// So instead I just put an instanceof check before calling writeArticle()
+		if (this.currentUser == null) {
+			System.err.println("You are not signed in!");
+			return;
+		}
+		
+		if (!(this.currentUser instanceof User.Author)) {
+			System.err.println("Only authors have the right to write articles!");
+			return;
+		}
+		
+		System.out.print("Title: ");
+		String title = scanner.nextLine();
+		System.out.print("Category: ");
+		String category = scanner.nextLine();
+		System.out.print("Content: ");
+		String content = scanner.nextLine();
+		
+		List<String> keywords = new LinkedList<String>();
+		System.out.println("(Enter nothing when you are done with all keywords)");
+		
+		while (true) {
+			System.out.print("Keyword: ");
+			String keywordInput = this.scanner.nextLine().trim().toLowerCase();
+			if (keywordInput.equals("")) {
+				break;
+			}
+			
+			keywords.add(keywordInput);
+		}
+		
+		User.Author author = (User.Author) this.currentUser;
+		author.writeArticle(title, category, content, keywords);
+	}
+
 	private void signUpCommand() {
 		System.out.print("Username: ");
 		String username = scanner.nextLine();
@@ -83,8 +138,9 @@ public class ConsoleCommandsManager {
 		
 		while(true) {
 			try { 
-				mood = Article.CommentMood.valueOf(scanner.nextLine().trim().toUpperCase()); 
-				this.currentArticle.writeComment(this.currentUser, content, mood);
+				String moodInput = scanner.nextLine().trim().toUpperCase();
+				mood = Article.CommentMood.valueOf(moodInput); 
+				this.currentUser.writeComment(this.currentArticle, content, mood);
 			}
 			catch (IllegalArgumentException e) {
 				System.out.println("That mood does not exist!");
@@ -113,11 +169,9 @@ public class ConsoleCommandsManager {
 		"comment" requires article and content
 		"write article" requires title, content, category, and keywords to create an article
 		
-		"show all categories" shows all created categories
+		"show categories" shows all created categories
 		"show hot categories" shows the five categories with most articles
-		"(category name)" shows all articles in this category 
-		(this command should have lower priority over the others, 
-		in case a category has the same name as one of the commands)
+		"show category" requires category name, to show all articles of that category
 		"show article" requires an article to show it
 		"show comments" requires the last command to have been "show article", 
 		and shows them ordered by date, from old to new
@@ -142,12 +196,10 @@ public class ConsoleCommandsManager {
 			+ "\n\"comment\" requires article and content"
 			+ "\n\"write article\" requires title, content, category, and keywords to create an article"
 			+ "\n"
-			+ "\n\"show all categories\" shows all created categories"
+			+ "\n\"show categories\" shows all created categories"
 			+ "\n\"show hot categories\" shows the five categories with most articles"
-			+ "\n\"(category name)\" shows all articles in this category "
-			+ "\n(this command should have lower priority over the others, "
-			+ "\nin case a category has the same name as one of the commands)"
-			+ "\n\"show article\" requires an article to show it"
+			+ "\n\"show category\" requires category name, to show all articles of that category"
+			+ "\n\"show article\" requires an article number to show it"
 			+ "\n\"show comments\" requires the last command to have been \"show article\", "
 			+ "\nand shows them ordered by date, from old to new"
 			+ "\n"

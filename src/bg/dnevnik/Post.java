@@ -13,15 +13,19 @@ public abstract class Post {
 	private int upvotesCount;
 	private int downvotesCount;
 	
-	protected Post(User poster, String content) throws IncorrectInputException {
-		Validation.throwIfNull(poster);
+	protected Post(User author, String content) throws IncorrectInputException {
+		Validation.throwIfNull(author);
 		
 		if (content == null)
 			content = "";
 		
+		this.author = author;
 		this.content = content;
-		this.author = poster;
 		this.timeOfPosting = LocalDateTime.now();
+	}
+
+	public User getAuthor() {
+		return this.author;
 	}
 
 	public String getContent() {

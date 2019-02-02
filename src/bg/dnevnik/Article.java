@@ -1,5 +1,6 @@
 package bg.dnevnik;
 
+import java.time.format.DateTimeFormatter;
 import java.util.Collection;
 
 import bg.dnevnik.User.Author;
@@ -8,25 +9,20 @@ import bg.dnevnik.utility.Validation;
 
 public class Article extends Post {
 
-	public enum CommentMood {
-		NEUTRAL, CHEERFUL, CURIOUS, SAD, ANGRY;
-	}
-	
 	public class Picture {
 		private String title;
 		private String url;
 		
 		private Picture(String url) throws IncorrectInputException {
-			Validation.throwIfNull(url);
-			Validation.throwIfEmpty(url);
+			Validation.throwIfNullOrEmpty(url);
 
 			this.url = url;
+			this.title = "";
 		}
 		
 		private Picture(String title, String url) throws IncorrectInputException {
 			this(url);
-			Validation.throwIfNull(title);
-			Validation.throwIfEmpty(title);
+			Validation.throwIfNullOrEmpty(title);
 			
 			this.title = title;
 		}
@@ -36,50 +32,45 @@ public class Article extends Post {
 		}
 
 		public String getUrl() {
-			return url;
+			return this.url;
 		}
 	}
 
+	public enum CommentMood {
+		NEUTRAL, CHEERFUL, CURIOUS, SAD, ANGRY;
+	}
+	
 	public class Comment extends Post {
 
 		private final CommentMood mood;
 
-		private Comment(User author, String content, CommentMood mood) throws IncorrectInputException {
+		Comment(User author, String content, CommentMood mood) throws IncorrectInputException {
 			super(author, content);
 			this.mood = mood;
+			
+			comments.add(this);
 		}
 
 		public CommentMood getMood() {
 			return this.mood;
 		}
-
 	}
 
 	private final String title;
-	private Picture mainPicture;
-	private Collection<Comment> comments;
 	private Collection<String> keywords;
+	private Picture mainPicture;
 	private int numberOfViews;
+	private Collection<Comment> comments;
 
-	public Article(Author author, String title, String content, Collection<String> keywords) throws IncorrectInputException {
+	public Article(Author author, String content, String title, Collection<String> keywords) throws IncorrectInputException {
 		super(author, content);
-
-		// TODO add validation; decide on the type of collections that should be used
+		Validation.throwIfNull(keywords);
+		Validation.throwIfNullOrEmpty(title);
+		
+		// TODO decide on the type of collections that should be used
+		
 		this.title = title;
 		this.keywords = keywords;
-	}
-
-	void writeComment(User poster, String content, Article.CommentMood mood) {
-		Comment comment = null;
-		try {
-			comment = new Comment(poster, content, mood);
-			this.comments.add(comment);
-			poster.addToCommentHistory(comment);
-		} 
-		catch (IncorrectInputException e) {
-			System.err.println("Could not create comment!");
-			e.printStackTrace();
-		}
 	}
 	
 	void addMainPicture (String title, String url) {
@@ -106,10 +97,20 @@ public class Article extends Post {
 			System.err.println("Picture could not be created!");
 		}
 	}		
-		
 
 	public String getTitle() {
 		return this.title;
+	}
+	
+	public String getSummary() {
+		StringBuilder summary = new StringBuilder();
+		
+		summary.append(this.title + "\n");
+		summary.append(this.getTimeOfPosting().format(DateTimeFormatter.ofPattern("hh:mm, dd MMM uu")));
+		summary.append(" / " + this.getAuthor().getName());
+		summary.append(" (" + this.comments.size() + " Comments)");
+		
+		return summary.toString();
 	}
 	
 }

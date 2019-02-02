@@ -3,6 +3,7 @@ package bg.dnevnik;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.concurrent.ConcurrentHashMap;
 
 import bg.dnevnik.exceptions.UserDoesNotExistException;
@@ -41,6 +42,7 @@ public class Site {
 	}
 
 	public void addArticle(Article article, String category) {
+		category = category.toUpperCase();
 		if (!this.articlesByCategory.containsKey(category)) {
 			this.articlesByCategory.put(category, new HashSet<Article>());
 		}
@@ -49,5 +51,29 @@ public class Site {
 
 	public String getName() {
 		return this.name;
+	}
+
+	public void showCategories() {
+		for (Entry<String, Collection<Article>> entry : this.articlesByCategory.entrySet()) {
+			System.out.println(entry.getKey().toUpperCase() + "(" + entry.getValue().size() + " articles)");
+		}
+	}
+
+	public void showCategory(String input) {
+		boolean categoryFound = false;
+		input = input.toUpperCase();
+		for (Entry<String, Collection<Article>> entry : this.articlesByCategory.entrySet()) {
+			if (entry.getKey().equals(input)) {
+				categoryFound = true;
+				for (Article article : entry.getValue()) {
+					System.out.println(article.getSummary());
+				}
+			}
+			break;
+		}
+		
+		if (!categoryFound) {
+			System.err.println("There is no category called " + input + "!");
+		}
 	}
 }
