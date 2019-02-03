@@ -2,6 +2,8 @@ package bg.dnevnik;
 
 import java.time.format.DateTimeFormatter;
 import java.util.Collection;
+import java.util.LinkedList;
+import java.util.stream.Collectors;
 
 import bg.dnevnik.User.Author;
 import bg.dnevnik.exceptions.IncorrectInputException;
@@ -56,21 +58,23 @@ public class Article extends Post {
 		}
 	}
 
+	private static int count;
+	private final int ID;
 	private final String title;
 	private Collection<String> keywords;
 	private Picture mainPicture;
 	private int numberOfViews;
 	private Collection<Comment> comments;
 
-	public Article(Author author, String content, String title, Collection<String> keywords) throws IncorrectInputException {
+	public Article(Author author, String title, String content, Collection<String> keywords) throws IncorrectInputException {
 		super(author, content);
 		Validation.throwIfNull(keywords);
 		Validation.throwIfNullOrEmpty(title);
 		
-		// TODO decide on the type of collections that should be used
-		
 		this.title = title;
 		this.keywords = keywords;
+		this.comments = new LinkedList<Comment>();
+		this.ID = Article.count++;
 	}
 	
 	void addMainPicture (String title, String url) {
@@ -105,12 +109,31 @@ public class Article extends Post {
 	public String getSummary() {
 		StringBuilder summary = new StringBuilder();
 		
+		summary.append("\n(ID " + this.getID() + ") ");
 		summary.append(this.title + "\n");
 		summary.append(this.getTimeOfPosting().format(DateTimeFormatter.ofPattern("hh:mm, dd MMM uu")));
 		summary.append(" / " + this.getAuthor().getName());
-		summary.append(" (" + this.comments.size() + " Comments)");
+		summary.append(" / " + this.numberOfViews + " Views, ");
+		summary.append(this.comments.size() + " Comments");
 		
 		return summary.toString();
+	}
+
+	public String show() {
+		// TODO find a good way to synchronize this
+		this.numberOfViews++;
+		
+		StringBuilder info = new StringBuilder();
+		info.append(this.getSummary());
+		info.append("\n\n   " + this.getContent());
+		info.append("\n\n ^" + this.getUpvotesCount() + " v" + this.getDownvotesCount());
+		info.append(" / Keywords: ");
+		info.append(this.keywords.stream().collect(Collectors.joining(", ")));
+		return info.toString();
+	}
+
+	public int getID() {
+		return this.ID;
 	}
 	
 }

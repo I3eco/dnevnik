@@ -6,6 +6,7 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.concurrent.ConcurrentHashMap;
 
+import bg.dnevnik.exceptions.NoSuchArticleException;
 import bg.dnevnik.exceptions.UserDoesNotExistException;
 
 public class Site {
@@ -55,7 +56,7 @@ public class Site {
 
 	public void showCategories() {
 		for (Entry<String, Collection<Article>> entry : this.articlesByCategory.entrySet()) {
-			System.out.println(entry.getKey().toUpperCase() + "(" + entry.getValue().size() + " articles)");
+			System.out.println(entry.getKey().toUpperCase() + " (" + entry.getValue().size() + " articles)");
 		}
 	}
 
@@ -68,12 +69,23 @@ public class Site {
 				for (Article article : entry.getValue()) {
 					System.out.println(article.getSummary());
 				}
+				break;
 			}
-			break;
 		}
 		
 		if (!categoryFound) {
 			System.err.println("There is no category called " + input + "!");
 		}
+	}
+
+	public Article getArticleByID(int id) throws NoSuchArticleException {
+		for (Entry<String, Collection<Article>> entry : this.articlesByCategory.entrySet()) {
+			for (Article article : entry.getValue()) {
+				if (article.getID() == id) {
+					return article;
+				}
+			}
+		}
+		throw new NoSuchArticleException();
 	}
 }

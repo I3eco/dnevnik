@@ -4,46 +4,95 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
 
+import bg.dnevnik.exceptions.NoSuchArticleException;
 import bg.dnevnik.exceptions.UserDoesNotExistException;
 
-public class ConsoleCommandsManager {
+public class ConsoleCommandsView {
 	
 	private Scanner scanner;
 	private User currentUser;
 	private Article currentArticle;
 	
-	public ConsoleCommandsManager() {
+	public ConsoleCommandsView() {
 		this.scanner = new Scanner(System.in);
 	}
 	
 	public void start() {
-		boolean running = true;
-		
 		// Even though it's repetitive,
 		// all of the methods have 'command' in their name to avoid confusion
 		// with the actual methods that they call, such as signUp()
 		
+		boolean running = true;
 		while(running) {
-			System.out.print("Enter a command, or 'help' for info: ");
+			System.out.print("Enter a command, or write 'commands' for info: ");
 			String input = scanner.nextLine().trim().toLowerCase();
 			
 			switch (input) {
 				case "exit": running = false; break;
-				case "help": showHelpCommand(); break;
+				case "commands": showCommands(); break;
 				case "sign up": signUpCommand(); break;
 				case "sign in": signInCommand(); break;
 				case "sign out": signOutCommand(); break;
-				case "comment": commentCommand(); break;
+				case "write comment": writeCommentCommand(); break;
 				case "write article": writeArticleCommand(); break;
 				case "show categories": Site.getInstance().showCategories(); break;
+				case "show article": showArticleCommand(); break;
 				case "show category": showCategoryCommand(); break;
+				case "upvote article": upvoteArticleCommand(); break;
+				case "downvote article": downvoteArticleCommand(); break;
 				
-				default: System.err.println("That command does not exist"); break;
+				default: 
+				try {
+					// because system.err does some strange buffer magic, messages appear out of order sometimes
+					// and this is so there's a higher chance to have them in the correct order
+					Thread.sleep(500); 
+				} catch (InterruptedException e) {
+					return;
+				}
+					System.err.println("That command does not exist!"); break;
 			}
-			System.out.println();
+			System.out.println("\n____________________________________");
 		}
 	}
 	
+	private void downvoteArticleCommand() {
+		if (!this.isSignedIn() || !this.hasOpenedArticle()) {
+			return;
+		}
+		
+		this.currentArticle.downvote();		
+	}
+
+	private void upvoteArticleCommand() {
+		if (!this.isSignedIn() || !this.hasOpenedArticle()) {
+			return;
+		}
+		
+		this.currentArticle.upvote();
+	}
+	
+	private void showArticleCommand() {
+		System.out.print("Article ID: ");
+		int id = 0;
+		
+		try {
+			id = Integer.parseInt(this.scanner.nextLine().trim());
+		}
+		catch (NumberFormatException e) {
+			System.err.println("Invalid ID, try again!");
+			return;
+		}
+		
+		try {
+			this.currentArticle = Site.getInstance().getArticleByID(id);
+		} 
+		catch (NoSuchArticleException e) {
+			System.err.println("An article with ID " + id + " does not exist!");
+			return;
+		}
+		System.out.println(this.currentArticle.show());
+	}
+
 	private void showCategoryCommand() {
 		System.out.print("Category name: ");
 		String category = this.scanner.nextLine().trim();
@@ -91,14 +140,15 @@ public class ConsoleCommandsManager {
 	}
 
 	private void signUpCommand() {
+		System.out.print("Rights (user/author/admin): ");
+		String rights = scanner.nextLine();
 		System.out.print("Username: ");
 		String username = scanner.nextLine();
 		System.out.print("Email: ");
 		String email = scanner.nextLine();
 		System.out.print("Password: ");
 		String password = scanner.nextLine();
-		System.out.print("Rights (user/author/admin): ");
-		String rights = scanner.nextLine();
+		
 		
 		User.signUp(username, email, password, rights);
 	}
@@ -118,16 +168,14 @@ public class ConsoleCommandsManager {
 	}
 	
 	private void signOutCommand() {
-		if (this.currentUser != null) {
-			this.currentUser.goOffline();
+		if (this.isSignedIn()) {
 			this.currentUser = null;
+			this.currentUser.goOffline();
 		}
-		else System.out.println("You are not signed in");
 	}
 	
-	private void commentCommand() {
-		if (this.currentUser == null) {
-			System.out.println("You are not signed in!");
+	private void writeCommentCommand() {
+		if (!this.isSignedIn() || !this.hasOpenedArticle()) {
 			return;
 		}
 		
@@ -136,43 +184,40 @@ public class ConsoleCommandsManager {
 		System.out.print("Mood (neutral/cheerful/curious/sad/angry): ");
 		Article.CommentMood mood = null;
 		
-		while(true) {
+		boolean inputIsIncorrent = true;
+		while(inputIsIncorrent) {
 			try { 
 				String moodInput = scanner.nextLine().trim().toUpperCase();
 				mood = Article.CommentMood.valueOf(moodInput); 
 				this.currentUser.writeComment(this.currentArticle, content, mood);
+				inputIsIncorrent = false;
 			}
 			catch (IllegalArgumentException e) {
-				System.out.println("That mood does not exist!");
+				System.err.println("That mood does not exist!");
 			}
 		}
 		
 	}
 	
-	private void showHelpCommand() {
-		/* These are some of the commands we could add, 
-		they should be very helpful as a TODO list.
-		It will also be a part of what the simulated users will do.
-		They are all according to the website in terms of functionality
+	private void showCommands() {
+		/* commands:
+		"commands" 
+		"exit"
+		"sign up" 
+		"sign in" 
+		"sign out"
 		
-		The logic for the command management should probably be in the site class,
-		it'll likely be here just temporarily
+		"upvote comment" requires comment id
+		"downvote comment" requires comment id
+		"downvote article"
+		"upvote article" 
+		"write comment"
+		"write article"
 		
-		commands:
-		"help" shows this info about all commands
-		
-		"sign up" requires name, email, and password to create a user
-		"sign in" requires email and password, allows user to make posts and vote
-		"sign out" requires to be signed in, disables ability to make posts and vote
-		
-		"upvote"/"downvote" requires a post and votes on it
-		"comment" requires article and content
-		"write article" requires title, content, category, and keywords to create an article
-		
-		"show categories" shows all created categories
+		"show categories"
 		"show hot categories" shows the five categories with most articles
-		"show category" requires category name, to show all articles of that category
-		"show article" requires an article to show it
+		"show category"
+		"show article"
 		"show comments" requires the last command to have been "show article", 
 		and shows them ordered by date, from old to new
 		
@@ -183,35 +228,24 @@ public class ConsoleCommandsManager {
 		"sort by comments"
 		"sort by votes"
 		*/
-		String commandInfo = ""
-			+ "\nCommands: "
-			+ "\n\"help\" shows this info about all commands"
-			+ "\n"
-			+ "\n\"sign up\" requires name, email, and password to create a user"
-			+ "\n\"sign in\" requires email and password, allows user to make posts and vote"
-			+ "\n\"sign out\" requires to be signed in, disables ability to make posts and vote"
-			+ "\n\"exit\" quits the program"
-			+ "\n"
-			+ "\n\"upvote\"/\"downvote\" requires a post and votes on it"
-			+ "\n\"comment\" requires article and content"
-			+ "\n\"write article\" requires title, content, category, and keywords to create an article"
-			+ "\n"
-			+ "\n\"show categories\" shows all created categories"
-			+ "\n\"show hot categories\" shows the five categories with most articles"
-			+ "\n\"show category\" requires category name, to show all articles of that category"
-			+ "\n\"show article\" requires an article number to show it"
-			+ "\n\"show comments\" requires the last command to have been \"show article\", "
-			+ "\nand shows them ordered by date, from old to new"
-			+ "\n"
-			+ "\nThese don't require anything, because they use all articles"
-			+ "\n\"show from today\" "
-			+ "\n\"sort by new\""
-			+ "\n\"sort by views\""
-			+ "\n\"sort by comments\""
-			+ "\n\"sort by votes\"";
+		String commandInfo = null;
 		System.out.println(commandInfo);
 	}
 	
+	private boolean hasOpenedArticle() {
+		if (this.currentArticle == null) {
+			System.err.println("There is no opened article!");
+			return false;
+		}
+		return true;
+	}
 
+	private boolean isSignedIn() {
+		if (this.currentUser == null) {
+			System.err.println("You are not signed in!");
+			return false;
+		}
+		return true;
+	}
 	
 }

@@ -2,6 +2,7 @@ package bg.dnevnik;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.LinkedList;
 
 import bg.dnevnik.Article.Comment;
 import bg.dnevnik.exceptions.IncorrectInputException;
@@ -66,6 +67,7 @@ public class User {
 		this.email = email;
 		this.name = name.trim();
 		this.password = password.trim();
+		this.commentHistory = new LinkedList<Comment>();
 		
 	}
 	
@@ -107,6 +109,9 @@ public class User {
 	}
 
 	public boolean loginInfoMatches(String email, String password) {
+		if (email == null || password == null) {
+			return false;
+		}
 		if (this.email.equals(email.trim()) && this.password.equals(password.trim())) {
 			return true;
 		}
