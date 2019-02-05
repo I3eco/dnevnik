@@ -1,7 +1,12 @@
 package bg.dnevnik;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Comparator;
 import java.util.HashSet;
@@ -21,7 +26,26 @@ public class Site {
 	private Map<String, Collection<Article>> articlesByCategory;
 
 	static {
+		File f = new File("src" + File.separator + "bg" + File.separator + "siteContent.json");
+		FileReader reader = null;
+		try {
+			reader = new FileReader(f);
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
 		
+		char[] chars = new char[1000];
+		
+		try {
+			reader.read(chars);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		String js = Arrays.toString(chars);
+		System.out.println(js);
+		
+		// TODO fix this
 	}
 
 	private Site() {

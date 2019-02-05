@@ -1,5 +1,8 @@
 package bg.dnevnik;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Arrays;
 
 import com.google.gson.Gson;
@@ -51,10 +54,25 @@ public class Main {
 		
 		
 		
-		Gson gson = new GsonBuilder().setPrettyPrinting().create();
+		Gson gson = new GsonBuilder().create();
 		String json = gson.toJson(Site.getInstance());  
+		File f = new File("src" + File.separator + "bg" + File.separator + "siteContent.json");
+		FileWriter writer = null;
+		try {
+			writer = new FileWriter(f);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
-		System.out.println(json);
+		try {
+			writer.write(json);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		//System.out.println(json);
 		
 		
 
