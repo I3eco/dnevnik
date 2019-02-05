@@ -2,6 +2,7 @@ package bg.dnevnik;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Comparator;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -98,7 +99,7 @@ public class Site {
 		throw new NoSuchArticleException();
 	}
 
-	public void showTopCategories(int numberOfCategories) {
+	public void showHotCategories(int numberOfCategories) {
 		class Category {
 			String name;
 			int numberOfArticles;
@@ -130,6 +131,30 @@ public class Site {
 			
 		}
 		System.out.println(topCategories);
+	}
+	
+	public void showTopCategories(int numOfCategories) {
+		Comparator<Entry<String, Collection<Article>>> comparatorBySize = (a, b) -> a.getValue().size() - b.getValue().size();
+		Set<Entry<String, Collection<Article>>> topCategories = new TreeSet<Entry<String, Collection<Article>>>(comparatorBySize);
+		
+		for (Entry<String, Collection<Article>> currentCategory : this.articlesByCategory.entrySet()) {
+			if (topCategories.size() < numOfCategories) {
+				topCategories.add(currentCategory);
+			}
+			else {
+				for (Entry<String, Collection<Article>> topCategory : topCategories) {
+					if (currentCategory.getValue().size() > topCategory.getValue().size()) {
+						topCategories.remove(topCategory);
+						topCategories.add(currentCategory);
+					}
+				}
+			}
+		}
+		
+		for (Entry<String, Collection<Article>> category : topCategories) {
+			System.out.println(category.getKey().toUpperCase() + " (" + category.getValue().size()+ ")");
+		}
+
 	}
 
 	public String getName() {
