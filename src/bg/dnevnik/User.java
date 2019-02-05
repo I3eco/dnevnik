@@ -39,9 +39,14 @@ public class User {
 		
 		public void makeUserAuthor (User user) throws IncorrectInputException {
 			Site site = Site.getInstance();
-			Author author = new Author(user.name, user.email, user.password);
-			
+			Author author = new Author(user.name, user.email, user.password);			
 			site.addUser(author);
+		}
+		
+		public void makeUserAdmin (User user) throws IncorrectInputException {
+			Site site = Site.getInstance();
+			Admin admin = new Admin(user.name, user.email, user.password);			
+			site.addUser(admin);
 		}
 		
 	}
@@ -71,7 +76,7 @@ public class User {
 		
 	}
 	
-	public static void signUp(String username, String email, String password, String rights) {
+	public static void createUser(String username, String email, String password, String rights) {
 		rights = rights.trim().toLowerCase();
 		User user = null;
 		
@@ -129,10 +134,8 @@ public class User {
 			return true;
 		if (obj == null)
 			return false;
-		if (!(obj instanceof User))
-			return false;
 		User other = (User) obj;
-		return this.equals(other);
+		return this.email.equals(other.email);
 	}
 
 	public String getName() {

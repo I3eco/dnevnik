@@ -6,6 +6,7 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.concurrent.ConcurrentHashMap;
 
+import bg.dnevnik.User.Admin;
 import bg.dnevnik.exceptions.NoSuchArticleException;
 import bg.dnevnik.exceptions.UserDoesNotExistException;
 
@@ -20,6 +21,7 @@ public class Site {
 	}
 
 	private Site() {
+		this.name = "Dnevnik";
 		this.users = new HashSet<User>();
 		this.articlesByCategory = new ConcurrentHashMap<String, Collection<Article>>();
 	}
@@ -27,10 +29,17 @@ public class Site {
 	public static Site getInstance() {
 		return Site.instance;
 	}
+	
+	public static void createAdmin(String name, String email, String password) {
+		User.createUser(name, email, password, "admin");
+	}
 
 	public void addUser(User user) {
-		users.add(user);
+		this.users.remove(user);
+		this.users.add(user);
 	}
+	
+	
 
 	public User signIn(String email, String password) throws UserDoesNotExistException {
 		for (User user : users) {
@@ -48,10 +57,6 @@ public class Site {
 			this.articlesByCategory.put(category, new HashSet<Article>());
 		}
 		this.articlesByCategory.get(category).add(article);		
-	}
-
-	public String getName() {
-		return this.name;
 	}
 
 	public void showCategories() {
@@ -87,5 +92,10 @@ public class Site {
 			}
 		}
 		throw new NoSuchArticleException();
+	}
+	
+
+	public String getName() {
+		return this.name;
 	}
 }

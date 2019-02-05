@@ -16,7 +16,8 @@ public class GalleryArticle extends Article {
 		this.pictures = new ArrayList<Picture>();
 	}
 	
-	void addPicture (String title, String url) {
-		this.addPicture(title, url, this.pictures);
-	}
+//	void addPicture (String title, String url) {
+//		this.addPicture(title, url, this.pictures);
+//	}
+
 }

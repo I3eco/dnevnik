@@ -140,17 +140,14 @@ public class ConsoleCommandsView {
 	}
 
 	private void signUpCommand() {
-		System.out.print("Rights (user/author/admin): ");
-		String rights = scanner.nextLine();
 		System.out.print("Username: ");
 		String username = scanner.nextLine();
 		System.out.print("Email: ");
 		String email = scanner.nextLine();
 		System.out.print("Password: ");
 		String password = scanner.nextLine();
-		
-		
-		User.signUp(username, email, password, rights);
+			
+		User.createUser(username, email, password, "user");
 	}
 	
 	private void signInCommand() {

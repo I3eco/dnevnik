@@ -1,10 +1,10 @@
 package bg.dnevnik;
 
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.LinkedList;
 import java.util.stream.Collectors;
-
 import bg.dnevnik.User.Author;
 import bg.dnevnik.exceptions.IncorrectInputException;
 import bg.dnevnik.utility.Validation;
@@ -57,6 +57,26 @@ public class Article extends Post {
 			return this.mood;
 		}
 	}
+	
+	public static class GalleryArticle extends Article {
+		
+		private Collection<Picture> pictures;
+
+		public GalleryArticle(Author author, String title, Collection<String> keywords)
+				throws IncorrectInputException {
+			super(author, title, "", keywords);
+			this.pictures = new ArrayList<Picture>();
+		}
+		
+		void addPicture(String title, String url) {
+			try {
+				this.pictures.add(new Article.Picture(title, url));
+			} catch (IncorrectInputException e) {
+				System.err.println("Picture could not be created!");
+			}
+		}
+
+	}
 
 	private static int count;
 	private final int ID;
@@ -74,7 +94,7 @@ public class Article extends Post {
 		this.title = title;
 		this.keywords = keywords;
 		this.comments = new LinkedList<Comment>();
-		this.ID = Article.count++;
+		this.ID = ++Article.count;
 	}
 	
 	void addMainPicture (String title, String url) {
@@ -91,19 +111,6 @@ public class Article extends Post {
 		content.insert(position, "/n" + url + "/n");
 		this.setContent(content.toString());
 		
-	}
-	
-	void addPicture (String title, String url, Collection<Article.Picture> pictures) {
-		try {
-		pictures.add(new Article.Picture(title, url));
-		}
-		catch (IncorrectInputException e) {
-			System.err.println("Picture could not be created!");
-		}
-	}		
-
-	public String getTitle() {
-		return this.title;
 	}
 	
 	public String getSummary() {
@@ -134,6 +141,10 @@ public class Article extends Post {
 
 	public int getID() {
 		return this.ID;
+	}
+	
+	public String getTitle() {
+		return this.title;
 	}
 	
 }
