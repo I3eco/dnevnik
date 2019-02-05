@@ -48,6 +48,7 @@ public class ConsoleCommandsView {
 				case "upvote article": upvoteArticleCommand(); break;
 				case "downvote article": downvoteArticleCommand(); break;
 				case "show top categories": showTopCategoriesCommand(); break;
+				case "show from today": Site.getInstance().showFromToday(); break;
 				
 				default: 
 				
@@ -227,7 +228,7 @@ public class ConsoleCommandsView {
 		"write article"
 		
 		"show categories"
-		"show hot categories" shows the five categories with most articles
+		"show top categories" shows the five categories with most articles
 		"show category"
 		"show article"
 		"show comments" requires the last command to have been "show article", 

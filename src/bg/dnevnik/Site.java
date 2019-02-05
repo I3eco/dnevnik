@@ -1,5 +1,6 @@
 package bg.dnevnik;
 
+import java.time.LocalDateTime;
 import java.util.Collection;
 import java.util.Comparator;
 import java.util.HashSet;
@@ -19,7 +20,6 @@ public class Site {
 	private Map<String, Collection<Article>> articlesByCategory;
 
 	static {
-		Site.instance = new Site();
 	}
 
 	private Site() {
@@ -27,11 +27,19 @@ public class Site {
 		this.users = new HashSet<User>();
 		this.articlesByCategory = new ConcurrentHashMap<String, Collection<Article>>();
 	}
-
+	
 	public static Site getInstance() {
+		if (instance == null) {
+			Site.instance = new Site();
+			return Site.instance;
+		}
 		return Site.instance;
 	}
 	
+	public void initialize(Site fromJson) {
+		
+	}
+
 	public static void createAdmin(String name, String email, String password) {
 		User.createUser(name, email, password, "admin");
 	}
@@ -40,7 +48,7 @@ public class Site {
 		this.users.remove(user);
 		this.users.add(user);
 	}
-	
+
 	public User signIn(String email, String password) throws UserDoesNotExistException {
 		for (User user : users) {
 			if (user.loginInfoMatches(email, password)) {
@@ -56,7 +64,7 @@ public class Site {
 		if (!this.articlesByCategory.containsKey(category)) {
 			this.articlesByCategory.put(category, new HashSet<Article>());
 		}
-		this.articlesByCategory.get(category).add(article);		
+		this.articlesByCategory.get(category).add(article);
 	}
 
 	public void showCategories() {
@@ -77,7 +85,7 @@ public class Site {
 				break;
 			}
 		}
-		
+
 		if (!categoryFound) {
 			System.err.println("There is no category called " + input + "!");
 		}
@@ -93,16 +101,21 @@ public class Site {
 		}
 		throw new NoSuchArticleException();
 	}
-	
+
 	public void showTopCategories(int numOfCategories) {
-		Comparator<Entry<String, Collection<Article>>> comparatorBySize = (a, b) -> a.getValue().size() - b.getValue().size();
-		Set<Entry<String, Collection<Article>>> topCategories = new TreeSet<Entry<String, Collection<Article>>>(comparatorBySize);
-		
+		if (numOfCategories <= 0) {
+			return;
+		}
+
+		Comparator<Entry<String, Collection<Article>>> comparatorBySize = (a, b) -> a.getValue().size()
+				- b.getValue().size();
+		Set<Entry<String, Collection<Article>>> topCategories = new TreeSet<Entry<String, Collection<Article>>>(
+				comparatorBySize);
+
 		for (Entry<String, Collection<Article>> currentCategory : this.articlesByCategory.entrySet()) {
 			if (topCategories.size() < numOfCategories) {
 				topCategories.add(currentCategory);
-			}
-			else {
+			} else {
 				for (Entry<String, Collection<Article>> topCategory : topCategories) {
 					if (currentCategory.getValue().size() > topCategory.getValue().size()) {
 						topCategories.remove(topCategory);
@@ -111,13 +124,25 @@ public class Site {
 				}
 			}
 		}
-		
+
 		for (Entry<String, Collection<Article>> category : topCategories) {
-			System.out.println(category.getKey().toUpperCase() + " (" + category.getValue().size()+ ")");
+			System.out.println(category.getKey().toUpperCase() + " (" + category.getValue().size() + ")");
 		}
 	}
 
+	public void showFromToday() {
+		// TODO test this
+		Collection<Collection<Article>> articles = this.articlesByCategory.values();
+		articles.forEach(Collection -> Collection.forEach(article -> {
+			if (article.getTimeOfPosting().isAfter(LocalDateTime.now().minusDays(1))) {
+				System.out.println(article.getSummary());
+			}
+		}));
+	}
+	
 	public String getName() {
 		return this.name;
 	}
+
+
 }
