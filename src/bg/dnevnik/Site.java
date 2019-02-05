@@ -11,6 +11,7 @@ import java.util.Set;
 import java.util.TreeMap;
 import java.util.concurrent.ConcurrentHashMap;
 
+import bg.dnevnik.User.Admin;
 import bg.dnevnik.exceptions.NoSuchArticleException;
 import bg.dnevnik.exceptions.UserDoesNotExistException;
 
@@ -25,6 +26,7 @@ public class Site {
 	}
 
 	private Site() {
+		this.name = "Dnevnik";
 		this.users = new HashSet<User>();
 		this.articlesByCategory = new ConcurrentHashMap<String, Collection<Article>>();
 	}
@@ -32,11 +34,16 @@ public class Site {
 	public static Site getInstance() {
 		return Site.instance;
 	}
-
-	public void addUser(User user) {
-		users.add(user);
+	
+	public static void createAdmin(String name, String email, String password) {
+		User.createUser(name, email, password, "admin");
 	}
 
+	public void addUser(User user) {
+		this.users.remove(user);
+		this.users.add(user);
+	}
+	
 	public User signIn(String email, String password) throws UserDoesNotExistException {
 		for (User user : users) {
 			if (user.loginInfoMatches(email, password)) {
@@ -53,10 +60,6 @@ public class Site {
 			this.articlesByCategory.put(category, new HashSet<Article>());
 		}
 		this.articlesByCategory.get(category).add(article);		
-	}
-
-	public String getName() {
-		return this.name;
 	}
 
 	public void showCategories() {
@@ -93,8 +96,6 @@ public class Site {
 		}
 		throw new NoSuchArticleException();
 	}
-
-	
 	
 	public void showTopCategories(int numOfCategories) {
 		List<Entry<String, Collection<Article>>> topCategories = new ArrayList<Entry<String, Collection<Article>>>();
@@ -118,5 +119,9 @@ public class Site {
 		for (Entry<String, Collection<Article>> category : topCategories) {
 			System.out.println(category.getKey().toUpperCase() + " (" + category.getValue().size()+ ")");
 		}
+	}
+
+	public String getName() {
+		return this.name;
 	}
 }
