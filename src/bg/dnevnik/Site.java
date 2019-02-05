@@ -1,17 +1,14 @@
 package bg.dnevnik;
 
-import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
-import java.util.TreeMap;
+import java.util.TreeSet;
 import java.util.concurrent.ConcurrentHashMap;
 
-import bg.dnevnik.User.Admin;
 import bg.dnevnik.exceptions.NoSuchArticleException;
 import bg.dnevnik.exceptions.UserDoesNotExistException;
 
@@ -98,7 +95,8 @@ public class Site {
 	}
 	
 	public void showTopCategories(int numOfCategories) {
-		List<Entry<String, Collection<Article>>> topCategories = new ArrayList<Entry<String, Collection<Article>>>();
+		Comparator<Entry<String, Collection<Article>>> comparatorBySize = (a, b) -> a.getValue().size() - b.getValue().size();
+		Set<Entry<String, Collection<Article>>> topCategories = new TreeSet<Entry<String, Collection<Article>>>(comparatorBySize);
 		
 		for (Entry<String, Collection<Article>> currentCategory : this.articlesByCategory.entrySet()) {
 			if (topCategories.size() < numOfCategories) {
@@ -113,8 +111,6 @@ public class Site {
 				}
 			}
 		}
-		
-		Collections.sort(topCategories, (a, b) -> a.getValue().size() - b.getValue().size());
 		
 		for (Entry<String, Collection<Article>> category : topCategories) {
 			System.out.println(category.getKey().toUpperCase() + " (" + category.getValue().size()+ ")");
