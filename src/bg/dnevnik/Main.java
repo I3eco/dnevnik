@@ -63,7 +63,6 @@ public class Main {
 		
 		
 		Site s = Site.getInstance();
-		s.initialize(gson.fromJson(json, Site.class));
 
 	}
 }

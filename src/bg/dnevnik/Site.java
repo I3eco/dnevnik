@@ -1,6 +1,7 @@
 package bg.dnevnik;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Comparator;
 import java.util.HashSet;
@@ -35,10 +36,6 @@ public class Site {
 		}
 		return Site.instance;
 	}
-	
-	public void initialize(Site fromJson) {
-		
-	}
 
 	public static void createAdmin(String name, String email, String password) {
 		User.createUser(name, email, password, "admin");
@@ -47,6 +44,10 @@ public class Site {
 	public void addUser(User user) {
 		this.users.remove(user);
 		this.users.add(user);
+	}
+
+	public void sighUp(String username, String email, String password) {
+		User.createUser(username, email, password, "user");
 	}
 
 	public User signIn(String email, String password) throws UserDoesNotExistException {
@@ -102,6 +103,40 @@ public class Site {
 		throw new NoSuchArticleException();
 	}
 
+	public void showHotCategories(int numberOfCategories) {
+		class Category {
+			String name;
+			int numberOfArticles;
+
+			Category(String name, int numberOfArticles) {
+				this.name = name;
+				this.numberOfArticles = numberOfArticles;
+			}
+		}
+
+		Set<Category> topCategories = new TreeSet<Category>((c1, c2) -> c2.numberOfArticles - c1.numberOfArticles);
+
+		for (Entry<String, Collection<Article>> entry : this.articlesByCategory.entrySet()) {
+
+			int articlesInCategory = entry.getValue().size();
+			Category currentCategory = new Category(entry.getKey(), articlesInCategory);
+
+			if ((topCategories.size() >= numberOfCategories)) {
+				ArrayList<Category> temp = new ArrayList<Category>(topCategories);
+				Category category = temp.get(numberOfCategories);
+
+				if (category.numberOfArticles < articlesInCategory) {
+					topCategories.remove(category);
+					topCategories.add(currentCategory);
+				}
+			} else {
+				topCategories.add(currentCategory);
+			}
+			
+		}
+		System.out.println(topCategories);
+	}
+	
 	public void showTopCategories(int numOfCategories) {
 		if (numOfCategories <= 0) {
 			return;
@@ -128,6 +163,7 @@ public class Site {
 		for (Entry<String, Collection<Article>> category : topCategories) {
 			System.out.println(category.getKey().toUpperCase() + " (" + category.getValue().size() + ")");
 		}
+
 	}
 
 	public void showFromToday() {
