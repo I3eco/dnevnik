@@ -147,7 +147,7 @@ public class ConsoleCommandsView {
 		System.out.print("Password: ");
 		String password = scanner.nextLine();
 			
-		User.createUser(username, email, password, "user");
+		Site.getInstance().sighUp(username, email, password);
 	}
 	
 	private void signInCommand() {

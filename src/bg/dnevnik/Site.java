@@ -1,12 +1,14 @@
 package bg.dnevnik;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Set;
+import java.util.TreeSet;
 import java.util.concurrent.ConcurrentHashMap;
 
-import bg.dnevnik.User.Admin;
 import bg.dnevnik.exceptions.NoSuchArticleException;
 import bg.dnevnik.exceptions.UserDoesNotExistException;
 
@@ -29,7 +31,7 @@ public class Site {
 	public static Site getInstance() {
 		return Site.instance;
 	}
-	
+
 	public static void createAdmin(String name, String email, String password) {
 		User.createUser(name, email, password, "admin");
 	}
@@ -38,7 +40,11 @@ public class Site {
 		this.users.remove(user);
 		this.users.add(user);
 	}
-	
+
+	public void sighUp(String username, String email, String password) {
+		User.createUser(username, email, password, "user");
+	}
+
 	public User signIn(String email, String password) throws UserDoesNotExistException {
 		for (User user : users) {
 			if (user.loginInfoMatches(email, password)) {
@@ -54,7 +60,7 @@ public class Site {
 		if (!this.articlesByCategory.containsKey(category)) {
 			this.articlesByCategory.put(category, new HashSet<Article>());
 		}
-		this.articlesByCategory.get(category).add(article);		
+		this.articlesByCategory.get(category).add(article);
 	}
 
 	public void showCategories() {
@@ -75,7 +81,7 @@ public class Site {
 				break;
 			}
 		}
-		
+
 		if (!categoryFound) {
 			System.err.println("There is no category called " + input + "!");
 		}
@@ -91,7 +97,40 @@ public class Site {
 		}
 		throw new NoSuchArticleException();
 	}
-	
+
+	public void showTopCategories(int numberOfCategories) {
+		class Category {
+			String name;
+			int numberOfArticles;
+
+			Category(String name, int numberOfArticles) {
+				this.name = name;
+				this.numberOfArticles = numberOfArticles;
+			}
+		}
+
+		Set<Category> topCategories = new TreeSet<Category>((c1, c2) -> c2.numberOfArticles - c1.numberOfArticles);
+
+		for (Entry<String, Collection<Article>> entry : this.articlesByCategory.entrySet()) {
+
+			int articlesInCategory = entry.getValue().size();
+			Category currentCategory = new Category(entry.getKey(), articlesInCategory);
+
+			if ((topCategories.size() >= numberOfCategories)) {
+				ArrayList<Category> temp = new ArrayList<Category>(topCategories);
+				Category category = temp.get(numberOfCategories);
+
+				if (category.numberOfArticles < articlesInCategory) {
+					topCategories.remove(category);
+					topCategories.add(currentCategory);
+				}
+			} else {
+				topCategories.add(currentCategory);
+			}
+			
+		}
+		System.out.println(topCategories);
+	}
 
 	public String getName() {
 		return this.name;
