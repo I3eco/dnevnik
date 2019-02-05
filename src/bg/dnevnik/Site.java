@@ -21,6 +21,7 @@ public class Site {
 	private Map<String, Collection<Article>> articlesByCategory;
 
 	static {
+		
 	}
 
 	private Site() {

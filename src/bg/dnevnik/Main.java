@@ -21,33 +21,33 @@ public class Main {
 			a = (Author) Site.getInstance().signIn("toshanov@gmail.com", "tosharata69");
 		} catch (UserDoesNotExistException e) {
 			e.printStackTrace();
-			System.err.println("fuck");
+			System.err.println("oops");
 			return;
 		}
 		
 		a.writeArticle("tosho e mnogo qk", "Pichovete", "nikoga nqma da povqrvate koi e nai golemiq pich v grada!", Arrays.asList("asdhg"));
-		a.writeArticle("pesho e tup!", "Pichovete", "nikoga nqma da povqrvate koi e nai smotaniq oligofren v grada!", Arrays.asList("asdgf"));
-		a.writeArticle("pesho e tup!", "Pichovete", "nikoga nqma da povqrvate koi e nai smotaniq oligofren v grada!", Arrays.asList("asdgf"));
-		a.writeArticle("pesho e tup!", "Pichovete", "nikoga nqma da povqrvate koi e nai smotaniq oligofren v grada!", Arrays.asList("asdgf"));
-		a.writeArticle("pesho e tup!", "Pichovete", "nikoga nqma da povqrvate koi e nai smotaniq oligofren v grada!", Arrays.asList("asdgf"));
-		a.writeArticle("pesho e tup!", "Pichovete", "nikoga nqma da povqrvate koi e nai smotaniq oligofren v grada!", Arrays.asList("asdgf"));
-		a.writeArticle("pesho e tup!", "Pichovete", "nikoga nqma da povqrvate koi e nai smotaniq oligofren v grada!", Arrays.asList("asdgf"));
-		a.writeArticle("pesho e tup!", "Pichovete", "nikoga nqma da povqrvate koi e nai smotaniq oligofren v grada!", Arrays.asList("asdgf"));
-		a.writeArticle("pesho e tup!", "Pichovete", "nikoga nqma da povqrvate koi e nai smotaniq oligofren v grada!", Arrays.asList("asdgf"));
-		a.writeArticle("pesho e tup!", "Pichovete", "nikoga nqma da povqrvate koi e nai smotaniq oligofren v grada!", Arrays.asList("asdgf"));
-		a.writeArticle("pesho e tup!", "Pichovete", "nikoga nqma da povqrvate koi e nai smotaniq oligofren v grada!", Arrays.asList("asdgf"));
+		a.writeArticle("pesho e tup!", "Pichovete", "nikoga nqma da povqrvate koi e nai prekrasniq chovek v grada!", Arrays.asList("asdgf"));
+		a.writeArticle("pesho e tup!", "Pichovete", "nikoga nqma da povqrvate koi e nai prekrasniq chovek v grada!", Arrays.asList("asdgf"));
+		a.writeArticle("pesho e tup!", "Pichovete", "nikoga nqma da povqrvate koi e nai prekrasniq chovek v grada!", Arrays.asList("asdgf"));
+		a.writeArticle("pesho e tup!", "Pichovete", "nikoga nqma da povqrvate koi e nai prekrasniq chovek v grada!", Arrays.asList("asdgf"));
+		a.writeArticle("pesho e tup!", "Pichovete", "nikoga nqma da povqrvate koi e nai prekrasniq chovek v grada!", Arrays.asList("asdgf"));
+		a.writeArticle("pesho e tup!", "Pichovete", "nikoga nqma da povqrvate koi e nai prekrasniq chovek v grada!", Arrays.asList("asdgf"));
+		a.writeArticle("pesho e tup!", "Pichovete", "nikoga nqma da povqrvate koi e nai prekrasniq chovek v grada!", Arrays.asList("asdgf"));
+		a.writeArticle("pesho e tup!", "Pichovete", "nikoga nqma da povqrvate koi e nai prekrasniq chovek v grada!", Arrays.asList("asdgf"));
+		a.writeArticle("pesho e tup!", "Pichovete", "nikoga nqma da povqrvate koi e nai prekrasniq chovek v grada!", Arrays.asList("asdgf"));
+		a.writeArticle("pesho e tup!", "Pichovete", "nikoga nqma da povqrvate koi e nai prekrasniq chovek v grada!", Arrays.asList("asdgf"));
 		
 		Article bestArticle = null;
 		try {
 			bestArticle = Site.getInstance().getArticleByID(1);
 		} catch (NoSuchArticleException e) {
 			e.printStackTrace();
-			System.err.println("fuck number 2");
+			System.err.println("oops number 2");
 			return;
 		}
 		
 		
-		a.writeComment(bestArticle, "ebasi qkoto", Article.CommentMood.ANGRY);
+		a.writeComment(bestArticle, "wow, super qkoto", Article.CommentMood.ANGRY);
 		
 		
 		
@@ -57,12 +57,6 @@ public class Main {
 		System.out.println(json);
 		
 		
-		
-		
-		
-		
-		
-		Site s = Site.getInstance();
 
 	}
 }
