@@ -24,6 +24,13 @@ public class ConsoleCommandsView {
 		
 		boolean running = true;
 		while(running) {
+			try {
+				// because system.err does some strange buffer magic, messages appear out of order sometimes
+				// and this is so there's a higher chance to have them in the correct order
+				Thread.sleep(100); 
+			} catch (InterruptedException e) {
+				return;
+			}
 			System.out.print("Enter a command, or write 'commands' for info: ");
 			String input = scanner.nextLine().trim().toLowerCase();
 			
@@ -40,21 +47,30 @@ public class ConsoleCommandsView {
 				case "show category": showCategoryCommand(); break;
 				case "upvote article": upvoteArticleCommand(); break;
 				case "downvote article": downvoteArticleCommand(); break;
+				case "show top categories": showTopCategoriesCommand(); break;
 				
 				default: 
-				try {
-					// because system.err does some strange buffer magic, messages appear out of order sometimes
-					// and this is so there's a higher chance to have them in the correct order
-					Thread.sleep(500); 
-				} catch (InterruptedException e) {
-					return;
-				}
+				
 					System.err.println("That command does not exist!"); break;
 			}
 			System.out.println("\n____________________________________");
 		}
 	}
 	
+	private void showTopCategoriesCommand() {
+		System.out.print("How many: ");
+		int numOfCategories = 0;
+		try {
+			numOfCategories = Integer.parseInt(this.scanner.nextLine().trim());
+		}
+		catch (NumberFormatException e) {
+			System.err.println("Not a number, try again!");
+			return;
+		}
+		Site.getInstance().showTopCategories(numOfCategories);
+		
+	}
+
 	private void downvoteArticleCommand() {
 		if (!this.isSignedIn() || !this.hasOpenedArticle()) {
 			return;
@@ -105,8 +121,7 @@ public class ConsoleCommandsView {
 		// But the problem with that is that you will learn that you don't have the rights
 		// only after you write the whole article, which will be annoying.
 		// So instead I just put an instanceof check before calling writeArticle()
-		if (this.currentUser == null) {
-			System.err.println("You are not signed in!");
+		if (!this.isSignedIn()) {
 			return;
 		}
 		

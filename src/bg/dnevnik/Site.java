@@ -1,9 +1,14 @@
 package bg.dnevnik;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Set;
+import java.util.TreeMap;
 import java.util.concurrent.ConcurrentHashMap;
 
 import bg.dnevnik.exceptions.NoSuchArticleException;
@@ -87,5 +92,31 @@ public class Site {
 			}
 		}
 		throw new NoSuchArticleException();
+	}
+
+	
+	
+	public void showTopCategories(int numOfCategories) {
+		List<Entry<String, Collection<Article>>> topCategories = new ArrayList<Entry<String, Collection<Article>>>();
+		
+		for (Entry<String, Collection<Article>> currentCategory : this.articlesByCategory.entrySet()) {
+			if (topCategories.size() < numOfCategories) {
+				topCategories.add(currentCategory);
+			}
+			else {
+				for (Entry<String, Collection<Article>> topCategory : topCategories) {
+					if (currentCategory.getValue().size() > topCategory.getValue().size()) {
+						topCategories.remove(topCategory);
+						topCategories.add(currentCategory);
+					}
+				}
+			}
+		}
+		
+		Collections.sort(topCategories, (a, b) -> a.getValue().size() - b.getValue().size());
+		
+		for (Entry<String, Collection<Article>> category : topCategories) {
+			System.out.println(category.getKey().toUpperCase() + " (" + category.getValue().size()+ ")");
+		}
 	}
 }
