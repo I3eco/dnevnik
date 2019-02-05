@@ -39,8 +39,6 @@ public class Site {
 		this.users.add(user);
 	}
 	
-	
-
 	public User signIn(String email, String password) throws UserDoesNotExistException {
 		for (User user : users) {
 			if (user.loginInfoMatches(email, password)) {
