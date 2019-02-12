@@ -1,5 +1,10 @@
 package bg.dnevnik;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -21,6 +26,25 @@ public class Site {
 	private Map<String, Collection<Article>> articlesByCategory;
 
 	static {
+		File fromJson = new File ("." + File.separator + "ExampleContent" + File.separator + "SiteContent.json");
+		if(fromJson.length() > 0 && fromJson.canRead()) {
+			
+			try {
+				FileInputStream readJson = new FileInputStream(fromJson);
+				String json = "";
+				
+				int b = readJson.read();
+				while (b != -1) {
+					json += b;
+					b = readJson.read();
+				}
+				System.out.println(json);
+				readJson.close();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
 	}
 
 	private Site() {
@@ -44,6 +68,18 @@ public class Site {
 	public void addUser(User user) {
 		this.users.remove(user);
 		this.users.add(user);
+	}
+	
+	public User getUser (String name, String password) {
+		User user = null;
+		
+		for (User person : this.users) {
+			if (person.getName().equals(name) && person.validatePassword(password)) {
+				user = person;
+			}
+		}
+		
+		return user;
 	}
 
 	public void sighUp(String username, String email, String password) {

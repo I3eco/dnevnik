@@ -51,8 +51,8 @@ public class User {
 		
 	}
 	
-	private final String name;
-	private String email;
+	private String name;
+	private final String email;
 	private String password;
 	private Collection<Article.Comment> commentHistory;
 
@@ -118,6 +118,13 @@ public class User {
 			return false;
 		}
 		if (this.email.equals(email.trim()) && this.password.equals(password.trim())) {
+			return true;
+		}
+		return false;
+	}
+	
+	public boolean validatePassword (String password) {
+		if (this.password.equals(password)) {
 			return true;
 		}
 		return false;
