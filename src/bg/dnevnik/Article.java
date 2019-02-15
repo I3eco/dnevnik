@@ -56,8 +56,15 @@ public class Article extends Post {
 			comments.add(this);
 		}
 
-		public CommentMood getMood() {
-			return this.mood;
+		public String toString() {
+			StringBuilder comment = new StringBuilder();
+			
+			comment.append("By " + getAuthor().getName() + " ");
+			comment.append(getTimeOfPosting().format(DateTimeFormatter.ofPattern("HH:mm dd MM yy")) + " ");
+			comment.append(mood);
+			comment.append("\n   "+ getContent());
+			
+			return comment.toString();
 		}
 	}
 	
@@ -134,7 +141,7 @@ public class Article extends Post {
 		return summary.toString();
 	}
 
-	public String show() {
+	public void show() {
 		// TODO find a good way to synchronize this
 		this.numberOfViews++;
 		
@@ -144,7 +151,7 @@ public class Article extends Post {
 		info.append("\n\n ^" + this.getUpvotesCount() + " v" + this.getDownvotesCount());
 		info.append(" / Keywords: ");
 		info.append(this.keywords.stream().collect(Collectors.joining(", ")));
-		return info.toString();
+		System.out.println(info.toString());
 	}
 
 	public int getID() {
@@ -153,6 +160,18 @@ public class Article extends Post {
 	
 	public String getTitle() {
 		return this.title;
+	}
+
+	
+	public void showComments() {
+		if (comments.size() == 0) {
+			System.out.println("No comments to show!");
+			return;
+		}
+		for (Comment comment : comments) {
+			System.out.println(comment);
+			System.out.println();
+		}
 	}
 	
 }

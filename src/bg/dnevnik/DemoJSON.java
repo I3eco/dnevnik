@@ -9,7 +9,6 @@ import java.io.PrintWriter;
 import java.util.Scanner;
 
 import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 
 import bg.dnevnik.exceptions.UserDoesNotExistException;
 
@@ -32,7 +31,6 @@ public class DemoJSON {
 		}
 		
 		Gson gson = new Gson();
-		Gson gson2 = new GsonBuilder().setPrettyPrinting().create();
 		
 		//converting JSONs to Strings
 		String jsonIvan = gson.toJson(ivan);
