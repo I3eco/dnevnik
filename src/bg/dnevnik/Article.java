@@ -6,8 +6,6 @@ import java.util.Collection;
 import java.util.LinkedList;
 import java.util.stream.Collectors;
 
-import javax.xml.bind.ValidationEvent;
-
 import bg.dnevnik.User.Author;
 import bg.dnevnik.exceptions.IncorrectInputException;
 import bg.dnevnik.utility.Validation;

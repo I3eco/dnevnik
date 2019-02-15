@@ -99,6 +99,12 @@ public class User {
 		Validation.throwIfNull(name, email, password);
 		Validation.throwIfNullOrEmpty(name, email, password);
 		
+		if(Site.getInstance().isUserInSite(email)) {
+			IncorrectInputException e = new IncorrectInputException ("User already exist!");
+			System.out.println(e.getMessage());
+			throw e;
+		}
+		
 		if (!email.trim().matches("[\\w-]+@([\\w-]+\\.)+[\\w-]+")) {
 			throw new IncorrectInputException("Email is incorrect!");
 		}
@@ -107,7 +113,7 @@ public class User {
 		this.name = name.trim();
 		this.password = password.trim();
 		this.commentHistory = new LinkedList<Comment>();
-		Logger.pritnToConsole(this.getTypeOfUser() + " with name: " + this.getName() + " and email: " + this.getEmail() + "was created.");
+		Logger.pritnToConsole(this.getTypeOfUser() + " with name: " + this.getName() + " and email: " + this.getEmail() + " was created.");
 	}
 	
 	public static void createUser(String username, String email, String password, String rights) {

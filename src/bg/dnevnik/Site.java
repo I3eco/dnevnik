@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Comparator;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
@@ -13,6 +14,7 @@ import java.util.concurrent.ConcurrentHashMap;
 
 import bg.dnevnik.exceptions.NoSuchArticleException;
 import bg.dnevnik.exceptions.UserDoesNotExistException;
+import bg.dnevnik.utility.UserComparatorByEmail;
 
 public class Site {
 	private static Site instance;
@@ -22,7 +24,7 @@ public class Site {
 
 	private Site() {
 		this.name = "Dnevnik";
-		this.users = new HashSet<User>();
+		this.users = new TreeSet<User>(new UserComparatorByEmail());
 		this.articlesByCategory = new ConcurrentHashMap<String, Collection<Article>>();
 	}
 	
@@ -54,6 +56,10 @@ public class Site {
 			}
 		}
 		throw new UserDoesNotExistException("There is no user with that email or password!");
+	}
+	
+	public void unregister (String email, String password) {
+		
 	}
 
 	public void addArticle(Article article, String category) {
@@ -170,6 +176,19 @@ public class Site {
 				System.out.println(article.getSummary());
 			}
 		}));
+	}
+	
+	public boolean isUserInSite(String email) {
+		
+		Iterator<User> userIterator = this.users.iterator();
+		
+		while(userIterator.hasNext()) {
+			if(userIterator.next().getEmail().equals(email)) {
+				return true;
+			}
+		}
+		
+		return false;
 	}
 	
 	public String getName() {
