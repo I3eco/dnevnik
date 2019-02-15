@@ -163,7 +163,7 @@ public class ConsoleCommandsView {
 		System.out.print("Password: ");
 		String password = scanner.nextLine();
 			
-		Site.getInstance().sighUp(username, email, password);
+		Site.getInstance().signUp(username, email, password);
 	}
 	
 	private void signInCommand() {

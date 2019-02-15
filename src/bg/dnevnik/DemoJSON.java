@@ -2,12 +2,16 @@ package bg.dnevnik;
 
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Scanner;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+
+import bg.dnevnik.exceptions.UserDoesNotExistException;
 
 public class DemoJSON {
 	public static void main(String[] args) throws IOException {
@@ -18,8 +22,14 @@ public class DemoJSON {
 		User.createUser("Georgi", "georgi@abv.bg", "qwerty", "user");
 		
 		//getting the users from Site
-		User ivan = site.getUser("Ivan", "123456");
-		User georgi = site.getUser("Georgi", "qwerty");
+		User ivan = null;
+		User georgi = null;
+		try {
+			ivan = site.signIn("ivan@abv.bg", "123456");
+			georgi = site.signIn("georgi@abv.bg", "qwerty");
+		} catch (UserDoesNotExistException e) {
+			e.printStackTrace();
+		}
 		
 		Gson gson = new Gson();
 		Gson gson2 = new GsonBuilder().setPrettyPrinting().create();
@@ -42,6 +52,27 @@ public class DemoJSON {
 			writer.println(jsonIvan);
 			writer.println(jsonGeorgi);
 			
+		}
+		
+		File fromJson = new File ("jsonFile.txt");
+		
+		if(fromJson.length() > 0 && fromJson.canRead()) {
+			
+				try(Scanner readJson = new Scanner(fromJson)){
+					StringBuilder json = new StringBuilder();
+					while(readJson.hasNext()) {
+//						json.append(readJson.nextLine());
+//						json.append("\n");
+						User user = gson.fromJson(readJson.nextLine(), User.class);
+						System.out.println(user);
+					}
+//					System.out.println(json.toString());
+					
+				} catch (FileNotFoundException e) {
+					e.printStackTrace();
+				}
+				
+				
 		}
 		
 	}

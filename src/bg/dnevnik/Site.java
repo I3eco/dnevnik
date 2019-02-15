@@ -1,18 +1,16 @@
 package bg.dnevnik;
 
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collection;
 import java.util.Comparator;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Scanner;
 import java.util.Set;
 import java.util.TreeSet;
 import java.util.concurrent.ConcurrentHashMap;
@@ -27,43 +25,43 @@ public class Site {
 	private Map<String, Collection<Article>> articlesByCategory;
 
 	static {
-		File fromJson = new File ("." + File.separator + "ExampleContent" + File.separator + "SiteContent.json");
-		if(fromJson.length() > 0 && fromJson.canRead()) {
-			
-			try {
-				FileInputStream readJson = new FileInputStream(fromJson);
-				String json = "";
-				
-				int b = readJson.read();
-				while (b != -1) {
-					json += b;
-					b = readJson.read();
-				}
-				System.out.println(json);
-				readJson.close();
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
-		File f = new File("src" + File.separator + "bg" + File.separator + "siteContent.json");
-		FileReader reader = null;
-		try {
-			reader = new FileReader(f);
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		}
-		
-		char[] chars = new char[1000];
-		
-		try {
-			reader.read(chars);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		
-		String js = Arrays.toString(chars);
-		System.out.println(js);
+//		File fromJson = new File ("." + File.separator + "ExampleContent" + File.separator + "SiteContent.json");
+//		if(fromJson.length() > 0 && fromJson.canRead()) {
+//			
+//			try {
+//				FileInputStream readJson = new FileInputStream(fromJson);
+//				String json = "";
+//				
+//				int b = readJson.read();
+//				while (b != -1) {
+//					json += b;
+//					b = readJson.read();
+//				}
+//				System.out.println(json);
+//				readJson.close();
+//			} catch (IOException e) {
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
+//			}
+//		}
+//		File f = new File("src" + File.separator + "bg" + File.separator + "siteContent.json");
+//		FileReader reader = null;
+//		try {
+//			reader = new FileReader(f);
+//		} catch (FileNotFoundException e) {
+//			e.printStackTrace();
+//		}
+//		
+//		char[] chars = new char[1000];
+//		
+//		try {
+//			reader.read(chars);
+//		} catch (IOException e) {
+//			e.printStackTrace();
+//		}
+//		
+//		String js = Arrays.toString(chars);
+//		System.out.println(js);
 	}
 
 	private Site() {
@@ -75,7 +73,7 @@ public class Site {
 	public static Site getInstance() {
 		if (instance == null) {
 			Site.instance = new Site();
-			return Site.instance;
+
 		}
 		return Site.instance;
 	}
@@ -88,20 +86,8 @@ public class Site {
 		this.users.remove(user);
 		this.users.add(user);
 	}
-	
-	public User getUser (String name, String password) {
-		User user = null;
-		
-		for (User person : this.users) {
-			if (person.getName().equals(name) && person.validatePassword(password)) {
-				user = person;
-			}
-		}
-		
-		return user;
-	}
 
-	public void sighUp(String username, String email, String password) {
+	public void signUp(String username, String email, String password) {
 		User.createUser(username, email, password, "user");
 	}
 

@@ -144,6 +144,13 @@ public class User {
 		User other = (User) obj;
 		return this.email.equals(other.email);
 	}
+	
+	
+
+	@Override
+	public String toString() {
+		return "USER: name=" + name + ", email=" + email + ", isOnline=" + isOnline;
+	}
 
 	public String getName() {
 		return this.name;
