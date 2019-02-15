@@ -3,7 +3,7 @@ package bg.dnevnik.utility;
 public class Logger {
 	private static boolean isEnabled = true;
 	
-	public static void pritnToConsole(String log) {
+	public static void printToConsole(String log) {
 		if(isEnabled) {
 			System.out.println(log);
 		}
