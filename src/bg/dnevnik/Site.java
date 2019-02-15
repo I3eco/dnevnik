@@ -1,8 +1,5 @@
 package bg.dnevnik;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -10,7 +7,6 @@ import java.util.Comparator;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Map.Entry;
-import java.util.Scanner;
 import java.util.Set;
 import java.util.TreeSet;
 import java.util.concurrent.ConcurrentHashMap;
@@ -24,46 +20,6 @@ public class Site {
 	private Collection<User> users;
 	private Map<String, Collection<Article>> articlesByCategory;
 
-	static {
-//		File fromJson = new File ("." + File.separator + "ExampleContent" + File.separator + "SiteContent.json");
-//		if(fromJson.length() > 0 && fromJson.canRead()) {
-//			
-//			try {
-//				FileInputStream readJson = new FileInputStream(fromJson);
-//				String json = "";
-//				
-//				int b = readJson.read();
-//				while (b != -1) {
-//					json += b;
-//					b = readJson.read();
-//				}
-//				System.out.println(json);
-//				readJson.close();
-//			} catch (IOException e) {
-//				// TODO Auto-generated catch block
-//				e.printStackTrace();
-//			}
-//		}
-//		File f = new File("src" + File.separator + "bg" + File.separator + "siteContent.json");
-//		FileReader reader = null;
-//		try {
-//			reader = new FileReader(f);
-//		} catch (FileNotFoundException e) {
-//			e.printStackTrace();
-//		}
-//		
-//		char[] chars = new char[1000];
-//		
-//		try {
-//			reader.read(chars);
-//		} catch (IOException e) {
-//			e.printStackTrace();
-//		}
-//		
-//		String js = Arrays.toString(chars);
-//		System.out.println(js);
-	}
-
 	private Site() {
 		this.name = "Dnevnik";
 		this.users = new HashSet<User>();
@@ -73,7 +29,6 @@ public class Site {
 	public static Site getInstance() {
 		if (instance == null) {
 			Site.instance = new Site();
-
 		}
 		return Site.instance;
 	}

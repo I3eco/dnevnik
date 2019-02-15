@@ -145,8 +145,6 @@ public class User {
 		return this.email.equals(other.email);
 	}
 	
-	
-
 	@Override
 	public String toString() {
 		return "USER: name=" + name + ", email=" + email + ", isOnline=" + isOnline;
