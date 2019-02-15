@@ -5,6 +5,9 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.LinkedList;
 import java.util.stream.Collectors;
+
+import javax.xml.bind.ValidationEvent;
+
 import bg.dnevnik.User.Author;
 import bg.dnevnik.exceptions.IncorrectInputException;
 import bg.dnevnik.utility.Validation;
@@ -62,9 +65,9 @@ public class Article extends Post {
 		
 		private Collection<Picture> pictures;
 
-		public GalleryArticle(Author author, String title, Collection<String> keywords)
+		public GalleryArticle(Author author, String category, String title, Collection<String> keywords)
 				throws IncorrectInputException {
-			super(author, title, "", keywords);
+			super(author, title, "", category, keywords);
 			this.pictures = new ArrayList<Picture>();
 		}
 		
@@ -86,7 +89,7 @@ public class Article extends Post {
 	private int numberOfViews;
 	private Collection<Comment> comments;
 
-	public Article(Author author, String title, String content, Collection<String> keywords) throws IncorrectInputException {
+	public Article(Author author, String category, String title, String content, Collection<String> keywords) throws IncorrectInputException {
 		super(author, content);
 		Validation.throwIfNull(keywords);
 		Validation.throwIfNullOrEmpty(title);
@@ -95,11 +98,16 @@ public class Article extends Post {
 		this.keywords = keywords;
 		this.comments = new LinkedList<Comment>();
 		this.ID = ++Article.count;
+		Site.getInstance().addArticle(this, category);
 	}
 	
 	void addMainPicture (String title, String url) {
 		try {
-			this.mainPicture = new Article.Picture(title, url);
+			if(title == null || title.trim().length() <= 0) {
+				this.mainPicture = new Article.Picture(url);
+			} else {
+				this.mainPicture = new Article.Picture(title, url);
+			}
 		} catch (IncorrectInputException e) {
 			System.err.println("Picture could not be created!");
 		}

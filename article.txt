@@ -1,0 +1,2101 @@
+<!DOCTYPE html>
+<!--[if IE 8 ]> <html class="oldie ie8 no-js" lang="bg"> <![endif]-->
+<!--[if IE 9 ]> <html class="ie9 no-js" lang="bg"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html class="no-js" lang="bg"><!--<![endif]-->
+	<head>
+                <title>Бизнес | Годишната инфлация през януари е 3% - Dnevnik.bg</title>
+
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+		<meta name="viewport" content="maximum-scale=2, user-scalable=1, minimal-ui" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE" />
+		
+		        <meta name="description" content="През януари 2019 г. спрямо същия месец на предходната година инфлацията се увеличава." />
+
+		        <meta property="og:site_name" content="www.dnevnik.bg" />
+        	        <meta property="og:title" content="Годишната инфлация през януари е 3%" />
+        				        <meta property="og:type" content="article" />
+			        <meta property="og:url" content="https://www.dnevnik.bg/biznes/2019/02/15/3390842_godishnata_inflaciia_prez_ianuari_e_3/" />
+        	        <meta property="og:description" content="През януари 2019 г. спрямо същия месец на предходната година инфлацията се увеличава." />
+        	        	        <meta property="og:image" content="https://www.dnevnik.bg/shimg/zx620y323d_2988722.jpg" />
+        <meta property="og:image:width" content="620" />
+        <meta property="og:image:height" content="348" />
+			        <meta property="fb:app_id" content="433554340074197" />
+        	        						<meta name="io-author" content="Дневник" />
+			        		<link rel="canonical" href="https://www.dnevnik.bg/biznes/2019/02/15/3390842_godishnata_inflaciia_prez_ianuari_e_3/" />
+				<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:site" content="@Dnevnik" />
+		<meta name="twitter:url" content="http://www.dnevnik.bg/biznes/2019/02/15/3390842_godishnata_inflaciia_prez_ianuari_e_3/?ref=home_mainStory" />
+		<meta name="twitter:title" content="Годишната инфлация през януари е 3%" />
+		<meta name="twitter:description" content="През януари 2019 г. спрямо същия месец на предходната година инфлацията се увеличава." />
+		<meta name="twitter:image" content="https://www.dnevnik.bg/shimg/zx620y323d_2988722.jpg" />
+								<link rel="alternate" media="only screen and (max-width: 1280px)" href="https://m.dnevnik.bg/biznes/2019/02/15/3390842_godishnata_inflaciia_prez_ianuari_e_3/" />
+				<link rel="amphtml" href="https://m.dnevnik.bg/biznes/2019/02/15/3390842_godishnata_inflaciia_prez_ianuari_e_3/amp" />
+				<link rel="alternate" type="application/rss+xml" title="Dnevnik News" href="/rss/" />
+																																						<link rel="alternate" type="application/rss+xml" title="Бизнес - Дневник" href="/rss/?rubrid=1661" />
+				<link rel="SHORTCUT ICON" href="/images/layout/favicon.ico" />
+		<link rel="apple-touch-icon" href="/images/layout/apple-touch-icon.png?v=1" />
+        <link rel="manifest" href="/manifest.json" />
+
+		<!-- CSS Files -->
+				     																										<link href="/minc/b=css&amp;f=fonts.css,default.css,video.css,audio.css,scrollbar.css,prettyphoto.css,jquery.modal.css,slider.css,custom.css&amp;amp;v=1549535173" rel="stylesheet" />
+							<!--// CSS Files -->
+		
+		<!-- JavaScript Files -->
+		<!--[if (gte IE 9) | (!IE)]><!-->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<script>window.jQuery || document.write('<script src="/js/jquery-2.1.4.min.js"><\/script>')</script>
+		<!--<![endif]-->
+		
+		<!--[if lt IE 9]>
+			<script src="/js/jquery-1.11.1.min.js"></script>
+			<script src="/js/ie.js"></script>
+
+			<script type="text/javascript">
+
+				document.write('<div id="upgrade-browser">\
+					<a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie" class="ie" target="_blank">Internet Explorer</a>\
+					<a href="http://www.getfirefox.com" class="firefox" target="_blank">Firefox</a>\
+					<a href="http://www.google.com/chrome" class="chrome" target="_blank">Chrome</a>\
+					<a href="http://www.opera.com/download" class="opera" target="_blank">Opera</a>\За по-добро качество и функционалност на сайта, моля обновете вашия браузър или изтеглете нов.\
+					<div class="close-warning" onclick="hideWarning()"></div>\
+				</div>');
+
+				function hideWarning(){
+					document.getElementById('upgrade-browser').style.display = 'none';
+				}
+			</script>
+
+			<style type="text/css">
+				#upgrade-browser{
+					padding: 17px 30px 14px 10px;
+					position: relative;
+					z-index: 10000;
+					font-size: 14px;
+					line-height: 12px;
+					text-align: center;
+					background: #ffefbb;
+				}
+
+				#upgrade-browser a{
+					height: 27px; width: 27px;
+					display: inline-block;
+					margin: -2px 10px 0 0;
+					font-size: 0;
+					vertical-align: middle;
+					background: url('web/images/layout/bgr-browsers.png') no-repeat -1000px 0;
+				}
+
+				#upgrade-browser a.ie{ background-position: 0 0; }
+				#upgrade-browser a.firefox{ background-position: -27px 0; }
+				#upgrade-browser a.chrome{ background-position: -54px 0; }
+				#upgrade-browser a.opera{ background-position: -81px 0; }
+
+				#upgrade-browser .close-warning{
+					height: 15px; width: 15px;
+					position: absolute;
+					top: 50%; right: 10px;
+					margin-top: -7px;
+					cursor: pointer;
+					background: url('web/images/layout/bgr-close-warning.png') no-repeat 0 0;
+				}
+			</style>
+		<![endif]-->
+		<!--// JavaScript Files -->
+
+		<script src="https://cdn.economedia.bg/minj/b=s&amp;f=blockadblock__blockadblock.3.2.1.min.js,jquery-cookie__jquery.cookie-1.4.1.min.js,mobile-detect__mobile-detect.1.3.6.min.js,analytics__jquery.scrolldepth.min.js"></script>
+				<script>
+			var query = window.location.search.substring(1),
+				dvCookie = '';
+			
+			if (query.indexOf('device_view=') === -1) {
+				if (!dvCookie) {
+					var md = new MobileDetect(window.navigator.userAgent);
+
+					if (md.mobile() || md.tablet()) {
+						window.location.replace('//' + window.location.host + window.location.pathname + '?device_view=mobile');
+					}
+				}
+			}
+		</script>
+		
+        
+    
+                <script src="https://www.googletagservices.com/tag/js/gpt.js"></script>
+
+<script type='text/javascript'>
+    googletag.cmd.push(function() {
+                                                                                        var slotMapping1 = googletag.sizeMapping()
+                                .addSize([1085, 0], [[300, 250], [468, 60], [600, 250], [650, 250], [728, 90], [728, 500], [780, 800]])
+                                                        .addSize([0, 0], [[300, 250], [468, 60], [600, 250], [650, 250], [780, 800]])
+            .build();                                                googletag.defineSlot('/149508300/dnk_business_lb_btf', [[300, 250], [468, 60], [600, 250], [650, 250], [780, 800]], 'div-gpt-ad-1486549213202-25').defineSizeMapping(slotMapping1).addService(googletag.pubads());
+        googletag.defineSlot('/149508300/dnk_ip_toplayer', [[800, 600], [750, 200], [750, 300], [940, 60]], 'div-gpt-ad-1486549213202-80').addService(googletag.pubads());
+                    var slotMapping3 = googletag.sizeMapping()
+                                .addSize([1005, 0], [[728, 90], [940, 90], [940, 220], [970, 90], [970, 250], [970, 300], [1330, 300], [1600, 300], [1600, 600]])
+                                                        .addSize([0, 0], [[728, 90], [940, 90], [940, 220], [1330, 300], [1600, 300], [1600, 600]])
+            .build();                                                googletag.defineSlot('/149508300/dnk_business_lb_atf', [[728, 90], [940, 90], [940, 220], [1330, 300], [1600, 300], [1600, 600]], 'div-gpt-ad-1486549213202-24').defineSizeMapping(slotMapping3).addService(googletag.pubads());
+        googletag.defineSlot('/149508300/Dnevnik.bg_Business_1st_300x250', [[300, 250], [300, 600]], 'div-gpt-ad-1435663167980-3').addService(googletag.pubads());
+                    var slotMapping5 = googletag.sizeMapping()
+                                .addSize([1137, 0], [[468, 60], [620, 200], [620, 220], [650, 250], [650, 251], [728, 90], [780, 200], [780, 220], [780, 801]])
+                                                        .addSize([1085, 0], [[468, 60], [620, 200], [620, 220], [650, 250], [650, 251], [728, 90], [780, 801]])
+                                                        .addSize([0, 0], [[468, 60], [620, 200], [620, 220], [650, 250], [650, 251], [780, 801]])
+            .build();                                                googletag.defineSlot('/149508300/dnk_business_lb_end', [[468, 60], [620, 200], [620, 220], [650, 250], [650, 251], [780, 801]], 'div-gpt-ad-1486549213202-26').defineSizeMapping(slotMapping5).addService(googletag.pubads());
+        googletag.defineSlot('/149508300/dnk_business_2nd_300x250', [[300, 250], [300, 251], [300, 601], [300, 300], [300, 600]], 'div-gpt-ad-1486549213202-21').addService(googletag.pubads());
+        googletag.defineSlot('/149508300/dnk_prarticle_10x50', [[10, 50]], 'div-gpt-ad-1486549213202-109').addService(googletag.pubads());
+        googletag.defineSlot('/149508300/dnk_business_3rd_300x250', [[300, 250], [300, 254], [300, 602], [300, 300], [300, 600]], 'div-gpt-ad-1486549213202-22').addService(googletag.pubads());
+                    var slotMapping9 = googletag.sizeMapping()
+                                .addSize([1005, 0], [[728, 90], [728, 93], [940, 90], [940, 220], [940, 93], [940, 223], [970, 90], [970, 250], [970, 300], [970, 93], [970, 253], [970, 303], [1600, 600], [1600, 603], [1600, 300], [1600, 303]])
+                                                        .addSize([0, 0], [[728, 90], [728, 93], [940, 90], [940, 220], [940, 93], [940, 223]])
+            .build();                                                googletag.defineSlot('/149508300/dnk_business_lb_footer', [[728, 90], [728, 93], [940, 90], [940, 220], [940, 93], [940, 223]], 'div-gpt-ad-1486549213202-27').defineSizeMapping(slotMapping9).addService(googletag.pubads());
+    
+                                googletag.pubads().setTargeting('story_id', '3390842');
+                                    googletag.pubads().setTargeting('rubr_id', ['1661']);
+                                    googletag.pubads().setTargeting('keywords', ['/biznes','стоки','потребление','цени','инфлация','годишната','през','януари','през','2019','спрямо','същия','месец','предходната','година','инфлацията','увеличава']);
+                    
+            
+                                                        googletag.pubads().setTargeting('content', 'articles');
+
+        
+        googletag.pubads().enableSingleRequest();
+                googletag.pubads().enableSyncRendering();
+                googletag.pubads().collapseEmptyDivs(true);
+        googletag.enableServices();
+        googletag.pubads().addEventListener('slotRenderEnded', function(event) { //Hide <br> if no ad is loaded
+          var element = $("#ad_lb_btf"),
+              slotStatiq = $("#ad_lb_btf div div").attr('id'),
+              articleCheck = $(".article-content");// proverka za statiq
+              $(element.next()).ready(function(){
+                  var prevElement = element.prev('br'),
+                      nextElement = element.next('br');
+                if (event.slot.getSlotElementId() == slotStatiq && articleCheck.length >= 1 && event.isEmpty && prevElement && nextElement) {
+                    prevElement.remove();
+                    nextElement.remove();
+                  }
+              });
+         });
+    });
+</script>
+    		
+		<script>
+			var $_root = 'web'
+            var $logged = false;
+		</script>
+                    <script async src="https://cdn.onthe.io/io.js/0MhQhfRAnOu1"></script>
+<script>
+    window._io_config = window._io_config || {};
+    window._io_config["0.2.0"] = window._io_config["0.2.0"] || [];
+    window._io_config["0.2.0"].push({
+        page_url: 'https://www.dnevnik.bg/biznes/2019/02/15/3390842_godishnata_inflaciia_prez_ianuari_e_3/?ref=home_mainStory',
+
+        page_url_canonical: 'https://www.dnevnik.bg/biznes/2019/02/15/3390842_godishnata_inflaciia_prez_ianuari_e_3/',
+
+        page_title: 'Бизнес | Годишната инфлация през януари е 3% - Dnevnik.bg',
+
+        page_type: 'article',
+
+                article_type: 'longread',
+                page_language: 'bg',
+
+                article_authors: ['Дневник'],
+                        article_categories: ['БИЗНЕС'],
+                        article_subcategories: ['Бизнес'],
+                        article_publication_date: "Fri, 15 Feb 19 12:18:00 +0200",
+                        article_word_count: 148
+            });
+</script>            <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-K7P4WH');</script>
+<!-- End Google Tag Manager -->
+        		
+		
+	</head>
+
+    <body data-pagetype="story"  >
+		<noscript>
+			<div class="no-javascript">
+				Здравейте, изглежда сте изключили JavaScript.
+				<br />
+				Моля, активирайте го, за да виждате по-добре сайта на Дневник.
+			</div>
+		</noscript>
+
+                    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K7P4WH"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+        
+		
+        <div class="table site-table " >
+                                <!-- /149508300/dnk_ip_toplayer -->
+<div id='div-gpt-ad-1486549213202-80'>
+<script type='text/javascript'>
+    googletag.display("div-gpt-ad-1486549213202-80");
+    </script>
+</div>
+
+    
+                                                        <div class="banner-box" id="ad_lb_atf">
+        <div class="banner">
+                                            <!-- /149508300/dnk_business_lb_atf -->
+<div id='div-gpt-ad-1486549213202-24'>
+<script type='text/javascript'>
+    googletag.display("div-gpt-ad-1486549213202-24");
+    </script>
+</div>
+
+                    </div>
+    </div>
+    
+    <header id="header">
+    <div class="wrapper">
+        <div class="logo">
+            <a href="/">
+                                <img src="/images/layout/logo-dnevnik.svg" data-image="/images/layout/logo-dnevnik.png" alt="Дневник" width="244" height="45" />
+                <strong class="sr">Дневник</strong>
+                            </a>
+            <button id="toggle-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="main-menu">
+                                <nav>
+                    <a href="/allnews/today/"
+                       class=""
+                       title="Новини">Новини</a>
+                    <a href="/politika/"
+                       class=""
+                       title="Политика">Политика</a>
+                    <a href="/kultura/"
+                       class=""
+                       title="Култура">Култура</a>
+                    <a href="/skorost/"
+                       class=""
+                       title="Скорост">Скорост</a>
+                </nav>
+                <nav>
+                    <a href="/analizi/"
+                       class=""
+                       title="Анализи">Анализи</a>
+                    <a href="/bulgaria/"
+                       class=""
+                       title="България">България</a>
+                    <a href="/razvlechenie/"
+                       class=""
+                       title="Развлечение">Развлечение</a>
+                    <a href="/morski/"
+                       class=""
+                       title="Морски">Морски</a>
+                                    </nav>
+                <nav>
+                    <a href="/video/"
+                       class=""
+                       title="Видео">Видео</a>
+                    <a href="/sviat/"
+                       class=""
+                       title="Свят">Свят</a>
+                    <a href="/detski_dnevnik/"
+                       class=""
+                       title="Детски">Детски</a>
+                    <a href="/evropa/zemedelie/"
+                       class=""
+                       title="Детски">Земеделие</a>
+                </nav>
+                <nav>
+                    <a href="/photos/"
+                       class=""
+                       title="Галерии">Галерии</a>
+                    <a href="/evropa/"
+                       class=""
+                       title="Бизнес">Европа</a>
+                    <a href="/na_put/"
+                       class=""
+                       title="На път">На път</a>
+                    <a href="/zelen/"
+                       class=""
+                       title="Зелен">Зелен</a>
+                </nav>
+                <nav>
+                    <a href="/comix/"
+                       class=""
+                       title="Комикс">Комикс</a>
+                    <a href="/biznes/"
+                       class="active"
+                       title="Бизнес">Бизнес</a>
+                    <a href="/zdrave/"
+                       class=""
+                       title="Здраве">Здраве</a>
+                    <a href="/ot_vas/"
+                       class=""
+                       title="От вас">От вас</a>
+                </nav>
+                <nav>
+                    <a href="/video/s_dve_dumi/"
+                       class=""
+                       title="С две думи">С две думи</a>
+                    <a href="/sport/"
+                       class=""
+                       title="Спорт">Спорт</a>
+                    <a href="/bigpicture/"
+                       class=""
+                       title="Голямата снимка">Голямата снимка</a>
+                    <a href="/olxindex"
+                       class=""
+                       title="Голямата снимка">Онлайн търговия</a>
+                </nav>
+                <nav>
+                    <a href="/sled5/tv/"
+                       class=""
+                       title="ТВ програма">ТВ програма</a>
+                    <a href="/sled5/"
+                       class=" header-addition-mb"
+                       title="След 5">След 5</a>
+                    <br />
+                    <a href="/pr_sfera/"
+                       class=""
+                       title="PR Сфера">PR Сфера</a>
+                </nav>
+            </div>
+        </div>
+                        <nav role="navigation">
+            <ul>
+                
+                <li><a href="/temi/2019_godinata/" class="active" title="2019: Годината">2019: Годината</a></li>
+
+                                                
+                <li><a href="/express/" title="Д Експрес"><strong class="express unactive">Д Експрес (10)</strong></a></li>
+                                <li><a href="/allnews/today/" title="Всичко от днес">Всичко от днес (53)</a></li>
+                <li><a href="javascript:;" class="i-search" title="Търсене">Търсене</a></li>
+                
+                                <li><a href="javascript:;" class="i-profile" title="Профил" onclick="changeForm('login');">Профил</a></li>
+                
+                <li class="partners">
+                    <a href="javascript:;" class="expand-partners" title="Икономедиа">Икономедиа</a>
+                    <ul>
+                        <li><a title="Economedia" href="https://www.economedia.bg/?utm_source=www.dnevnik.bg&utm_medium=top-lenta&utm_campaign=owned-media&ref=top_lenta" target="_blank">Economedia</a></li>
+                        <li><a title="id" href="https://id.capital.bg/?utm_source=www.dnevnik.bg&utm_medium=top-lenta&utm_campaign=owned-media&ref=top_lenta" target="_blank">id</a></li>
+                        <li><a title="Капитал" href="https://www.capital.bg/?utm_source=www.dnevnik.bg&utm_medium=top-lenta&utm_campaign=owned-media&ref=top_lenta" target="_blank">Капитал</a></li>
+                        <li><a title="Дневник" href="/?ref=top_lenta" target="_blank">Дневник</a></li>
+                        <li><a title="Кариери" href="https://www.karieri.bg/?utm_source=www.dnevnik.bg&utm_medium=top-lenta&utm_campaign=owned-media&ref=top_lenta" target="_blank">Кариери</a></li>
+                        <li><a title="Бакхус" href="https://www.bacchus.bg/?utm_source=www.dnevnik.bg&utm_medium=top-lenta&utm_campaign=owned-media&ref=top_lenta" target="_blank">Бакхус</a></li>
+                        <li><a title="Одит" href="https://www.odit.info/?utm_source=www.dnevnik.bg&utm_medium=top-lenta&utm_campaign=owned-media&ref=top_lenta" target="_blank">Одит</a></li>
+                        <li><a title="Регал" href="https://www.regal.bg/?utm_source=www.dnevnik.bg&utm_medium=top-lenta&utm_campaign=owned-media&ref=top_lenta" target="_blank">Регал</a></li>
+                        <li><a title="DigitalK" href="https://digitalk.bg/?utm_source=www.dnevnik.bg&utm_medium=top-lenta&utm_campaign=owned-media&ref=top_lenta" target="_blank">DigitalK</a></li>
+                        <li><a title="DigitalK" href="https://www.capital.bg/kquarterly/?utm_source=www.capital.bg&utm_medium=top-lenta&utm_campaign=owned-media&ref=top_lenta" target="_blank">KQuarterly</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <div class="search-form">
+            <div class="wrapper">
+                <strong class="title">Търсене</strong>
+                <form name="search" action="/searchSubmit" method="get">
+                    <div class="form">
+                        <input type="text" name="query" id="query" required='true' autocomplete="off">
+                        <button type="submit"><span>Търсене</span></button>
+                    </div>
+                </form>
+                <span class="close-search">x</span>
+            </div>
+        </div>
+    </div>
+</header>            <main>
+                <div class="wrapper">
+                                <div class="site-block">
+    
+        <article class="general-article-v2 article" data-id="3390842">
+    <div class="main-content article-top">
+
+        <div class="content">
+                        <h1>Годишната инфлация през януари е 3%</h1>
+                    </div>
+                <aside>
+            <div class="author-v3">
+    <figure>
+                                                                                                <span class="thumb"><img src="/images/d-grayIcon.png" class="dnevnik" alt="Дневник"></span>
+                        <figcaption title="Дневник">
+                                                                <p><strong class="name"><a href="/author/337" title="Всички статии от Дневник">Дневник</a></strong></p>
+        </figcaption>
+                        </figure>
+</div>
+
+        </aside>
+        
+    </div>
+    <div class="main-content">
+                <div class="content">
+            <div class="site-block pl-80 pr-80">
+                <ul class="social-links links-top clearfix">
+                    
+                    	<li class="pull-left"><a class="facebook" href="http://www.facebook.com/share.php?u=http%3A%2F%2Fwww.dnevnik.bg%2F3390842" target="_blank" rel="nofollow" title="Споделяне във Facebook" onclick="ga('send', { 'hitType': 'event', 'eventCategory':  'StoryButtonsAbove', 'eventAction': 'Click', 'eventLabel': 'btn=facebook' });">Facebook</a></li>
+<li class="pull-left"><a class="twitter" href="http://twitter.com/share?text=%D0%93%D0%BE%D0%B4%D0%B8%D1%88%D0%BD%D0%B0%D1%82%D0%B0+%D0%B8%D0%BD%D1%84%D0%BB%D0%B0%D1%86%D0%B8%D1%8F+%D0%BF%D1%80%D0%B5%D0%B7+%D1%8F%D0%BD%D1%83%D0%B0%D1%80%D0%B8+%D0%B5+3%25&amp;url=http%3A%2F%2Fwww.dnevnik.bg%2F3390842" target="_blank" rel="nofollow" title="Споделяне в Twitter" onclick="ga('send', { 'hitType': 'event', 'eventCategory':  'StoryButtonsAbove', 'eventAction': 'Click', 'eventLabel': 'btn=twitter' });">Twitter</a></li>
+<li class="pull-left"><a class="viber" href="viber://forward?text=%22%D0%93%D0%BE%D0%B4%D0%B8%D1%88%D0%BD%D0%B0%D1%82%D0%B0+%D0%B8%D0%BD%D1%84%D0%BB%D0%B0%D1%86%D0%B8%D1%8F+%D0%BF%D1%80%D0%B5%D0%B7+%D1%8F%D0%BD%D1%83%D0%B0%D1%80%D0%B8+%D0%B5+3%25%22+http%3A%2F%2Fwww.dnevnik.bg%2F3390842" target="_blank" rel="nofollow" title="Споделяне във Viber" onclick="ga('send', { 'hitType': 'event', 'eventCategory': 'StoryButtonsAbove', 'eventAction': 'Click', 'eventLabel': 'btn=viber' });">Viber</a></li>
+<li class="pull-left share">
+    <a href="javascript:;" class="shareit" title="Още възможности за споделяне">Още възможности за споделяне</a>
+    <ul>
+        <li><a href="https://plus.google.com/share?url=http%3A%2F%2Fwww.dnevnik.bg%2F3390842" class="google-plus" target="_blank" rel="nofollow" title="Споделяне в Google+" onclick="ga('send', { 'hitType': 'event', 'eventCategory': 'StoryButtonsAbove', 'eventAction': 'Click', 'eventLabel': 'btn=googleplus' });">Google Plus</a></li>
+        <li><a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http%3A%2F%2Fwww.dnevnik.bg%2F3390842" class="linkedin" target="_blank" rel="nofollow" title="Споделяне в LinkedIn" onclick="ga('send', { 'hitType': 'event', 'eventCategory': 'StoryButtonsAbove', 'eventAction': 'Click', 'eventLabel': 'btn=linkedin' });">LinkedIn</a></li>
+        <li><a href="mailto:?subject=Дневник: &quot;Годишната инфлация през януари е 3%&quot;&amp;body=http%3A%2F%2Fwww.dnevnik.bg%2F3390842" class="email" title="Споделяне по мейл">Email</a></li>
+    </ul>
+</li>
+
+                    <li class="pull-left">
+                        <div class="article-tools">
+                            <time datetime="2019-02-15T12:18">12:18, 15 фев 19</time>, <i class="i i-seen"></i> 1026
+                        </div>
+                    </li>
+
+                    <li>
+                        <a href="#comments-wrapper" class="comments">26</a>
+                    </li>
+                </ul>
+
+                <div class="article-content" data-access="free" data-io-article-url="https://www.dnevnik.bg/biznes/2019/02/15/3390842_godishnata_inflaciia_prez_ianuari_e_3/?ref=home_mainStory">
+
+                    
+                                <figure class="has-source">
+        <div class="thumb">
+            <img alt="Годишната инфлация през януари е 3%" src="https://www.dnevnik.bg/shimg/zx860y484_2988722.jpg" />
+                                    <p class="copy">&copy; Красимир Юскеселиев</p>
+                                </div>
+            </figure>
+    <br /><br />
+
+
+                                        
+                                            <p>През януари 2019 г. спрямо същия месец на предходната инфлацията се увеличава до 3%, съобщава Националният статистически институт. Спрямо декември животът е поскъпнал с 0.5 на сто.</p><br /><p><figure>        <div class="thumb">            <img alt="Годишната инфлация през януари е 3%" src="https://www.dnevnik.bg/shimg/zx780_3390841.jpg" />                                                                <p class="copy">&copy; НСИ</p>                                </div>            </figure>    </p><br /><p>От данните се вижда, че най-много през месеца са нараснали разходите за развлечение и култура, където цените са се покачили в сравнение с декември с 5.6%. Храните и безалкохолните напитки са се увеличили с 1.6%; а разходите за жилища, вода, електроенергия, газ и други горива са нараснали с 0.6%.</p><br /><br />                                            <div class="banner-box" id="ad_lb_btf">
+        <div class="banner">
+                                            <!-- /149508300/dnk_business_lb_btf -->
+<div id='div-gpt-ad-1486549213202-25'>
+<script type='text/javascript'>
+    googletag.display("div-gpt-ad-1486549213202-25");
+    </script>
+</div>
+
+                    </div>
+    </div>
+    <br /><p>През януари спрямо декември алкохолните напитки и тютюневи изделия са поевтинели с 0.2%. Цените на облеклото и обувките са намалели с 4.2%, което е очаквано заради намаленията, които търговците правят през януари. Цените в транспорта са спаднали с 2.8%.</p><br /><p>През януари 2019 г. при хранителните продукти най-много са се повишили цените на зелето - със 17.4%, доматите - със 16.7%, краставиците - с 11.1%, зрелия лук - с 10.6%. Най-значително намаление има при олиото и млякото - съответно с 2.4 и 2.7%.</p><br /><p>При нехранителните стоки и услугите най-значително увеличение е регистрирано при пакетни услуги за почивка и туристически пътувания и международните полети - съответно с 11.7% и 15.2%. Увеличение има и при горивата - въглищата са поскъпнали с 1%, метанът - с 1.4%.</p><br /><p>Сред най-силно поевтинелите през месеца са облеклото - с 4%, дизеловото гориво - с 2.3%, бензинът А95H и А98Н - с 3.5% и с 3%, както и пропан-бутанът - със 7.6%.</p>
+                                            
+                    
+                    
+                    
+                    
+                </div>
+
+                
+                <ul class="social-links links-bottom clearfix">
+                    
+                    	<li class="pull-left"><a class="facebook" href="http://www.facebook.com/share.php?u=http%3A%2F%2Fwww.dnevnik.bg%2F3390842" target="_blank" rel="nofollow" title="Споделяне във Facebook" onclick="ga('send', { 'hitType': 'event', 'eventCategory':  'StoryButtonsBellow', 'eventAction': 'Click', 'eventLabel': 'btn=facebook' });">Facebook</a></li>
+<li class="pull-left"><a class="twitter" href="http://twitter.com/share?text=%D0%93%D0%BE%D0%B4%D0%B8%D1%88%D0%BD%D0%B0%D1%82%D0%B0+%D0%B8%D0%BD%D1%84%D0%BB%D0%B0%D1%86%D0%B8%D1%8F+%D0%BF%D1%80%D0%B5%D0%B7+%D1%8F%D0%BD%D1%83%D0%B0%D1%80%D0%B8+%D0%B5+3%25&amp;url=http%3A%2F%2Fwww.dnevnik.bg%2F3390842" target="_blank" rel="nofollow" title="Споделяне в Twitter" onclick="ga('send', { 'hitType': 'event', 'eventCategory':  'StoryButtonsBellow', 'eventAction': 'Click', 'eventLabel': 'btn=twitter' });">Twitter</a></li>
+<li class="pull-left"><a class="viber" href="viber://forward?text=%22%D0%93%D0%BE%D0%B4%D0%B8%D1%88%D0%BD%D0%B0%D1%82%D0%B0+%D0%B8%D0%BD%D1%84%D0%BB%D0%B0%D1%86%D0%B8%D1%8F+%D0%BF%D1%80%D0%B5%D0%B7+%D1%8F%D0%BD%D1%83%D0%B0%D1%80%D0%B8+%D0%B5+3%25%22+http%3A%2F%2Fwww.dnevnik.bg%2F3390842" target="_blank" rel="nofollow" title="Споделяне във Viber" onclick="ga('send', { 'hitType': 'event', 'eventCategory': 'StoryButtonsBellow', 'eventAction': 'Click', 'eventLabel': 'btn=viber' });">Viber</a></li>
+<li class="pull-left share">
+    <a href="javascript:;" class="shareit" title="Още възможности за споделяне">Още възможности за споделяне</a>
+    <ul>
+        <li><a href="https://plus.google.com/share?url=http%3A%2F%2Fwww.dnevnik.bg%2F3390842" class="google-plus" target="_blank" rel="nofollow" title="Споделяне в Google+" onclick="ga('send', { 'hitType': 'event', 'eventCategory': 'StoryButtonsBellow', 'eventAction': 'Click', 'eventLabel': 'btn=googleplus' });">Google Plus</a></li>
+        <li><a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http%3A%2F%2Fwww.dnevnik.bg%2F3390842" class="linkedin" target="_blank" rel="nofollow" title="Споделяне в LinkedIn" onclick="ga('send', { 'hitType': 'event', 'eventCategory': 'StoryButtonsBellow', 'eventAction': 'Click', 'eventLabel': 'btn=linkedin' });">LinkedIn</a></li>
+        <li><a href="mailto:?subject=Дневник: &quot;Годишната инфлация през януари е 3%&quot;&amp;body=http%3A%2F%2Fwww.dnevnik.bg%2F3390842" class="email" title="Споделяне по мейл">Email</a></li>
+    </ul>
+</li>
+                </ul>
+
+                
+                <div class="site-block">
+	<div class="tags">
+				<p>Ключови думи към статията:</p>
+		<ul><li>
+    <a href="/search/%D1%81%D1%82%D0%BE%D0%BA%D0%B8/3">стоки</a>
+    </li><li>
+    <a href="/search/%D0%BF%D0%BE%D1%82%D1%80%D0%B5%D0%B1%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5/3">потребление</a>
+    </li><li>
+    <a href="/search/%D1%86%D0%B5%D0%BD%D0%B8/3">цени</a>
+    </li><li>
+    <a href="/search/%D0%B8%D0%BD%D1%84%D0%BB%D0%B0%D1%86%D0%B8%D1%8F/3">инфлация</a>
+    </li>        </ul>
+    </div>
+</div>
+
+                <div class="site-block" id="CommentsButton">
+    <div class="view-comments">
+        <a href="#comments-wrapper">
+            <var>26</var>
+            Коментара &gt;
+        </a>
+    </div>
+</div>
+
+            </div>
+
+            <div class="site-block" id="OshtePoTemata">
+    <div class="block-title underline-title">
+        <h2>Още по темата</h2>
+    </div>
+    <ul class="related"><li><h4><a href="/biznes/imoti/2019/02/05/3385606_pazarut_na_jilishta_zapochva_da_se_zabavia_smiatat/" title="Пазарът на жилища започва да се забавя, смятат експерти" onclick="ga('send', { 'hitType': 'event', 'eventCategory': 'ArticleLinksInText', 'eventAction': 'Click #1', 'eventLabel': 'http://www.dnevnik.bg/biznes/imoti/2019/02/05/3385606_pazarut_na_jilishta_zapochva_da_se_zabavia_smiatat/', 'eventValue': '1' });">Пазарът на жилища започва да се забавя, смятат експерти</a></h4></li><li><h4><a href="/biznes/2019/01/15/3375044_godishnata_inflaciia_prez_dekemvri_e_27/" title="Годишната инфлация през декември е 2.7%" onclick="ga('send', { 'hitType': 'event', 'eventCategory': 'ArticleLinksInText', 'eventAction': 'Click #2', 'eventLabel': 'http://www.dnevnik.bg/biznes/2019/01/15/3375044_godishnata_inflaciia_prez_dekemvri_e_27/', 'eventValue': '2' });">Годишната инфлация през декември е 2.7%</a></h4></li><li><h4><a href="/biznes/2019/01/09/3372218_bulgarskata_ikonomika_shte_se_zabavia_v_sledvashtite_3/" title="Българската икономика ще се забавя в следващите 3 години, обяви Световната банка" onclick="ga('send', { 'hitType': 'event', 'eventCategory': 'ArticleLinksInText', 'eventAction': 'Click #3', 'eventLabel': 'http://www.dnevnik.bg/biznes/2019/01/09/3372218_bulgarskata_ikonomika_shte_se_zabavia_v_sledvashtite_3/', 'eventValue': '3' });">Българската икономика ще се забавя в следващите 3 години, обяви Световната банка</a></h4></li><li><h4><a href="/biznes/2018/12/12/3360491_poevtiniavaneto_na_gorivata_v_kraia_na_noemvri_vurna/" title="Поевтиняването на горивата в края на ноември върна дефлацията" onclick="ga('send', { 'hitType': 'event', 'eventCategory': 'ArticleLinksInText', 'eventAction': 'Click #4', 'eventLabel': 'http://www.dnevnik.bg/biznes/2018/12/12/3360491_poevtiniavaneto_na_gorivata_v_kraia_na_noemvri_vurna/', 'eventValue': '4' });">Поевтиняването на горивата в края на ноември върна дефлацията</a></h4></li>    </ul>
+</div>
+                        <div class="site-block" id="OshteOtRubrikata" >
+        <div class="block-title underline-title">
+        <h2>Още от Бизнес</h2>
+    </div>
+        <div class="grid-container">
+                            <div class="grid-d-4">
+                                            <article class="secondary-article">
+        <figure>
+                <span class="thumbnail">
+            <a href="/biznes/2019/02/15/3390846_zaradi_poskupvaneto_prez_2018_g_kupuvachi_sa/" title="Заради поскъпването през 2018 г. купувачи са предпочели жилища в строеж вместо готови">
+                <img src="https://www.dnevnik.bg/shimg/zx300y169_3390936.jpg" alt="Заради поскъпването през 2018 г. купувачи са предпочели жилища в строеж вместо готови" />
+                            </a>
+        </span>
+                    </figure>
+        
+    <h2><a href="/biznes/2019/02/15/3390846_zaradi_poskupvaneto_prez_2018_g_kupuvachi_sa/" title="Заради поскъпването през 2018 г. купувачи са предпочели жилища в строеж вместо готови">Заради поскъпването през 2018 г. купувачи са предпочели жилища в строеж вместо готови</a></h2>                                        <div class="article-tools">
+                    <time datetime="2019-02-15T14:12">14:12, 15 фев 19</time> / 
+        <a href="/biznes/">Бизнес</a>
+        
+    <a href="/biznes/2019/02/15/3390846_zaradi_poskupvaneto_prez_2018_g_kupuvachi_sa/#comments">
+                        <i class='i i-com'></i> 5</a>
+            </a>
+        </div>
+    </article>
+        </div>
+                            <div class="grid-d-4">
+                                            <article class="secondary-article">
+        <figure>
+                <span class="thumbnail">
+            <a href="/evropa/2019/02/15/3390897_rustut_na_turizma_v_portugaliia_riazko_se_e_zabavil/" title="Ръстът на туризма в Португалия рязко се е забавил през 2018 г.">
+                <img src="https://www.dnevnik.bg/shimg/zx300y169_3390900.jpg" alt="Ръстът на туризма в Португалия рязко се е забавил през 2018 г." />
+                            </a>
+        </span>
+                    </figure>
+        
+    <h2><a href="/evropa/2019/02/15/3390897_rustut_na_turizma_v_portugaliia_riazko_se_e_zabavil/" title="Ръстът на туризма в Португалия рязко се е забавил през 2018 г.">Ръстът на туризма в Португалия рязко се е забавил през 2018 г.</a></h2>                                        <div class="article-tools">
+                    <time datetime="2019-02-15T13:18">13:18, 15 фев 19</time> / 
+        <a href="/evropa/">Европа</a>
+        
+    <a href="/evropa/2019/02/15/3390897_rustut_na_turizma_v_portugaliia_riazko_se_e_zabavil/#comments">
+                        <i class='i i-com'></i> 0</a>
+            </a>
+        </div>
+    </article>
+        </div>
+                            <div class="grid-d-4">
+                                            <article class="secondary-article">
+        <figure>
+                <span class="thumbnail">
+            <a href="/sport/2019/02/15/3390775_joze_mourinyo_-_menidjurut_sus_zlatnite_neustoiki/" title="Жозе Моуриньо - мениджърът със &quot;златните&quot; неустойки">
+                <img src="https://www.dnevnik.bg/shimg/zx300y169_3390778.jpg" alt="Жозе Моуриньо - мениджърът със &quot;златните&quot; неустойки" />
+                            </a>
+        </span>
+                    </figure>
+        
+    <h2><a href="/sport/2019/02/15/3390775_joze_mourinyo_-_menidjurut_sus_zlatnite_neustoiki/" title="Жозе Моуриньо - мениджърът със &quot;златните&quot; неустойки">Жозе Моуриньо - мениджърът със &quot;златните&quot; неустойки</a></h2>                                        <div class="article-tools">
+                    <time datetime="2019-02-15T10:31">10:31, 15 фев 19</time> / 
+        <a href="/sport/">Спорт</a>
+        
+    <a href="/sport/2019/02/15/3390775_joze_mourinyo_-_menidjurut_sus_zlatnite_neustoiki/#comments">
+                        <i class='i i-com'></i> 8</a>
+            </a>
+        </div>
+    </article>
+        </div>
+            </div>
+</div>
+
+            <div class="site-block" id="MoreFromDnevnik" >
+        <div class="block-title underline-title">
+        <h2>Още от Дневник</h2>
+    </div>
+        <div class="grid-container">
+                            <div class="grid-d-4">
+                                            <article class="secondary-article">
+        <figure>
+                <span class="thumbnail">
+            <a href="/bulgaria/2019/02/14/3390579_bulgarskata_chast_ot_turski_potok_e_spriana_zaradi/" title="Българската част от &quot;Турски поток&quot; е спряна заради жалба от фирма, свързвана с Ковачки">
+                <img src="https://www.dnevnik.bg/shimg/zx300y169_3390593.jpg" alt="Българската част от &quot;Турски поток&quot; е спряна заради жалба от фирма, свързвана с Ковачки" />
+                            </a>
+        </span>
+                    </figure>
+        
+    <h2><a href="/bulgaria/2019/02/14/3390579_bulgarskata_chast_ot_turski_potok_e_spriana_zaradi/" title="Българската част от &quot;Турски поток&quot; е спряна заради жалба от фирма, свързвана с Ковачки">Българската част от &quot;Турски поток&quot; е спряна заради жалба от фирма, свързвана с Ковачки</a></h2>                                        <div class="article-tools">
+                    <time datetime="2019-02-14T17:46">17:46, 14 фев 19</time> / 
+        <a href="/bulgaria/">България</a>
+        
+    <a href="/bulgaria/2019/02/14/3390579_bulgarskata_chast_ot_turski_potok_e_spriana_zaradi/#comments">
+                        <i class='i i-com'></i> 96</a>
+            </a>
+        </div>
+    </article>
+        </div>
+                            <div class="grid-d-4">
+                                            <article class="secondary-article">
+        <figure>
+                <span class="thumbnail">
+            <a href="/evropa/2019/02/15/3390732_mei_preturpia_porajenie_v_parlamenta_za_strategiiata/" title="Мей претърпя поражение в парламента за стратегията си за Брекзит">
+                <img src="https://www.dnevnik.bg/shimg/zx300y169_3390733.jpg" alt="Мей претърпя поражение в парламента за стратегията си за Брекзит" />
+                            </a>
+        </span>
+                    </figure>
+        
+    <h2><a href="/evropa/2019/02/15/3390732_mei_preturpia_porajenie_v_parlamenta_za_strategiiata/" title="Мей претърпя поражение в парламента за стратегията си за Брекзит">Мей претърпя поражение в парламента за стратегията си за Брекзит</a></h2>                                        <div class="article-tools">
+                    <time datetime="2019-02-15T08:47">08:47, 15 фев 19</time> / 
+        <a href="/evropa/">Европа</a>
+        
+    <a href="/evropa/2019/02/15/3390732_mei_preturpia_porajenie_v_parlamenta_za_strategiiata/#comments">
+                        <i class='i i-com'></i> 52</a>
+            </a>
+        </div>
+    </article>
+        </div>
+                            <div class="grid-d-4">
+                                            <article class="secondary-article">
+        <figure>
+                <span class="thumbnail">
+            <a href="/sviat/2019/02/14/3390617_denis_sergeev_e_istinskoto_ime_na_agenta_na_gru/" title="Денис Сергеев е истинското име на &quot;агента на ГРУ&quot;, свързван с отравянето на Гебрев">
+                <img src="https://www.dnevnik.bg/shimg/zx300y169_3390621.jpg" alt="Денис Сергеев е истинското име на &quot;агента на ГРУ&quot;, свързван с отравянето на Гебрев" />
+                            </a>
+        </span>
+                    </figure>
+        
+    <h2><a href="/sviat/2019/02/14/3390617_denis_sergeev_e_istinskoto_ime_na_agenta_na_gru/" title="Денис Сергеев е истинското име на &quot;агента на ГРУ&quot;, свързван с отравянето на Гебрев">Денис Сергеев е истинското име на &quot;агента на ГРУ&quot;, свързван с отравянето на Гебрев</a></h2>                                        <div class="article-tools">
+                    <time datetime="2019-02-14T18:15">18:15, 14 фев 19</time> / 
+        <a href="/sviat/">Свят</a>
+        
+    <a href="/sviat/2019/02/14/3390617_denis_sergeev_e_istinskoto_ime_na_agenta_na_gru/#comments">
+                        <i class='i i-com'></i> 261</a>
+            </a>
+        </div>
+    </article>
+        </div>
+            </div>
+</div>
+
+                            <div class="site-block offset-left dark-block" id="NazaemOt" >
+        <div class="block-title no-marker">
+        <h2>Назаем от ...</h2>
+    </div>
+        <div class="grid-container">
+                                                        <div class="grid-d-4">
+                                        <article class="secondary-article">
+        <figure>
+                <span class="thumbnail">
+            <a href="https://www.capital.bg/politika_i_ikonomika/redakcionni_komentari/2019/02/15/3390566_da_ne_vijdash_mechkata_v_hola/" target=_blank title="Да не виждаш мечката в хола">
+                <img src="https://www.dnevnik.bg/shimg/zx300y169_3390943.jpg" alt="Да не виждаш мечката в хола" />
+                            </a>
+        </span>
+                        <span class="label"><img src="/disk1/ecms/dnevnik.bg/app/../web/images/label_capital.jpg" alt="" /></span>
+            </figure>
+        
+    <h2><a href="https://www.capital.bg/politika_i_ikonomika/redakcionni_komentari/2019/02/15/3390566_da_ne_vijdash_mechkata_v_hola/" target=_blank title="Да не виждаш мечката в хола">Да не виждаш мечката в хола</a></h2>                                        <div class="article-tools">
+                    <time datetime="2019-02-15T14:14">14:14, 15 фев 19</time> / 
+        <a href="/politika_i_ikonomika/redakcionni_komentari/">Редакционни коментари</a>
+        
+    <a href="https://www.capital.bg/politika_i_ikonomika/redakcionni_komentari/2019/02/15/3390566_da_ne_vijdash_mechkata_v_hola/#comments">
+                        <i class='i i-com'></i> 0</a>
+            </a>
+        </div>
+    </article>
+        </div>
+                                                        <div class="grid-d-4">
+                                        <article class="secondary-article">
+        <figure>
+                <span class="thumbnail">
+            <a href="https://www.bacchus.bg/novini/2019/02/14/3390190_kulinarnoto_berlinale_2019_vagner_bio_domati_i_tumnata/" target=_blank title="Кулинарното Берлинале 2019: Вагнер, био домати и тъмната страна на храната">
+                <img src="https://www.dnevnik.bg/shimg/zx300y169_3390197.jpg" alt="Кулинарното Берлинале 2019: Вагнер, био домати и тъмната страна на храната" />
+                            </a>
+        </span>
+                        <span class="label"><img src="/disk1/ecms/dnevnik.bg/app/../web/images/label_bacchus.jpg" alt="" /></span>
+            </figure>
+        
+    <h2><a href="https://www.bacchus.bg/novini/2019/02/14/3390190_kulinarnoto_berlinale_2019_vagner_bio_domati_i_tumnata/" target=_blank title="Кулинарното Берлинале 2019: Вагнер, био домати и тъмната страна на храната">Кулинарното Берлинале 2019: Вагнер, био домати и тъмната страна на храната</a></h2>                                        <div class="article-tools">
+                    <time datetime="2019-02-14T11:14">11:14, 14 фев 19</time> / 
+        <a href="/novini/">Новини</a>
+        
+    <a href="https://www.bacchus.bg/novini/2019/02/14/3390190_kulinarnoto_berlinale_2019_vagner_bio_domati_i_tumnata/#comments">
+                        <i class='i i-com'></i> 0</a>
+            </a>
+        </div>
+    </article>
+        </div>
+                                                        <div class="grid-d-4">
+                                        <article class="secondary-article">
+        <figure>
+                <span class="thumbnail">
+            <a href="https://www.karieri.bg/show/?storyid=3390257" target=_blank title="Mars с нов директор за българския пазар">
+                <img src="https://www.dnevnik.bg/shimg/zx300y169_3390255.jpg" alt="Mars с нов директор за българския пазар" />
+                            </a>
+        </span>
+                        <span class="label"><img src="/disk1/ecms/dnevnik.bg/app/../web/images/label_karieri.jpg" alt="" /></span>
+            </figure>
+        
+    <h2><a href="https://www.karieri.bg/show/?storyid=3390257" target=_blank title="Mars с нов директор за българския пазар">Mars с нов директор за българския пазар</a></h2>                                        <div class="article-tools">
+                    <time datetime="2019-02-14T12:34">12:34, 14 фев 19</time> / 
+        <a href="/karieren_klub/novini/">Новини</a>
+        
+    <a href="https://www.karieri.bg/show/?storyid=3390257#comments">
+                        <i class='i i-com'></i> 2</a>
+            </a>
+        </div>
+    </article>
+        </div>
+            </div>
+</div>
+
+                    </div>
+
+        <aside>
+                    <div class="module long-scroll">
+        <div class="smodule">
+                                                <div class="site-block">
+                <div class="banner-box" id="ad_1st_300x250">
+                <div class="banner">
+                                            <!-- /149508300/Dnevnik.bg_Business_1st_300x250 -->
+<div id='div-gpt-ad-1435663167980-3'>
+<script type='text/javascript'>
+    googletag.display("div-gpt-ad-1435663167980-3");
+    </script>
+</div>
+
+                                    </div>
+            </div>
+            </div>
+            </div>
+    </div>
+
+            <div class="module">
+                                                                                                                    <!-- /149508300/dnk_prarticle_10x50 -->
+<div id='div-gpt-ad-1486549213202-109'>
+<script type='text/javascript'>
+    googletag.display("div-gpt-ad-1486549213202-109");
+    </script>
+</div>
+
+    
+                                        <div class="site-block" id="Filter">
+        <div class="aside-title">
+            <h2>Филтър</h2>
+        </div>
+		
+                            		
+        <div class="border-box">
+            <div class="ajaxy">
+                <div class="filter">
+                    <nav class="ajaxy-filter" id="nav-ajaxy-filter">
+                        <a class="active" href="javascript:;" data-ajaxy="/ajax/filternews/latest" onclick="ga('send', { 'hitType': 'event', 'eventCategory': 'FilterKareStatia', 'eventAction': 'ViewTab', 'eventLabel': 'Ново' });"><strong>Ново</strong> |</a>
+                        <a  href="javascript:;" data-ajaxy="/ajax/filternews/read" onclick="ga('send', { 'hitType': 'event', 'eventCategory': 'FilterKareStatia', 'eventAction': 'ViewTab', 'eventLabel': 'Четено' });"><strong>Четено</strong> |</a>
+                        <a  href="javascript:;" data-ajaxy="/ajax/filternews/commented" onclick="ga('send', { 'hitType': 'event', 'eventCategory': 'FilterKareStatia', 'eventAction': 'ViewTab', 'eventLabel': 'Коментирано' });"><strong>Коментирано</strong> |</a>
+                        <a  href="javascript:;" data-ajaxy="/ajax/filternews/recommended" onclick="ga('send', { 'hitType': 'event', 'eventCategory': 'FilterKareStatia', 'eventAction': 'ViewTab', 'eventLabel': 'Препоръчвано' });"><strong>Препоръчвано</strong></a>
+                    </nav>
+                </div>
+                <div class="ajaxy-output">
+                    <div class="short-list">
+                                                                                        
+                <article>
+            <h3><a href="/sport/2019/02/15/3390920_bnt_shte_izluchva_evropeiskoto_po_futbol_prez_2020_g/" title="БНТ ще излъчва европейското по футбол през 2020 г.">БНТ ще излъчва европейското по футбол през 2020 г.</a></h3>
+                                        <div class="article-tools">
+                    <time datetime="2019-02-15T14:30">14:30, 15 фев 19</time> / 
+        <a href="/sport/">Спорт</a>
+        
+    <a href="/sport/2019/02/15/3390920_bnt_shte_izluchva_evropeiskoto_po_futbol_prez_2020_g/#comments">
+                        <i class='i i-com'></i> 0</a>
+            </a>
+        </div>
+    </article>
+                                                                                                                    
+                <article>
+            <h3><a href="/sport/2019/02/15/3390779_dobre_doshli_na_edna_evropeiska_preskonferenciia_na/" title="Добре дошли на една европейска пресконференция на ЦСКА">Добре дошли на една европейска пресконференция на ЦСКА</a></h3>
+                                        <div class="article-tools">
+                    <time datetime="2019-02-15T14:25">14:25, 15 фев 19</time> / 
+        <a href="/sport/">Спорт</a>
+        
+    <a href="/sport/2019/02/15/3390779_dobre_doshli_na_edna_evropeiska_preskonferenciia_na/#comments">
+                        <i class='i i-com'></i> 6</a>
+            </a>
+        </div>
+    </article>
+                                                                                                                    
+                <article>
+            <h3><a href="/biznes/2019/02/15/3390846_zaradi_poskupvaneto_prez_2018_g_kupuvachi_sa/" title="Заради поскъпването през 2018 г. купувачи са предпочели жилища в строеж вместо готови">Заради поскъпването през 2018 г. купувачи са предпочели жилища в строеж вместо готови</a></h3>
+                                        <div class="article-tools">
+                    <time datetime="2019-02-15T14:12">14:12, 15 фев 19</time> / 
+        <a href="/biznes/">Бизнес</a>
+        
+    <a href="/biznes/2019/02/15/3390846_zaradi_poskupvaneto_prez_2018_g_kupuvachi_sa/#comments">
+                        <i class='i i-com'></i> 5</a>
+            </a>
+        </div>
+    </article>
+                                                                                                                    
+                <article>
+            <h3><a href="/evropa/2019/02/15/3390912_konstitucionniiat_sud_v_slovakiia_e_pred_kriza_zaradi/" title="Конституционният съд в Словакия е пред криза заради политически боричкания">Конституционният съд в Словакия е пред криза заради политически боричкания</a></h3>
+                                        <div class="article-tools">
+                    <time datetime="2019-02-15T13:26">13:26, 15 фев 19</time> / 
+        <a href="/evropa/">Европа</a>
+        
+    <a href="/evropa/2019/02/15/3390912_konstitucionniiat_sud_v_slovakiia_e_pred_kriza_zaradi/#comments">
+                        <i class='i i-com'></i> 13</a>
+            </a>
+        </div>
+    </article>
+                                                                                                                    
+                <article>
+            <h3><a href="/bulgaria/2019/02/15/3390911_regionalnoto_ministerstvo_obmislia_da_vuvede/" title="Регионалното министерство обмисля да въведе реверсивно движение между София и Перник">Регионалното министерство обмисля да въведе реверсивно движение между София и Перник</a></h3>
+                                        <div class="article-tools">
+                    <time datetime="2019-02-15T13:24">13:24, 15 фев 19</time> / 
+        <a href="/bulgaria/">България</a>
+        
+    <a href="/bulgaria/2019/02/15/3390911_regionalnoto_ministerstvo_obmislia_da_vuvede/#comments">
+                        <i class='i i-com'></i> 12</a>
+            </a>
+        </div>
+    </article>
+                                                                        </div>
+                </div>
+                <p class="text-center">
+                    <a href="/allnews/today/" title="Всичко от Ново" class="view-all">Всичко от Ново &gt;</a>
+                </p>
+            </div>
+        </div>
+    </div>
+    
+                                                <div class="site-block">
+    <section class="selected-comment-v2">
+        <header>Избрани коментари</header>
+                <div class="comment">
+            <a href="//id.capital.bg/gdx1455570718489047" class="profile" target="_blank">
+                <span class="thumb">
+                    <img src="https://id.capital.bg/avatars/z60_489047.jpg" alt="aleks ivan">
+                </span>
+                <strong>aleks ivan</strong>
+                <span class="article-tools">
+                    <time datetime="2019-02-15T12:23">12:23, 15 фев 19</time> / Неутрално
+                </span>
+            </a>
+            <p><a href="#comment-1">Официално. Значи поне х2 е реалната. А за кошницата, която интересува нормалния човек: и повече.</a></p>
+        </div>
+                <footer>
+            <a href="#comments" class="view-all arrow-down">Всички коментари (26) <i>&gt;&gt;</i></a>
+        </footer>
+    </section>
+</div>
+
+                            </div>
+                                    <div class="module">
+        <div class="smodule">
+                                                <div class="site-block">
+                <div class="banner-box" id="ad_2nd_300x250">
+                <div class="banner">
+                                            <!-- /149508300/dnk_business_2nd_300x250 -->
+<div id='div-gpt-ad-1486549213202-21'>
+<script type='text/javascript'>
+    googletag.display("div-gpt-ad-1486549213202-21");
+    </script>
+</div>
+
+                                    </div>
+            </div>
+            </div>
+            </div>
+    </div>
+
+                    </aside>
+    </div>
+
+
+</article>
+</div>
+<div class="site-block">
+    <div class="main-content">
+        <div class="content">            
+                                    <div class="site-block">
+                            <div class="banner-box" id="ad_lb_end">
+        <div class="banner">
+                                            <!-- /149508300/dnk_business_lb_end -->
+<div id='div-gpt-ad-1486549213202-26'>
+<script type='text/javascript'>
+    googletag.display("div-gpt-ad-1486549213202-26");
+    </script>
+</div>
+
+                    </div>
+    </div>
+    </div>
+    
+                                        <div class="comments clearfix" id="comments-wrapper">
+    <div class="top clearfix">
+        <strong class="c-count">Коментари (26)</strong>
+                <ol class="c-sort">
+            <li>
+                <strong>Подредба:</strong>
+                                                                    <a href="javascript:;" class="switch-comments down"><!-- UP / DOWN -->
+                    <span>Сортирай</span>
+                </a>
+            </li>
+            <li>
+                <div class="select">
+                    <select id="filterComments" name="filterComments">
+                        <option value="1" selected="selected">Всички мнения</option>
+                        <option value="2">Само високооценени</option>
+                        <option value="3">Без нискооценените</option>
+                        <option value="4">Скриване на коментарите</option>
+                    </select>
+                </div>
+            </li>
+        </ol>
+            </div>
+        
+    <ol class="comments" id="comments" data-itemid="3390842" data-perpage="100" data-ordertype="1" data-filtertype="1" data-forumtype="story">
+        <li id="comment-1" data-id="16142833" data-hash="MTYxNDI4MzN4QFl6PUE," class="comment">
+    <div class="ct">
+        <div class="cl">
+            <var>1</var>
+            <span class="ca">
+                                                            <a href="https://knetwork.capital.bg/gdx1455570718489047" target="_blank"><img alt="Профил на aleks ivan" src="https://id.capital.bg/avatars/z60_489047.jpg" /></a>
+                                                </span>
+            <h6>
+                                <a href="https://knetwork.capital.bg/gdx1455570718489047" target="_blank">aleks ivan</a>
+                            </h6>
+                        <strong>Рейтинг: 2589</strong>
+                        <time datetime="2019-02-15T12:23">12:23, 15 фев 19</time>
+            <small class="neutral">Неутрално</small>
+        </div>
+        <div class="cr">
+            <div class="ci">
+                <p>Официално. Значи поне х2 е реалната. А за кошницата, която интересува нормалния човек: и повече.</p>
+                                <em class="cs">ЖИВОТ за дунавските есетри!! :  https://esetri.wwf.bg/</em>
+                                                <ul class="cb">
+                    <li class="pull-left">
+                                                <a class="e-minus" href="javascript:;" title="Не се съгласявам с коментара">9</a>
+                        <a class="e-plus" href="javascript:;" title="Съгласявам се с коментара">18</a>
+                                                                        <a class="e-report" href="javascript:;" title="Коментарът е обиден или неуместен">Коментарът е обиден или неуместен</a>
+                                            </li>
+                    <li class="pull-right">
+                                            </li>
+                </ul>
+                            </div>
+        </div>
+    </div>
+</li><li id="comment-2" data-id="16142919" data-hash="MTYxNDI5MTl4QFl6PUE," class="comment">
+    <div class="ct">
+        <div class="cl">
+            <var>2</var>
+            <span class="ca">
+                                                            <a href="https://knetwork.capital.bg/alexander97" target="_blank"><img alt="Профил на Alexander97" src="/images/layout/avatar-man-60.jpg" /></a>
+                                                </span>
+            <h6>
+                                <a href="https://knetwork.capital.bg/alexander97" target="_blank">Alexander97</a>
+                            </h6>
+                        <strong>Рейтинг: 2597</strong>
+                        <time datetime="2019-02-15T12:42">12:42, 15 фев 19</time>
+            <small class="neutral">Неутрално</small>
+        </div>
+        <div class="cr">
+            <div class="ci">
+                <p>Блазе на всички пенсионери,<br /><br /><br /> които ще получат увеличени пенсии от първи юли! </p>
+                                                <ul class="cb">
+                    <li class="pull-left">
+                                                <a class="e-minus" href="javascript:;" title="Не се съгласявам с коментара">6</a>
+                        <a class="e-plus" href="javascript:;" title="Съгласявам се с коментара">5</a>
+                                                                        <a class="e-report" href="javascript:;" title="Коментарът е обиден или неуместен">Коментарът е обиден или неуместен</a>
+                                            </li>
+                    <li class="pull-right">
+                                            </li>
+                </ul>
+                            </div>
+        </div>
+    </div>
+</li><li id="comment-3" data-id="16142986" data-hash="MTYxNDI5ODZ4QFl6PUE," class="comment">
+    <div class="ct">
+        <div class="cl">
+            <var>3</var>
+            <span class="ca">
+                                                            <a href="https://knetwork.capital.bg/ymn41587549" target="_blank"><img alt="Профил на Kiril" src="https://id.capital.bg/avatars/z60_587550.jpg" /></a>
+                                                </span>
+            <h6>
+                                <a href="https://knetwork.capital.bg/ymn41587549" target="_blank">Kiril</a>
+                            </h6>
+                        <strong>Рейтинг: 3207</strong>
+                        <time datetime="2019-02-15T12:57">12:57, 15 фев 19</time>
+            <small class="neutral">Неутрално</small>
+        </div>
+        <div class="cr">
+            <div class="ci">
+                <p>Не бe, слушайте форумникът как се мери ,,реалната" инфлация с листовки на Кауфланд преди 5 години и цената на лука от женския пазар:<br /><br /><a href="https://m.dnevnik.bg/bulgaria/2019/02/14/3390099_v_bulgariia_cenata_na_truda_narastva_zaiavi_biser/" target="_blank" rel="nofollow">https://m.dnevnik.bg/bulgaria/2019/02/14/3390099_v_bulgariia_cenata_na_truda_narastva_zaiavi_biser/</a> #comments?ref=id</p>
+                                <em class="cs">В деня на влюбените депутатите ни показаха как се празнува автентично.</em>
+                                                <ul class="cb">
+                    <li class="pull-left">
+                                                <a class="e-minus" href="javascript:;" title="Не се съгласявам с коментара">9</a>
+                        <a class="e-plus" href="javascript:;" title="Съгласявам се с коментара">6</a>
+                                                                        <a class="e-report" href="javascript:;" title="Коментарът е обиден или неуместен">Коментарът е обиден или неуместен</a>
+                                            </li>
+                    <li class="pull-right">
+                                            </li>
+                </ul>
+                            </div>
+        </div>
+    </div>
+</li><li id="comment-4" data-id="16143094" data-hash="MTYxNDMwOTR4QFl6PUE," class="comment">
+    <div class="ct">
+        <div class="cl">
+            <var>4</var>
+            <span class="ca">
+                                                            <a href="https://knetwork.capital.bg/dedo_andro" target="_blank"><img alt="Профил на дедо Андро" src="https://id.capital.bg/avatars/z60_396653.jpg" /></a>
+                                                </span>
+            <h6>
+                                <a href="https://knetwork.capital.bg/dedo_andro" target="_blank">дедо Андро</a>
+                            </h6>
+                        <strong>Рейтинг: 2607</strong>
+                        <time datetime="2019-02-15T13:25">13:25, 15 фев 19</time>
+            <small class="upset">Разстроено</small>
+        </div>
+        <div class="cr">
+            <div class="ci">
+                <p><div class="c-reply"><blockquote>Блазе на всички пенсионери, които ще получат увеличени пенсии от първи юли! </blockquote> <small>—цитат от <a href="#comment-2">коментар <strong>2</strong></a> на <strong>Alexander97</strong></small></div><br /><br />Ако доживеем дотогава...</p>
+                                <em class="cs">Пич Незнам Как Да Ти Обесна Че Несъжелявам За Недостика На Некой Уникални Изразни Сретства По Български.</em>
+                                                <ul class="cb">
+                    <li class="pull-left">
+                                                <a class="e-minus" href="javascript:;" title="Не се съгласявам с коментара">0</a>
+                        <a class="e-plus" href="javascript:;" title="Съгласявам се с коментара">6</a>
+                                                                        <a class="e-report" href="javascript:;" title="Коментарът е обиден или неуместен">Коментарът е обиден или неуместен</a>
+                                            </li>
+                    <li class="pull-right">
+                                            </li>
+                </ul>
+                            </div>
+        </div>
+    </div>
+</li><li id="comment-5" data-id="16143095" data-hash="MTYxNDMwOTV4QFl6PUE," class="comment">
+    <div class="ct">
+        <div class="cl">
+            <var>5</var>
+            <span class="ca">
+                                                            <a href="https://knetwork.capital.bg/dedo_andro" target="_blank"><img alt="Профил на дедо Андро" src="https://id.capital.bg/avatars/z60_396653.jpg" /></a>
+                                                </span>
+            <h6>
+                                <a href="https://knetwork.capital.bg/dedo_andro" target="_blank">дедо Андро</a>
+                            </h6>
+                        <strong>Рейтинг: 2607</strong>
+                        <time datetime="2019-02-15T13:25">13:25, 15 фев 19</time>
+            <small class="upset">Разстроено</small>
+        </div>
+        <div class="cr">
+            <div class="ci">
+                <p><div class="c-reply"><blockquote>Блазе на всички пенсионери, които ще получат увеличени пенсии от първи юли! </blockquote> <small>—цитат от <a href="#comment-2">коментар <strong>2</strong></a> на <strong>Alexander97</strong></small></div><br /><br />Ако доживеем дотогава...</p>
+                                <em class="cs">Пич Незнам Как Да Ти Обесна Че Несъжелявам За Недостика На Некой Уникални Изразни Сретства По Български.</em>
+                                                <ul class="cb">
+                    <li class="pull-left">
+                                                <a class="e-minus" href="javascript:;" title="Не се съгласявам с коментара">1</a>
+                        <a class="e-plus" href="javascript:;" title="Съгласявам се с коментара">4</a>
+                                                                        <a class="e-report" href="javascript:;" title="Коментарът е обиден или неуместен">Коментарът е обиден или неуместен</a>
+                                            </li>
+                    <li class="pull-right">
+                                            </li>
+                </ul>
+                            </div>
+        </div>
+    </div>
+</li><li id="comment-6" data-id="16143113" data-hash="MTYxNDMxMTN4QFl6PUE," class="comment">
+    <div class="ct">
+        <div class="cl">
+            <var>6</var>
+            <span class="ca">
+                                                            <a href="https://knetwork.capital.bg/jumbojet" target="_blank"><img alt="Профил на Jumbo Jet" src="/images/layout/avatar-man-60.jpg" /></a>
+                                                </span>
+            <h6>
+                                <a href="https://knetwork.capital.bg/jumbojet" target="_blank">Jumbo Jet</a>
+                            </h6>
+                        <strong>Рейтинг: 2680</strong>
+                        <time datetime="2019-02-15T13:30">13:30, 15 фев 19</time>
+            <small class="neutral">Неутрално</small>
+        </div>
+        <div class="cr">
+            <div class="ci">
+                <p>Годишна инфлация до 3-3,5% е добра за икономиката.</p>
+                                                <ul class="cb">
+                    <li class="pull-left">
+                                                <a class="e-minus" href="javascript:;" title="Не се съгласявам с коментара">7</a>
+                        <a class="e-plus" href="javascript:;" title="Съгласявам се с коментара">4</a>
+                                                                        <a class="e-report" href="javascript:;" title="Коментарът е обиден или неуместен">Коментарът е обиден или неуместен</a>
+                                            </li>
+                    <li class="pull-right">
+                                            </li>
+                </ul>
+                            </div>
+        </div>
+    </div>
+</li><li id="comment-7" data-id="16143122" data-hash="MTYxNDMxMjJ4QFl6PUE," class="comment">
+    <div class="ct">
+        <div class="cl">
+            <var>7</var>
+            <span class="ca">
+                                                            <a href="https://knetwork.capital.bg/alexander97" target="_blank"><img alt="Профил на Alexander97" src="/images/layout/avatar-man-60.jpg" /></a>
+                                                </span>
+            <h6>
+                                <a href="https://knetwork.capital.bg/alexander97" target="_blank">Alexander97</a>
+                            </h6>
+                        <strong>Рейтинг: 2597</strong>
+                        <time datetime="2019-02-15T13:32">13:32, 15 фев 19</time>
+            <small class="neutral">Неутрално</small>
+        </div>
+        <div class="cr">
+            <div class="ci">
+                <p>До коментар <a href="#comment-4">[#4]</a> от "дедо Андро":<br /><br /><br />"Ако доживеем дотогава..."<br /><br />Дръж се, не се давай на "🎃" 😀! </p>
+                                                <ul class="cb">
+                    <li class="pull-left">
+                                                <a class="e-minus" href="javascript:;" title="Не се съгласявам с коментара">2</a>
+                        <a class="e-plus" href="javascript:;" title="Съгласявам се с коментара">3</a>
+                                                                        <a class="e-report" href="javascript:;" title="Коментарът е обиден или неуместен">Коментарът е обиден или неуместен</a>
+                                            </li>
+                    <li class="pull-right">
+                                            </li>
+                </ul>
+                            </div>
+        </div>
+    </div>
+</li><li id="comment-8" class="comment grey" data-id="16143133" data-hash="MTYxNDMxMzN4QFl6PUE,">
+    <div class="ct">
+        <div class="cl">
+            <var>8</var>
+            <span class="ca">
+                                                            <a href="//id.capital.bg/ztp43598982" target="_blank"><img alt="" src="/images/layout/avatar-man-60.jpg" /></a>
+                                                </span>
+            <h6>
+                <span>****</span>
+            </h6>
+            <time datetime="2019-02-15T13:34">13:34, 15 фев 19</time>
+        </div>
+        <div class="cr">
+            <div class="ci">
+                <p>
+                    <em class="mod-reason">
+                                        Коментарът беше изтрит от модераторите, защото съдържаше рекламни съобщения или спам.
+                                        </em>
+                </p>
+                            </div>
+        </div>
+    </div>
+</li><li id="comment-9" class="comment grey" data-id="16143134" data-hash="MTYxNDMxMzR4QFl6PUE,">
+    <div class="ct">
+        <div class="cl">
+            <var>9</var>
+            <span class="ca">
+                                                            <a href="//id.capital.bg/ztp43598982" target="_blank"><img alt="" src="/images/layout/avatar-man-60.jpg" /></a>
+                                                </span>
+            <h6>
+                <span>****</span>
+            </h6>
+            <time datetime="2019-02-15T13:34">13:34, 15 фев 19</time>
+        </div>
+        <div class="cr">
+            <div class="ci">
+                <p>
+                    <em class="mod-reason">
+                                        Коментарът беше изтрит от модераторите, защото съдържаше рекламни съобщения или спам.
+                                        </em>
+                </p>
+                            </div>
+        </div>
+    </div>
+</li><li id="comment-10" data-id="16143163" data-hash="MTYxNDMxNjN4QFl6PUE," class="comment">
+    <div class="ct">
+        <div class="cl">
+            <var>10</var>
+            <span class="ca">
+                                                            <a href="https://knetwork.capital.bg/nv" target="_blank"><img alt="Профил на nv" src="https://id.capital.bg/avatars/z60_161202.jpg" /></a>
+                                                </span>
+            <h6>
+                                <a href="https://knetwork.capital.bg/nv" target="_blank">nv</a>
+                            </h6>
+                        <strong>Рейтинг: 869</strong>
+                        <time datetime="2019-02-15T13:37">13:37, 15 фев 19</time>
+            <small class="curious">Любопитно</small>
+        </div>
+        <div class="cr">
+            <div class="ci">
+                <p>До коментар <a href="#comment-1">[#1]</a> от "aleks ivan":<br /><br />И как го изчисли? </p>
+                                <em class="cs">&quot;The Queen Is Dead&quot; 30 years anniversary</em>
+                                                <ul class="cb">
+                    <li class="pull-left">
+                                                <a class="e-minus" href="javascript:;" title="Не се съгласявам с коментара">7</a>
+                        <a class="e-plus" href="javascript:;" title="Съгласявам се с коментара">0</a>
+                                                                        <a class="e-report" href="javascript:;" title="Коментарът е обиден или неуместен">Коментарът е обиден или неуместен</a>
+                                            </li>
+                    <li class="pull-right">
+                                            </li>
+                </ul>
+                            </div>
+        </div>
+    </div>
+</li><li id="comment-11" data-id="16143171" data-hash="MTYxNDMxNzF4QFl6PUE," class="comment">
+    <div class="ct">
+        <div class="cl">
+            <var>11</var>
+            <span class="ca">
+                                                            <a href="https://knetwork.capital.bg/ymn41587549" target="_blank"><img alt="Профил на Kiril" src="https://id.capital.bg/avatars/z60_587550.jpg" /></a>
+                                                </span>
+            <h6>
+                                <a href="https://knetwork.capital.bg/ymn41587549" target="_blank">Kiril</a>
+                            </h6>
+                        <strong>Рейтинг: 3207</strong>
+                        <time datetime="2019-02-15T13:38">13:38, 15 фев 19</time>
+            <small class="neutral">Неутрално</small>
+        </div>
+        <div class="cr">
+            <div class="ci">
+                <p>Коментар номер 2<br />aleks ivanРейтинг: 258909:13, 14 фев, '19 / Неутрално<br /><br />При реална инфлация почти 10%, ... нормално 🤑<br /><br />Отговор- 10 +30<br /><br /><br />Коментар номер 4<br />KirilРейтинг: 320709:15, 14 фев, '19 / Любопитно<br /><br />До коментар <a href="#comment-2">[#2]</a> от "aleks ivan":<br /><br />Къде видя 10% инфлация?<br /><br />Отговор -31 +8<br /><br /><br />Коментар номер 10<br />aleks ivanРейтинг: 258909:29, 14 фев, '19 / Весело<br /><br />До коментар <a href="#comment-4">[#4]</a> от "Kiril":<br /><br />Няма, няма, лягайте да си доспите 😂<br /><br />Отговор -7 +13<br /><br /><br />Какво стана трол бесепарски нали беше 10% ,,реалната" инфлация? Вчера 10%. Днеска 6%.<br /></p>
+                                <em class="cs">В деня на влюбените депутатите ни показаха как се празнува автентично.</em>
+                                                <ul class="cb">
+                    <li class="pull-left">
+                                                <a class="e-minus" href="javascript:;" title="Не се съгласявам с коментара">2</a>
+                        <a class="e-plus" href="javascript:;" title="Съгласявам се с коментара">3</a>
+                                                                        <a class="e-report" href="javascript:;" title="Коментарът е обиден или неуместен">Коментарът е обиден или неуместен</a>
+                                            </li>
+                    <li class="pull-right">
+                                            </li>
+                </ul>
+                            </div>
+        </div>
+    </div>
+</li><li id="comment-12" data-id="16143177" data-hash="MTYxNDMxNzd4QFl6PUE," class="comment">
+    <div class="ct">
+        <div class="cl">
+            <var>12</var>
+            <span class="ca">
+                                                            <a href="https://knetwork.capital.bg/dxd50598374" target="_blank"><img alt="Профил на TanitaS" src="/images/layout/avatar-woman-60.jpg" /></a>
+                                                </span>
+            <h6>
+                                <a href="https://knetwork.capital.bg/dxd50598374" target="_blank">TanitaS</a>
+                            </h6>
+                        <strong>Рейтинг: 70</strong>
+                        <time datetime="2019-02-15T13:38">13:38, 15 фев 19</time>
+            <small class="neutral">Неутрално</small>
+        </div>
+        <div class="cr">
+            <div class="ci">
+                <p>Нещо не ми се вярва да е точно така</p>
+                                <em class="cs">TanitaS</em>
+                                                <ul class="cb">
+                    <li class="pull-left">
+                                                <a class="e-minus" href="javascript:;" title="Не се съгласявам с коментара">2</a>
+                        <a class="e-plus" href="javascript:;" title="Съгласявам се с коментара">2</a>
+                                                                        <a class="e-report" href="javascript:;" title="Коментарът е обиден или неуместен">Коментарът е обиден или неуместен</a>
+                                            </li>
+                    <li class="pull-right">
+                                            </li>
+                </ul>
+                            </div>
+        </div>
+    </div>
+</li><li id="comment-13" data-id="16143182" data-hash="MTYxNDMxODJ4QFl6PUE," class="comment">
+    <div class="ct">
+        <div class="cl">
+            <var>13</var>
+            <span class="ca">
+                                                            <a href="https://knetwork.capital.bg/ymn41587549" target="_blank"><img alt="Профил на Kiril" src="https://id.capital.bg/avatars/z60_587550.jpg" /></a>
+                                                </span>
+            <h6>
+                                <a href="https://knetwork.capital.bg/ymn41587549" target="_blank">Kiril</a>
+                            </h6>
+                        <strong>Рейтинг: 3207</strong>
+                        <time datetime="2019-02-15T13:39">13:39, 15 фев 19</time>
+            <small class="neutral">Неутрално</small>
+        </div>
+        <div class="cr">
+            <div class="ci">
+                <p>Трол машината не спи<br /><br /><a href="https://dnevnik.bg/bulgaria/2019/02/14/3390099_v_bulgariia_cenata_na_truda_narastva_zaiavi_biser/" target="_blank" rel="nofollow">https://dnevnik.bg/bulgaria/2019/02/14/3390099_v_bulgariia_cenata_na_truda_narastva_zaiavi_biser/</a> </p>
+                                <em class="cs">В деня на влюбените депутатите ни показаха как се празнува автентично.</em>
+                                                <ul class="cb">
+                    <li class="pull-left">
+                                                <a class="e-minus" href="javascript:;" title="Не се съгласявам с коментара">2</a>
+                        <a class="e-plus" href="javascript:;" title="Съгласявам се с коментара">2</a>
+                                                                        <a class="e-report" href="javascript:;" title="Коментарът е обиден или неуместен">Коментарът е обиден или неуместен</a>
+                                            </li>
+                    <li class="pull-right">
+                                            </li>
+                </ul>
+                            </div>
+        </div>
+    </div>
+</li><li id="comment-14" data-id="16143197" data-hash="MTYxNDMxOTd4QFl6PUE," class="comment">
+    <div class="ct">
+        <div class="cl">
+            <var>14</var>
+            <span class="ca">
+                                                            <a href="https://knetwork.capital.bg/alexander97" target="_blank"><img alt="Профил на Alexander97" src="/images/layout/avatar-man-60.jpg" /></a>
+                                                </span>
+            <h6>
+                                <a href="https://knetwork.capital.bg/alexander97" target="_blank">Alexander97</a>
+                            </h6>
+                        <strong>Рейтинг: 2597</strong>
+                        <time datetime="2019-02-15T13:43">13:43, 15 фев 19</time>
+            <small class="neutral">Неутрално</small>
+        </div>
+        <div class="cr">
+            <div class="ci">
+                <p><div class="c-reply"><blockquote>Google вече плаща $ 17000 до $ 22000 на месец за работа онлайн от дома си. Присъединих се към тази работа преди 2 месеца и спечелих $ 20544 през първия месец от тази работа. Мога да кажа, че животът ми е променен.------->>>>>   <a href="http://www.WebJob33.Com" target="_blank" rel="nofollow">http://www.WebJob33.Com</a>  </blockquote> <small>—цитат от <a href="#comment-9">коментар <strong>9</strong></a> на <strong>ztp43598982</strong></small></div><br /><br />Искаш само данните ми и адреса в банката, за да ми превеждаш $$$$$$$$ 🤣🤣🤣🤣<br />Я се разкарай!<br />Модератора, заключете го този/тази!</p>
+                                                <ul class="cb">
+                    <li class="pull-left">
+                                                <a class="e-minus" href="javascript:;" title="Не се съгласявам с коментара">3</a>
+                        <a class="e-plus" href="javascript:;" title="Съгласявам се с коментара">2</a>
+                                                                        <a class="e-report" href="javascript:;" title="Коментарът е обиден или неуместен">Коментарът е обиден или неуместен</a>
+                                            </li>
+                    <li class="pull-right">
+                                            </li>
+                </ul>
+                            </div>
+        </div>
+    </div>
+</li><li id="comment-15" data-id="16143221" data-hash="MTYxNDMyMjF4QFl6PUE," class="comment">
+    <div class="ct">
+        <div class="cl">
+            <var>15</var>
+            <span class="ca">
+                                                            <a href="https://knetwork.capital.bg/ymn41587549" target="_blank"><img alt="Профил на Kiril" src="https://id.capital.bg/avatars/z60_587550.jpg" /></a>
+                                                </span>
+            <h6>
+                                <a href="https://knetwork.capital.bg/ymn41587549" target="_blank">Kiril</a>
+                            </h6>
+                        <strong>Рейтинг: 3207</strong>
+                        <time datetime="2019-02-15T13:47">13:47, 15 фев 19</time>
+            <small class="neutral">Неутрално</small>
+        </div>
+        <div class="cr">
+            <div class="ci">
+                <p>До коментар <a href="#comment-12">[#12]</a> от "TanitaS":<br /><br />Като не ти се вярва извади легитимно доказателство вместо да коментираш ,,вярвания".</p>
+                                <em class="cs">В деня на влюбените депутатите ни показаха как се празнува автентично.</em>
+                                                <ul class="cb">
+                    <li class="pull-left">
+                                                <a class="e-minus" href="javascript:;" title="Не се съгласявам с коментара">1</a>
+                        <a class="e-plus" href="javascript:;" title="Съгласявам се с коментара">0</a>
+                                                                        <a class="e-report" href="javascript:;" title="Коментарът е обиден или неуместен">Коментарът е обиден или неуместен</a>
+                                            </li>
+                    <li class="pull-right">
+                                            </li>
+                </ul>
+                            </div>
+        </div>
+    </div>
+</li><li id="comment-16" data-id="16143229" data-hash="MTYxNDMyMjl4QFl6PUE," class="comment">
+    <div class="ct">
+        <div class="cl">
+            <var>16</var>
+            <span class="ca">
+                                                            <a href="https://knetwork.capital.bg/shisharko" target="_blank"><img alt="Профил на shisharko" src="/images/layout/avatar-man-60.jpg" /></a>
+                                                </span>
+            <h6>
+                                <a href="https://knetwork.capital.bg/shisharko" target="_blank">shisharko</a>
+                            </h6>
+                        <strong>Рейтинг: 914</strong>
+                        <time datetime="2019-02-15T13:49">13:49, 15 фев 19</time>
+            <small class="neutral">Неутрално</small>
+        </div>
+        <div class="cr">
+            <div class="ci">
+                <p>Част от проблема с инфлацията е, че цените на горивата не падат както би трябвало да стане според световните котировки, а някои направо си се увеличават (напр. природния газ).<br /><br />Интересен въпрос е каква част от инфлацията е 'данък енергийна мафия'.</p>
+                                                <ul class="cb">
+                    <li class="pull-left">
+                                                <a class="e-minus" href="javascript:;" title="Не се съгласявам с коментара">2</a>
+                        <a class="e-plus" href="javascript:;" title="Съгласявам се с коментара">1</a>
+                                                                        <a class="e-report" href="javascript:;" title="Коментарът е обиден или неуместен">Коментарът е обиден или неуместен</a>
+                                            </li>
+                    <li class="pull-right">
+                                            </li>
+                </ul>
+                            </div>
+        </div>
+    </div>
+</li><li id="comment-17" data-id="16143239" data-hash="MTYxNDMyMzl4QFl6PUE," class="comment">
+    <div class="ct">
+        <div class="cl">
+            <var>17</var>
+            <span class="ca">
+                                                            <a href="https://knetwork.capital.bg/pet_fire" target="_blank"><img alt="Профил на pet_fire" src="/images/layout/avatar-man-60.jpg" /></a>
+                                                </span>
+            <h6>
+                                <a href="https://knetwork.capital.bg/pet_fire" target="_blank">pet_fire</a>
+                            </h6>
+                        <strong>Рейтинг: 4879</strong>
+                        <time datetime="2019-02-15T13:52">13:52, 15 фев 19</time>
+            <small class="happy">Весело</small>
+        </div>
+        <div class="cr">
+            <div class="ci">
+                <p>"Годишната инфлация през януари е 3%"<br /><br />През януари е месечна инфлация/не годишна/ защото няма натрупване.</p>
+                                                <ul class="cb">
+                    <li class="pull-left">
+                                                <a class="e-minus" href="javascript:;" title="Не се съгласявам с коментара">4</a>
+                        <a class="e-plus" href="javascript:;" title="Съгласявам се с коментара">0</a>
+                                                                        <a class="e-report" href="javascript:;" title="Коментарът е обиден или неуместен">Коментарът е обиден или неуместен</a>
+                                            </li>
+                    <li class="pull-right">
+                                            </li>
+                </ul>
+                            </div>
+        </div>
+    </div>
+</li><li id="comment-18" data-id="16143265" data-hash="MTYxNDMyNjV4QFl6PUE," class="comment">
+    <div class="ct">
+        <div class="cl">
+            <var>18</var>
+            <span class="ca">
+                                                            <a href="https://knetwork.capital.bg/filiboy" target="_blank"><img alt="Профил на Момо" src="/images/layout/avatar-man-60.jpg" /></a>
+                                                </span>
+            <h6>
+                                <a href="https://knetwork.capital.bg/filiboy" target="_blank">Момо</a>
+                            </h6>
+                        <strong>Рейтинг: 490</strong>
+                        <time datetime="2019-02-15T13:57">13:57, 15 фев 19</time>
+            <small class="neutral">Неутрално</small>
+        </div>
+        <div class="cr">
+            <div class="ci">
+                <p>Всъщност, всеки може да сметне потребителската инфлацията за себе си (собствената потребителска кошница), но за да сме точни, то е хубаво да потребява едно и също количество стоки и услуги за определен период.  Методиката на НСИ е следната (база 100): Януари 2018г. сте купували кило портокали за 1лв., а Януари 2019г. за 1.50лв., то инфлацията ви ще е (150-100)/100, или 0.5, тоест 50%. Ако вкарате 50 стоки и услуги в кошницата, то всеки продукт ще се равнява на 2% от общото и т.н. За един човек инфлацията може да е 2%, за друг 5%, а за трети 10%. За всички българи общо обаче е 3% : )</p>
+                                                <ul class="cb">
+                    <li class="pull-left">
+                                                <a class="e-minus" href="javascript:;" title="Не се съгласявам с коментара">3</a>
+                        <a class="e-plus" href="javascript:;" title="Съгласявам се с коментара">0</a>
+                                                                        <a class="e-report" href="javascript:;" title="Коментарът е обиден или неуместен">Коментарът е обиден или неуместен</a>
+                                            </li>
+                    <li class="pull-right">
+                                            </li>
+                </ul>
+                            </div>
+        </div>
+    </div>
+</li><li id="comment-19" data-id="16143321" data-hash="MTYxNDMzMjF4QFl6PUE," class="comment">
+    <div class="ct">
+        <div class="cl">
+            <var>19</var>
+            <span class="ca">
+                                                            <a href="https://knetwork.capital.bg/filiboy" target="_blank"><img alt="Профил на Момо" src="/images/layout/avatar-man-60.jpg" /></a>
+                                                </span>
+            <h6>
+                                <a href="https://knetwork.capital.bg/filiboy" target="_blank">Момо</a>
+                            </h6>
+                        <strong>Рейтинг: 490</strong>
+                        <time datetime="2019-02-15T14:06">14:06, 15 фев 19</time>
+            <small class="neutral">Неутрално</small>
+        </div>
+        <div class="cr">
+            <div class="ci">
+                <p><div class="c-reply"><blockquote>Официално. Значи поне х2 е реалната. А за кошницата, която интересува нормалния човек: и повече.</blockquote> <small>—цитат от <a href="#comment-1">коментар <strong>1</strong></a> на <strong>aleks ivan</strong></small></div><br /><br />Тъй като българският пазар е малък като цяло, то тази инфлация до голяма степен си е реална. Нереална би била, ако имахме примерно 20 доставчика на гориво, 20 доставчика на ток и т.н.<br /></p>
+                                                <ul class="cb">
+                    <li class="pull-left">
+                                                <a class="e-minus" href="javascript:;" title="Не се съгласявам с коментара">1</a>
+                        <a class="e-plus" href="javascript:;" title="Съгласявам се с коментара">0</a>
+                                                                        <a class="e-report" href="javascript:;" title="Коментарът е обиден или неуместен">Коментарът е обиден или неуместен</a>
+                                            </li>
+                    <li class="pull-right">
+                                            </li>
+                </ul>
+                            </div>
+        </div>
+    </div>
+</li><li id="comment-20" data-id="16143362" data-hash="MTYxNDMzNjJ4QFl6PUE," class="comment">
+    <div class="ct">
+        <div class="cl">
+            <var>20</var>
+            <span class="ca">
+                                                            <a href="https://knetwork.capital.bg/dedo_andro" target="_blank"><img alt="Профил на дедо Андро" src="https://id.capital.bg/avatars/z60_396653.jpg" /></a>
+                                                </span>
+            <h6>
+                                <a href="https://knetwork.capital.bg/dedo_andro" target="_blank">дедо Андро</a>
+                            </h6>
+                        <strong>Рейтинг: 2607</strong>
+                        <time datetime="2019-02-15T14:16">14:16, 15 фев 19</time>
+            <small class="happy">Весело</small>
+        </div>
+        <div class="cr">
+            <div class="ci">
+                <p><div class="c-reply"><blockquote>Дръж се, не се давай на "🎃" 😀! </blockquote> <small>—цитат от <a href="#comment-7">коментар <strong>7</strong></a> на <strong>Alexander97</strong></small></div><br /><br />На кого е това бе, чедо? На тиквите ли?<br />Аааааа, не, на тях - НЕ!!!<br /><br />И как ги тургате (егати думичката) тия фигурки бе?</p>
+                                <em class="cs">Пич Незнам Как Да Ти Обесна Че Несъжелявам За Недостика На Некой Уникални Изразни Сретства По Български.</em>
+                                                <ul class="cb">
+                    <li class="pull-left">
+                                                <a class="e-minus" href="javascript:;" title="Не се съгласявам с коментара">0</a>
+                        <a class="e-plus" href="javascript:;" title="Съгласявам се с коментара">1</a>
+                                                                        <a class="e-report" href="javascript:;" title="Коментарът е обиден или неуместен">Коментарът е обиден или неуместен</a>
+                                            </li>
+                    <li class="pull-right">
+                                            </li>
+                </ul>
+                            </div>
+        </div>
+    </div>
+</li><li id="comment-21" data-id="16143384" data-hash="MTYxNDMzODR4QFl6PUE," class="comment">
+    <div class="ct">
+        <div class="cl">
+            <var>21</var>
+            <span class="ca">
+                                                            <a href="https://knetwork.capital.bg/seniorbb" target="_blank"><img alt="Профил на джендър NATO generals" src="https://id.capital.bg/avatars/z60_102925.jpg" /></a>
+                                                </span>
+            <h6>
+                                <a href="https://knetwork.capital.bg/seniorbb" target="_blank">джендър NATO generals</a>
+                            </h6>
+                        <strong>Рейтинг: 1862</strong>
+                        <time datetime="2019-02-15T14:21">14:21, 15 фев 19</time>
+            <small class="happy">Весело</small>
+        </div>
+        <div class="cr">
+            <div class="ci">
+                <p>Годишната инфлация е повече от 3%, ако пазарувате от където е снимката! </p>
+                                <em class="cs">Само от 2009 - 2012-та са &quot;инвестирани&quot; 8 милиарда евро във ВЕИ тролово производство на ток</em>
+                                                <ul class="cb">
+                    <li class="pull-left">
+                                                <a class="e-minus" href="javascript:;" title="Не се съгласявам с коментара">0</a>
+                        <a class="e-plus" href="javascript:;" title="Съгласявам се с коментара">0</a>
+                                                                        <a class="e-report" href="javascript:;" title="Коментарът е обиден или неуместен">Коментарът е обиден или неуместен</a>
+                                            </li>
+                    <li class="pull-right">
+                                            </li>
+                </ul>
+                            </div>
+        </div>
+    </div>
+</li><li id="comment-22" data-id="16143388" data-hash="MTYxNDMzODh4QFl6PUE," class="comment">
+    <div class="ct">
+        <div class="cl">
+            <var>22</var>
+            <span class="ca">
+                                                            <a href="https://knetwork.capital.bg/otg46594191" target="_blank"><img alt="Профил на otg46594191" src="/images/layout/avatar-man-60.jpg" /></a>
+                                                </span>
+            <h6>
+                                <a href="https://knetwork.capital.bg/otg46594191" target="_blank">otg46594191</a>
+                            </h6>
+                        <strong>Рейтинг: 1528</strong>
+                        <time datetime="2019-02-15T14:22">14:22, 15 фев 19</time>
+            <small class="neutral">Неутрално</small>
+        </div>
+        <div class="cr">
+            <div class="ci">
+                <p>Годишната инфлация през януари е 3%<br /><br />Или казано иначе, от години икономическият растеж в България е отрицателен. ГЕРБ няма да се отидат без бой - казано в прекия, а не в преносния смисъл.</p>
+                                                <ul class="cb">
+                    <li class="pull-left">
+                                                <a class="e-minus" href="javascript:;" title="Не се съгласявам с коментара">0</a>
+                        <a class="e-plus" href="javascript:;" title="Съгласявам се с коментара">0</a>
+                                                                        <a class="e-report" href="javascript:;" title="Коментарът е обиден или неуместен">Коментарът е обиден или неуместен</a>
+                                            </li>
+                    <li class="pull-right">
+                                            </li>
+                </ul>
+                            </div>
+        </div>
+    </div>
+</li><li id="comment-23" data-id="16143398" data-hash="MTYxNDMzOTh4QFl6PUE," class="comment">
+    <div class="ct">
+        <div class="cl">
+            <var>23</var>
+            <span class="ca">
+                                                            <a href="https://knetwork.capital.bg/esi11598467" target="_blank"><img alt="Профил на esi11598467" src="/images/layout/avatar-man-60.jpg" /></a>
+                                                </span>
+            <h6>
+                                <a href="https://knetwork.capital.bg/esi11598467" target="_blank">esi11598467</a>
+                            </h6>
+                        <strong>Рейтинг: 5</strong>
+                        <time datetime="2019-02-15T14:24">14:24, 15 фев 19</time>
+            <small class="neutral">Неутрално</small>
+        </div>
+        <div class="cr">
+            <div class="ci">
+                <p>Годишната инфлация през Януари е към 2%</p>
+                                                <ul class="cb">
+                    <li class="pull-left">
+                                                <a class="e-minus" href="javascript:;" title="Не се съгласявам с коментара">0</a>
+                        <a class="e-plus" href="javascript:;" title="Съгласявам се с коментара">0</a>
+                                                                        <a class="e-report" href="javascript:;" title="Коментарът е обиден или неуместен">Коментарът е обиден или неуместен</a>
+                                            </li>
+                    <li class="pull-right">
+                                            </li>
+                </ul>
+                            </div>
+        </div>
+    </div>
+</li><li id="comment-24" data-id="16143440" data-hash="MTYxNDM0NDB4QFl6PUE," class="comment">
+    <div class="ct">
+        <div class="cl">
+            <var>24</var>
+            <span class="ca">
+                                                            <a href="https://knetwork.capital.bg/marshalov" target="_blank"><img alt="Профил на Маршалов" src="https://id.capital.bg/avatars/z60_231661.jpg" /></a>
+                                                </span>
+            <h6>
+                                <a href="https://knetwork.capital.bg/marshalov" target="_blank">Маршалов</a>
+                            </h6>
+                        <strong>Рейтинг: 3266</strong>
+                        <time datetime="2019-02-15T14:32">14:32, 15 фев 19</time>
+            <small class="neutral">Неутрално</small>
+        </div>
+        <div class="cr">
+            <div class="ci">
+                <p><div class="c-reply"><blockquote>Годишна инфлация до 3-3,5% е добра за икономиката.</blockquote> <small>—цитат от <a href="#comment-6">коментар <strong>6</strong></a> на <strong>Jumbo Jet</strong></small></div><br /><br />Само че, не е годишната 3-3.5 %. Събери инфлацията по месеци и ще получиш колко се е събрало в края на миналата година, спрямо началото. Средно 2.6%на месец*12 месеца е? </p>
+                                <em class="cs">мурзилка</em>
+                                                <ul class="cb">
+                    <li class="pull-left">
+                                                <a class="e-minus" href="javascript:;" title="Не се съгласявам с коментара">1</a>
+                        <a class="e-plus" href="javascript:;" title="Съгласявам се с коментара">0</a>
+                                                                        <a class="e-report" href="javascript:;" title="Коментарът е обиден или неуместен">Коментарът е обиден или неуместен</a>
+                                            </li>
+                    <li class="pull-right">
+                                            </li>
+                </ul>
+                            </div>
+        </div>
+    </div>
+</li><li id="comment-25" data-id="16143442" data-hash="MTYxNDM0NDJ4QFl6PUE," class="comment">
+    <div class="ct">
+        <div class="cl">
+            <var>25</var>
+            <span class="ca">
+                                                            <a href="https://knetwork.capital.bg/njr53519793" target="_blank"><img alt="Профил на bash" src="https://id.capital.bg/avatars/z60_519793.jpg" /></a>
+                                                </span>
+            <h6>
+                                <a href="https://knetwork.capital.bg/njr53519793" target="_blank">bash</a>
+                            </h6>
+                        <strong>Рейтинг: 344</strong>
+                        <time datetime="2019-02-15T14:32">14:32, 15 фев 19</time>
+            <small class="happy">Весело</small>
+        </div>
+        <div class="cr">
+            <div class="ci">
+                <p><div class="c-reply"><blockquote>Всъщност, всеки може да сметне потребителската инфлацията за себе си (собствената потребителска кошница), но за да сме точни, то е хубаво да потребява едно и също количество стоки и услуги за определен период.  Методиката на НСИ е следната (база 100): Януари 2018г. сте купували кило портокали за 1лв., а Януари 2019г. за 1.50лв., то инфлацията ви ще е (150-100)/100, или 0.5, тоест 50%. Ако вкарате 50 стоки и услуги в кошницата, то всеки продукт ще се равнява на 2% от общото и т.н. За един човек инфлацията може да е 2%, за друг 5%, а за трети 10%. За всички българи общо обаче е 3% : )</blockquote> <small>—цитат от <a href="#comment-18">коментар <strong>18</strong></a> на <strong>Момо</strong></small></div><br /><br />Ако прочетеш какво си написал, ще разбереш, че именно за всички българи не е 3$. Ти сам казваш на всеки кошницата е различна. Сиреч 3% е само кошницата на един човек, който се казва господин НСИ :) . "За всички българи" процентът би бил една огромна кошница включваща в себе си абсолютно всички стоки от индивидуалните кошнички. Разбира се това е почти невъзможно за смятане и за това приемаме лъжата, че на господин НСИ кошничката е "българската кошничка" :) Това че той трябва да си я актуализира, понеже бая му бягат цифрите от "усещането" е друга тема.</p>
+                                                <ul class="cb">
+                    <li class="pull-left">
+                                                <a class="e-minus" href="javascript:;" title="Не се съгласявам с коментара">0</a>
+                        <a class="e-plus" href="javascript:;" title="Съгласявам се с коментара">0</a>
+                                                                        <a class="e-report" href="javascript:;" title="Коментарът е обиден или неуместен">Коментарът е обиден или неуместен</a>
+                                            </li>
+                    <li class="pull-right">
+                                            </li>
+                </ul>
+                            </div>
+        </div>
+    </div>
+</li><li id="comment-26" data-id="16143454" data-hash="MTYxNDM0NTR4QFl6PUE," class="comment">
+    <div class="ct">
+        <div class="cl">
+            <var>26</var>
+            <span class="ca">
+                                                            <a href="https://knetwork.capital.bg/ohn34598678" target="_blank"><img alt="Профил на ohn34598678" src="/images/layout/avatar-man-60.jpg" /></a>
+                                                </span>
+            <h6>
+                                <a href="https://knetwork.capital.bg/ohn34598678" target="_blank">ohn34598678</a>
+                            </h6>
+                        <strong>Рейтинг: 5</strong>
+                        <time datetime="2019-02-15T14:35">14:35, 15 фев 19</time>
+            <small class="neutral">Неутрално</small>
+        </div>
+        <div class="cr">
+            <div class="ci">
+                <p><div class="c-reply"><blockquote>Годишната инфлация през януари е 3%Или казано иначе, от години икономическият растеж в България е отрицателен. ГЕРБ няма да се отидат без бой - казано в прекия, а не в преносния смисъл.</blockquote> <small>—цитат от <a href="#comment-22">коментар <strong>22</strong></a> на <strong>otg46594191</strong></small></div><br /><br />Друг път! Гoдишнaтa инфлaция цялaтa изминaлa гoдинa зa (дeĸeмвpи 2018г. cпpямo дeĸeмвpи 2017 г.) e 2,8 нa cтo. Това са рекордно ниски нива.<br /><br /></p>
+                                                <ul class="cb">
+                    <li class="pull-left">
+                                                <a class="e-minus" href="javascript:;" title="Не се съгласявам с коментара">0</a>
+                        <a class="e-plus" href="javascript:;" title="Съгласявам се с коментара">0</a>
+                                                                        <a class="e-report" href="javascript:;" title="Коментарът е обиден или неуместен">Коментарът е обиден или неуместен</a>
+                                            </li>
+                    <li class="pull-right">
+                                            </li>
+                </ul>
+                            </div>
+        </div>
+    </div>
+</li>
+    </ol>
+    <br /><br />
+    <br /><br />
+        <div class="site-block">
+            <div class="message-box-v2" id=loginBox>
+    <strong class="title">За да коментирате, е нужно да влезете в профила си или да се регистрирате.</strong>
+    <nav>
+        <a class="login" href="javascript:;" onclick="changeForm('login');">Вход &gt;</a>
+        <a class="reg" href="javascript:;" onclick="changeForm('regshort'); ga('send', { 'hitType': 'pageview', 'page': '/virtual/register/comments', 'title': 'Клик на Регистрация' });">Регистрация &gt;</a>
+    </nav>
+</div>
+    </div>
+    </div>
+
+
+                    </div>
+        <aside>
+            <div class="site-block">
+    <div class="aside-title-v2">
+        <h2>Назаем от <img src="/images/label_karieri.jpg" alt="Кариери" /></h2>
+    </div>
+    <div class="borrowed-v2">
+                <article class="secondary-article">
+            <h2><a href="http://www.karieri.bg/search/gotoadv.php?src=1&id=45259" target="_blank">Главен счетоводител 
+                                <span class="rate"><i></i><i></i><i></i><i></i><i></i></span></a>
+                            </h2>
+            <p><strong>Валидна:</strong> от 12 фев,  2019 до 12 мар,  2019</p>
+                        <p><strong>Населено място:</strong> София</p>
+                                    <p><strong>Компания:</strong> Ей енд Ди Фарма България ЕАД</p>
+                    </article>
+                <article class="secondary-article">
+            <h2><a href="http://www.karieri.bg/search/gotoadv.php?src=1&id=45258" target="_blank">Realize your potential with Huawei 
+                                <span class="rate"><i></i><i></i><i></i><i></i><i></i></span></a>
+                            </h2>
+            <p><strong>Валидна:</strong> от 12 фев,  2019 до 12 мар,  2019</p>
+                        <p><strong>Населено място:</strong> София</p>
+                                    <p><strong>Компания:</strong> Huawei Technologies Co., Ltd.</p>
+                    </article>
+                <article class="secondary-article">
+            <h2><a href="http://www.karieri.bg/search/gotoadv.php?src=1&id=45242" target="_blank">Internship Aftersales for BMW Bulgaria (m/f) 
+                                <span class="rate"><i></i><i></i><i></i><i></i><i></i></span></a>
+                            </h2>
+            <p><strong>Валидна:</strong> от 08 фев,  2019 до 22 фев,  2019</p>
+                        <p><strong>Населено място:</strong> София</p>
+                                    <p><strong>Компания:</strong> BMW Group Bulgaria</p>
+                    </article>
+                <article class="secondary-article">
+            <h2><a href="http://www.karieri.bg/search/gotoadv.php?src=1&id=44701" target="_blank">Event Coordinator 
+                                <span class="rate"><i></i><i></i><i></i><i></i><i></i></span></a>
+                            </h2>
+            <p><strong>Валидна:</strong> от 04 фев,  2019 до 18 фев,  2019</p>
+                        <p><strong>Населено място:</strong> София</p>
+                                    <p><strong>Компания:</strong> Икономедиа АД</p>
+                    </article>
+            </div>
+</div>
+
+                                    <div class="module">
+        <div class="smodule">
+                                                <div class="site-block">
+                <div class="banner-box" id="ad_3rd_300x250">
+                <div class="banner">
+                                            <!-- /149508300/dnk_business_3rd_300x250 -->
+<div id='div-gpt-ad-1486549213202-22'>
+<script type='text/javascript'>
+    googletag.display("div-gpt-ad-1486549213202-22");
+    </script>
+</div>
+
+                                    </div>
+            </div>
+            </div>
+            </div>
+    </div>
+
+                    </aside>
+    </div>
+</div>
+<div class="site-block">
+    <div class="to-top">
+        <a href="javascript:;">нагоре</a>
+    </div>
+</div>
+        <div class="site-block">
+                            <div class="banner-box" id="ad_lb_footer">
+        <div class="banner">
+                                            <!-- /149508300/dnk_business_lb_footer -->
+<div id='div-gpt-ad-1486549213202-27'>
+<script type='text/javascript'>
+    googletag.display("div-gpt-ad-1486549213202-27");
+    </script>
+</div>
+
+                    </div>
+    </div>
+    </div>
+    
+
+                </div>
+            </main>
+            
+            <footer id="footer">
+    <div class="footer-top">
+        <div class="wrapper">
+            <div class="line">
+                <h5>Дневник</h5>
+                <nav class="social">
+                    <a title="Facebook" href="https://facebook.com/#!/dnevnik" target="_blank" class="facebook" rel="nofollow">Facebook</a>
+                    <a title="Google +" href="https://plus.google.com/112051113315926295145?prsrc=3" target="_blank" class="google" rel="nofollow">Google +</a>
+                    <a title="Twitter" href="https://twitter.com/dnevnik" target="_blank" class="twitter" rel="nofollow">Twitter</a>
+                    <a title="Viber" href="https://www.viber.com/dnevnik.bg" class="viber" target="_blank" rel="nofollow">Viber</a>
+                    <a title="Instagram" href="https://www.instagram.com/dnevnik.bg" class="instagram" target="_blank" rel="nofollow">Instagram</a>
+                </nav>
+            </div>
+            <div class="navigation">
+                <div class="col">
+                    <h6><a title="Новини" href="/allnews/today/">Новини</a></h6>
+                    <nav>
+                        <a title="Политика" href="/politika/">Политика</a>
+                        <a title="България" href="/bulgaria/">България</a>
+                        <a title="Свят" href="/sviat/">Свят</a>
+                        <a title="Спорт" href="/sport/">Спорт</a>
+                        <a title="Бизнес" href="/biznes/">Бизнес</a>
+                        <a title="Технологии" href="/tehnologii/">Технологии</a>
+                        <a title="Култура" href="/kultura/">Култура</a>
+                        <a title="Развлечение" href="/razvlechenie/">Развлечение</a>
+                        <a title="Градска среда" href="/gradska_sreda/">Градска среда</a>
+                    </nav>
+                    <h6><a title="Докладване на проблем" href="javascript:;" data-form="true" data-form-type="send" data-form-variant="message">Докладване на проблем</a></h6>
+                    <h6><a title="Екип" href="https://www.dnevnik.bg/pomosht/ekip/2017/08/04/3019214_kontakti/">Екип</a></h6>
+                    <h6><a title="Помощ" href="https://www.dnevnik.bg/pomosht/2017/03/14/2934939_chesto_zadavani_vuprosi_za_dnevnik/">Помощ</a></h6>
+                    <h6><a title="Нов Дневник" href="/nov/">Нов Дневник</a></h6>
+                                    </div>
+                <div class="col">
+                    <h6><a title="Анализи" href="/analizi/">Анализи</a></h6>
+                    <nav>
+                        <a title="Редакционни коментари" href="/analizi/redakcionni_komentari/">Редакционни коментари</a>
+                        <a title="Авторите на Дневник" href="/analizi/avtorite_na_dnevnik/">Авторите на Дневник</a>
+                        <a title="Цитат на деня" href="/citat_na_deniia/">Цитат на деня</a>
+                        <a title="Интервю" href="/intervju/">Интервю</a>
+                        <a title="Дебат" href="/debat/">Дебат</a>
+                    </nav>
+                    
+                    <h6><a title="Бизнес" href="/biznes/">Бизнес</a></h6>
+                    <nav>
+                        <a title="Компании" href="/biznes/companii/">Компании</a>
+                        <a title="Финанси" href="/biznes/finansi/">Финанси</a>
+                        <a title="Онлайн търговия" href="/olxindex">Онлайн търговия</a>
+                        <a title="Имоти" href="/biznes/imoti/">Имоти</a>
+                        <a title="Лични финанси" href="/biznes/lichni_finansi/">Лични финанси</a>
+                        <a title="Потребители" href="/biznes/potrebiteli/">Потребители</a>
+                        <a title="Туризъм" href="/biznes/turizam/">Туризъм</a>
+                        <a title="Осигуряване" href="/biznes/osiguriavane/">Осигуряване</a>
+
+                    </nav>
+                </div>
+                <div class="col">
+                    <h6><a title="Европа" href="/evropa/">Европа</a></h6>
+                    <nav>
+                        <a title="Новини от ЕС" href="/evropa/novini_ot_es/">Новини от ЕС</a>
+                        <a title="Земеделие" href="/evropa/zemedelie/">Земеделие</a>
+                    </nav>
+                    
+                    <h6><a title="Спорт" href="/sport/">Спорт</a></h6>
+                    <nav>
+                        <a title="Футбол" href="/sport/futbol/">Футбол</a>
+                        <a title="Тенис" href="/sport/tenis/">Тенис</a>
+                        <a title="Волейбол" href="/sport/voleibol/">Волейбол</a>
+                        <a title="Екстремни" href="/sport/extreme/">Екстремни</a>
+                        <a title="За любители" href="/sport/amateurs/">За любители</a>
+                        <a title="Формула 1" href="/sport/formula_1/">Формула 1</a>
+                    </nav>
+                </div>
+                <div class="col">
+                    <h6><a title="Зелен" href="/zelen/">Зелен</a></h6>
+                    <nav>
+                        <a title="Въздух" href="/zelen/vazduh/">Въздух</a>
+                        <a title="Отпадъци" href="/zelen/otpaduci_i_reciklirane/">Отпадъци</a>
+                        <a title="Биоразнообразие" href="/zelen/bioraznoobrazie/">Биоразнообразие</a>
+                        <a title="Климат" href="/zelen/klimat/">Климат</a>
+                        <a title="Ресурси" href="/zelen/resursi/">Ресурси</a>
+                        <a title="Стил на живот" href="/zelen/stil_na_jivot/">Стил на живот</a>
+                    </nav>
+                    
+                    <h6><a title="Здраве" href="/zdrave/">Здраве</a></h6>
+                    <nav>
+                        <a title="Здравословен живот" href="/zdrave/zdravosloven_jivot/">Здравословен живот</a>
+                        <a title="Ново в медицината" href="/zdrave/novo_v_medicinata/">Ново в медицината</a>
+                        <a title="Прегледи и кампании" href="/zdrave/pregledi_i_kampanii/">Прегледи и кампании</a>
+                    </nav>
+                    
+                    <h6><a title="Детски" href="/detski_dnevnik/">Детски</a></h6>
+                    <nav>
+                        <a title="Образование" href="/detski_dnevnik/obrazovanie/">Образование</a>
+                        <a title="Детски книги" href="/detski_dnevnik/detski_knigi/">Детски книги</a>
+                        <a title="Свободно време" href="/detski_dnevnik/svobodno_vreme/">Свободно време</a>
+                        <a title="Здраве" href="/detski_dnevnik/detsko_zdrave/">Здраве</a>
+                        <a title="С децата на път" href="/detski_dnevnik/s_decata_na_put/">С децата на път</a>
+                    </nav>
+                </div>
+                <div class="col">
+                    <h6><a title="На път" href="/na_put/">На път</a></h6>
+                    <nav>
+                        <a title="Как се прави" href="/na_put/kak_se_pravi/">Как се прави</a>
+                        <a title="От първа ръка" href="/na_put/ot_purva_ruka/">От първа ръка</a>
+                    </nav>
+                    
+                    <h6><a title="Скорост" href="/skorost/">Скорост</a></h6>
+                    <nav>
+                        <a title="Автопремиера" href="/skorost/avtopremiera/">Автопремиера</a>
+                        <a title="Автомобилна индустрия" href="/skorost/avtomobilna_industriia/">Автомобилна индустрия</a>
+                        <a title="Коли в кадър" href="/skorost/koli_v_kadur/">Коли в кадър</a>
+                    </nav>
+                    
+                    <h6><a title="След 5" href="/sled5/">След 5</a></h6>
+                    <nav>
+                        <a title="ТВ програма" href="/sled5/tv/">ТВ програма</a>
+                        <a title="Театър" href="/sled5/teatralni_postanovki/">Театър</a>
+                        <a title="Изложби" href="/sled5/izlojbi/">Изложби</a>
+                        <a title="Филми" href="/sled5/filmi/">Филми</a>
+                        <a title="Концерти" href="/sled5/koncerti/">Концерти</a>
+                                            </nav>
+                    <h6><a title="Блогосфера" href="/blogosfera/">Блогосфера</a></h6>
+                </div>
+                <div class="col">
+                    <h6><a title="От Вас" href="/ot_vas/">От Вас</a></h6>
+                    <nav>
+                        <a title="Новини от вас" href="/ot_vas/novini_ot_vas/">Новини от вас</a>
+                        <a title="Читателски галерии" href="/ot_vas/galeriiotvas/">Читателски галерии</a>
+                        <a title="Читателски Дневник" href="/ot_vas/chitatelski_dnevnik/">Читателски Дневник</a>
+                        <a title="Комикс" href="/comix/">Комикс</a>
+                        <a title="Стена на славата" href="/ot_vas/#walloffame">Стена на славата</a>
+                        <a href="javascript:;" data-form="true" data-form-type="send" data-form-variant="news" title="Изпращане на новина">Изпращане на новина</a>
+                    </nav>
+                    
+                    <h6><a title="Галерии" href="/photos/">Галерии</a></h6>
+                    <nav>
+                        <a title="Голямата снимка" href="/bigpicture/">Голямата снимка</a>
+                        <a title="Снимка на деня" href="/photos/snimka_na_denia/">Снимка на деня</a>
+                    </nav>
+                    
+                    <h6><a title="Видео" href="/video/">Видео</a></h6>
+                    <nav>
+                        <a title="С две думи" href="/video/s_dve_dumi/">С две думи</a>
+                        <a title="Видео 5" href="/video/video5/">Видео 5</a>
+                    </nav>
+                                        <h6><a title="Морски" href="/morski/">Морски</a></h6>
+                    
+                    <h6><a title="PR Сфера" href="/pr_sfera/">PR Сфера</a></h6>
+                                    </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div class="wrapper">
+            <div class="pull-left">
+                <p><strong>&copy; 2001 &ndash; 2019 Икономедиа АД.</strong> Някои снимки &copy; 2019 Associated Press и Reuters. Всички права запазени.</p>
+                <p>
+                    <a href="https://www.economedia.bg/terms.php" target="_blank">Общи условия за ползване</a> |
+                    <a href="https://www.economedia.bg/cookies" target="_blank">Политика за бисквитките</a> |
+                    <a href="https://www.economedia.bg/privacy" target="_blank">Декларация за поверителност</a>
+                </p>
+                <p>Уеб разработка на <a href="https://www.economedia.bg" target="_blank">Икономедиа</a> + дизайн на <a href="http://studiox.bg" target="_blank" title="Studio X Creative / Web Design / Development">Studio X</a></p>
+                <p>Действителни собственици на настоящото издание са Иво Георгиев Прокопиев и Теодор Иванов Захов.</p>
+                <p>Дневник спазва <a href="https://www.economedia.bg/news.php?guid=802558" target="_blank" title="Етичния кодекс на българските медии">етичния кодекс на българските медии</a>.</p>
+                <p><a target="_blank" href="https://mediakit.economedia.bg" title="Реклама">Реклама</a></p>
+                <p><span class="clever-link" data-link="/biznes/2019/02/15/3390842_godishnata_inflaciia_prez_ianuari_e_3/?ref=home_mainStory?device_view=mobile" data-target="_self" title="Към мобилната версия">Към мобилната версия.</span></p>
+                <div class="afbDisclaimer">
+                    <img src="/images/amb.jpg" alt="America For Bulgaria Foundation logo">
+                    <div>Фондация "Америка за България" финансира проект на "Икономедиа". Мненията и твърденията, изразени в изданията на "Икономедиа", са резултат от журналистическа дейност и отразяват редакционна позиция и не непременно възгледите на фондацията или на нейните директори, служители или представители. Изданията на "Икономедиа" спазват Етичния кодекс на българските журналисти.</div>
+                </div>
+            </div>
+            <div class="pull-right">
+                <p>
+                    <strong class="el-show">Бизнес:</strong>
+                    <a title="Капитал" href="https://www.capital.bg/" target="_blank">Капитал</a>
+                    <a title="Кариери" href="https://www.karieri.bg/" target="_blank">Кариери</a>
+                    <a title="Бизнес" href="/biznes/" target="_blank">Бизнес</a>
+                    <a title="Регал" href="https://www.regal.bg/" target="_blank">Регал</a>
+                    <a title="Одит" href="https://www.odit.info/" target="_blank">Одит</a>
+                    <a title="Foton.bg" href="http://www.foton.bg/" target="_blank">Foton.bg</a>
+                </p>						
+                <p>
+                    <strong>Новини:</strong>
+                    <a title="Дневник" href="https://www.dnevnik.bg/" target="_blank">Дневник</a>
+                    <a title="Европа" href="/evropa/" target="_blank">Европа</a>
+                </p>						
+                <p>
+                    <strong>IT:</strong>
+                    <a title="Computerworld" href="http://www.computerworld.bg/" target="_blank">Computerworld</a>
+                    <a title="PC World" href="http://pcworld.bg/" target="_blank">PC World</a>
+                    <a title="CIO" href="http://www.cio.bg/" target="_blank">CIO</a>
+                    <a title="Networkworld" href="http://www.networkworld.bg/" target="_blank">Networkworld</a>
+                </p>
+                <p>
+                    <strong>Развлечение:</strong>
+                    <a title="Бакхус" href="https://www.bacchus.bg/" target="_blank">Бакхус</a>
+                    <a title="LIGHT" href="https://www.capital.bg/light/" target="_blank">LIGHT</a>
+                </p>
+                <p>
+                    <strong>На английски:</strong>
+                    <a title="KQuarterly" href="https://www.capital.bg/kquarterly/" target="_blank">KQuarterly</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+<div class="cookies-banner-wrapper" id="cookies-banner">
+    <div class="cookies-banner">
+        <span>С използването на сайта вие приемате, че използваме „бисквитки" за подобряване на преживяването, персонализиране на съдържанието и рекламите, и анализиране на трафика. Вижте нашата <a href="https://www.economedia.bg/cookies" target="_blank">политика за бисквитките</a> и <a href="https://www.economedia.bg/privacy" target="_blank">декларацията за поверителност</a>.</span>
+        <a href="#" class="cookies-banner-button">ОK</a>
+    </div>
+</div>            <!--[if (gte IE 9) | (!IE)]><!-->
+            <script src="/js/video.js"></script>
+            <!--<![endif]-->
+
+            <!--[if lt IE 9]>
+                <script src="//vjs.zencdn.net/ie8/1.1.1/videojs-ie8.min.js"></script>
+                <script src="//vjs.zencdn.net/5.5.3/video.min.js"></script>
+            <![endif]-->
+
+			<!-- JavaScript Files -->
+															
+												
+				<script src="/minj/b=js&amp;f=moment.min.js,plugins.js,jquery.mCustomScrollbar.js,prettyphoto.js,jquery.disablescroll.js,jquery.modal.js,slider.js?v=1530013343"></script>
+				<script src="/minj/b=js&amp;f=default.src.js,forms.js,custom.js,poll.js,sticky.js?v=1546957923"></script>
+			
+			<script src="//platform.twitter.com/widgets.js" defer></script>
+			<!--// JavaScript Files -->
+            
+                        </div>
+	                    <!-- (C)2000-2014 Gemius SA - gemiusAudience / Dnevnik.bg / Business -->
+<script type="text/javascript">
+var pp_gemius_identifier = 'bO3rQJPrbHwopRZWNhI_O6PeHUy6zjrmFXQWDC9CmkP.F7';
+function gemius_pending(i) { window[i] = window[i] || function() {var x = window[i+'_pdata'] = window[i+'_pdata'] || []; x[x.length]=arguments;};};
+gemius_pending('gemius_hit'); gemius_pending('gemius_event'); gemius_pending('pp_gemius_hit'); gemius_pending('pp_gemius_event');
+(function(d,t) {try {var gt=d.createElement(t),s=d.getElementsByTagName(t)[0],l='http'+((location.protocol=='https:')?'s':''); gt.setAttribute('async','async');
+gt.setAttribute('defer','defer'); gt.src=l+'://gabg.hit.gemius.pl/xgemius.js'; s.parentNode.insertBefore(gt,s);} catch (e) {}})(document,'script');
+</script>
+
+			
+																						                <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+</script>
+<script>
+	
+									
+ga('create', 'UA-317994-11', {  'cookieDomain': 'dnevnik.bg', 'siteSpeedSampleRate': 20, 'allowLinker': true });
+ga('set', 'anonymizeIp', true);
+	ga('set', 'dimension5', 'NotLoggedIn');
+	ga('set', 'dimension7', '2019-02-15');
+	ga('set', 'dimension8', 'Редакция');
+	ga('set', 'dimension9', 'Бизнес(1661)');
+ga('send', 'pageview', { 'metric1': 1 });
+
+
+</script>
+            
+            			    
+	    <div id="commentLoginPrompt" class="" style="display: none;">
+	    	<div class="pp_content_container">
+	    		<a class="pp_close" href="#" rel="modal:close">Close</a>
+	    		<div class="modal-body">
+	    			<div class="modal-content text-center">
+	    				<h3>Достъп за логнати потребители</h3>
+	    				<p>За да пишете, оценявате или докладвате коментари, моля логнете се в профила си.</p>
+	    				<p><a href="javascript:;" class="button" onclick="changeForm('login');">Вход</a> <a href="javascript:;" class="button" onclick="changeForm('regshort');">Регистрация</a></p>
+	    			</div>
+	    		</div>
+	    	</div>
+	    </div>
+
+	    <div id="comicLoginPrompt" class="" style="display: none;">
+	    	<div class="pp_content_container">
+	    		<a class="pp_close" href="#" rel="modal:close">Close</a>
+	    		<div class="modal-body">
+	    			<div class="modal-content text-center">
+	    				<h3>Достъп за логнати потребители</h3>
+	    				<p>За да създадете комикс, моля логнете се в профила си.</p>
+	    				<p><a href="javascript:;" class="button" onclick="changeForm('login');">Вход</a> <a href="javascript:;" class="button" onclick="changeForm('regshort');">Регистрация</a></p>
+	    			</div>
+	    		</div>
+	    	</div>
+	    </div>
+
+	    <div id="loginModal" class="" style="display: none;">
+	    	<div class="pp_content_container">
+	    		<a class="pp_close" href="#" rel="modal:close">Close</a>
+	    		<div class="modal-body">
+	    			<div class="modal-content"></div>
+	    		</div>
+	    	</div>
+	    </div>
+	</body>
+</html>

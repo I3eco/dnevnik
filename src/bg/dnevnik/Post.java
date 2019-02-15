@@ -32,7 +32,12 @@ public abstract class Post {
 		return content;
 	}
 
-	public void setContent(String content) {
+	public void setContent(String content){
+		try {
+			Validation.throwIfNullOrEmpty(content);
+		} catch (IncorrectInputException e) {
+			System.out.println("Wrong input for content");
+		}
 		this.content = content;
 	}
 	

@@ -6,6 +6,8 @@ import java.util.LinkedList;
 
 import bg.dnevnik.Article.Comment;
 import bg.dnevnik.exceptions.IncorrectInputException;
+import bg.dnevnik.exceptions.NoSuchArticleException;
+import bg.dnevnik.utility.Logger;
 import bg.dnevnik.utility.Validation;
 
 public class User {
@@ -19,10 +21,10 @@ public class User {
 		}
 		
 		public void writeArticle(String title, String category, String content, Collection<String> keywords) {
+
 			Article article;
 			try {
-				article = new Article(this, title, content, keywords);
-				Site.getInstance().addArticle(article, category);
+				article = new Article(this, category, title, content, keywords);
 				this.writtenArticles.add(article);
 			} 
 			catch (IncorrectInputException e) {
@@ -30,6 +32,20 @@ public class User {
 			}
 			
 		}
+		
+		public void editArticle(Article article, String content) {
+			try {
+				article = Site.getInstance().getArticleByID(article.getID());
+			} catch (NoSuchArticleException e) {
+				System.out.println("No such article");
+			}
+			article.setContent(content);
+		}
+		
+			@Override
+		public String getTypeOfUser() {
+				return "Author";
+			}
 	}
 	
 	public static class Admin extends Author {
@@ -47,6 +63,24 @@ public class User {
 			Site site = Site.getInstance();
 			Admin admin = new Admin(user.name, user.email, user.password);			
 			site.addUser(admin);
+		}
+		
+		public void editArticle(Article article, String content) {
+			try {
+				article = Site.getInstance().getArticleByID(article.getID());
+			} catch (NoSuchArticleException e) {
+				System.out.println("No such article");
+			}
+			article.setContent(content);
+		}
+		
+		public void deleteArticle() {
+			
+		}
+		
+		@Override
+		public String getTypeOfUser() {
+			return "Admin";
 		}
 		
 	}
@@ -73,7 +107,7 @@ public class User {
 		this.name = name.trim();
 		this.password = password.trim();
 		this.commentHistory = new LinkedList<Comment>();
-		
+		Logger.pritnToConsole(this.getTypeOfUser() + " with name: " + this.getName() + " and email: " + this.getEmail() + "was created.");
 	}
 	
 	public static void createUser(String username, String email, String password, String rights) {
@@ -130,6 +164,10 @@ public class User {
 		return false;
 	}
 	
+	public String getTypeOfUser() {
+		return "User";
+	}
+	
 	@Override
 	public int hashCode() {
 		return this.email.hashCode();
@@ -144,8 +182,6 @@ public class User {
 		User other = (User) obj;
 		return this.email.equals(other.email);
 	}
-	
-	
 
 	@Override
 	public String toString() {
@@ -154,6 +190,10 @@ public class User {
 
 	public String getName() {
 		return this.name;
+	}
+
+	public String getEmail() {
+		return email;
 	}
 
 	public boolean isOnline() {
