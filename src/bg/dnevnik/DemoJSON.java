@@ -54,19 +54,20 @@ public class DemoJSON {
 			
 		}
 		
-		File fromJson = new File ("jsonFile.txt");
+		File fromJson = new File ("." + File.separator + "ExampleContent" + File.separator + "jsonFile.lajna");
 		
 		if(fromJson.length() > 0 && fromJson.canRead()) {
 			
 				try(Scanner readJson = new Scanner(fromJson)){
 					StringBuilder json = new StringBuilder();
 					while(readJson.hasNext()) {
-//						json.append(readJson.nextLine());
+//						System.out.println(readJson.next());
+						json.append(readJson.next() + "\n");
 //						json.append("\n");
-						User user = gson.fromJson(readJson.nextLine(), User.class);
-						System.out.println(user);
+//						User user = gson.fromJson(readJson.nextLine(), User.class);
+//						System.out.println(user);
 					}
-//					System.out.println(json.toString());
+					System.out.println(json.toString());
 					
 				} catch (FileNotFoundException e) {
 					e.printStackTrace();

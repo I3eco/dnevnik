@@ -18,7 +18,7 @@ public class Main {
 
 	public static void main(String[] args) {
 
-		// new ConsoleCommandsView().start();
+//		 new ConsoleCommandsView().start();
 
 		User.createUser("Toshko", "toshanov@gmail.com", "tosharata69", "author");
 		Author a = null;
