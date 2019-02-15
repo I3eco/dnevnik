@@ -173,6 +173,7 @@ public class ConsoleCommandsView {
 	}
 
 	private void signInCommand() {
+		signOutCommand();
 		System.out.print("Email: ");
 		String email = scanner.nextLine();
 		System.out.print("Password: ");
@@ -220,30 +221,53 @@ public class ConsoleCommandsView {
 	}
 
 	private void showCommands() {
-		/*
-		 * commands: 'exit' 'sign up' 'sign in' 'sign out'
-		 * 
-		 * 'upvote comment' requires comment id 'downvote comment' requires comment id
-		 * 'downvote article' 'upvote article' 'write comment' 'write article'
-		 * 
-		 * 'show categories' 'show top categories' shows the five categories with most
-		 * articles 'show category' 'show article' 'show comments' requires the last
-		 * command to have been 'show article', and shows them ordered by date, from old
-		 * to new
-		 * 
-		 * These don't require anything, because they use all articles 'show from today'
-		 * 'sort by new' 'sort by views' 'sort by comments' 'sort by votes'
-		 */
+	//commands: 
+	//'sign up' 
+	//'sign in' 
+	//'sign out'
+	//
+	//'show categories'
+	//'show top categories'
+	//'show category'
+	//
+	//'write article'
+	//'show article'
+	//'upvote/downvote article'
+	//
+	//'write comment'
+	//'show comments'
+	//'upvote/downvote comment'
+	//
+	//'sort by new' 
+	//'sort by views' 
+	//'sort by comments' 
+	//'sort by votes'
+	//
+	//'exit' 
 
-		String commandInfo = "'exit'\r\n" + "'sign up' \r\n" + "'sign in' \r\n" + "'sign out'\r\n" + "\r\n"
-				+ "'upvote comment' requires comment id\r\n" + "'downvote comment' requires comment id\r\n"
-				+ "'downvote article'\r\n" + "'upvote article' \r\n" + "'write comment'\r\n" + "'write article'\r\n"
-				+ "\r\n" + "'show categories'\r\n"
-				+ "'show top categories' shows the five categories with most articles\r\n" + "'show category'\r\n"
-				+ "'show article'\r\n" + "'show comments' requires the last command to have been 'show article', \r\n"
-				+ "and shows them ordered by date, from old to new\r\n" + "\r\n"
-				+ "These don't require anything, because they use all articles\r\n" + "'show from today' \r\n"
-				+ "'sort by new'\r\n" + "'sort by views'\r\n" + "'sort by comments'\r\n" + "'sort by votes'";
+		String commandInfo = "commands: \r\n" + 
+				"'sign up' \r\n" + 
+				"'sign in' \r\n" + 
+				"'sign out'\r\n" + 
+				"\r\n" + 
+				"'show categories'\r\n" + 
+				"'show top categories'\r\n" + 
+				"'show category'\r\n" + 
+				"\r\n" + 
+				"'write article'\r\n" + 
+				"'show article'\r\n" + 
+				"'upvote/downvote article'\r\n" + 
+				"\r\n" + 
+				"'write comment'\r\n" + 
+				"'show comments'\r\n" + 
+				"'upvote/downvote comment'\r\n" + 
+				"\r\n" + 
+				"'sort by new' \r\n" + 
+				"'sort by views' \r\n" + 
+				"'sort by comments' \r\n" + 
+				"'sort by votes'\r\n" + 
+				"\r\n" + 
+				"'exit' ";
 		System.out.println(commandInfo);
 	}
 	

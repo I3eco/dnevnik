@@ -107,7 +107,7 @@ public class User {
 		this.name = name.trim();
 		this.password = password.trim();
 		this.commentHistory = new LinkedList<Comment>();
-		Logger.pritnToConsole(this.getTypeOfUser() + " with name: " + this.getName() + " and email: " + this.getEmail() + "was created.");
+		Logger.printToConsole(this.getTypeOfUser() + " with name: " + this.getName() + " and email: " + this.getEmail() + "was created.");
 	}
 	
 	public static void createUser(String username, String email, String password, String rights) {
@@ -125,6 +125,7 @@ public class User {
 			Site.getInstance().addUser(user);
 		} 
 		catch (IncorrectInputException e) {
+			System.err.println(e.getMessage());
 			System.err.println("Could not sign up!");
 		}
 	}
@@ -152,13 +153,6 @@ public class User {
 			return false;
 		}
 		if (this.email.equals(email.trim()) && this.password.equals(password.trim())) {
-			return true;
-		}
-		return false;
-	}
-	
-	public boolean validatePassword (String password) {
-		if (this.password.equals(password)) {
 			return true;
 		}
 		return false;
