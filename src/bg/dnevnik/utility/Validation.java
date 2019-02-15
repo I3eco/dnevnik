@@ -1,5 +1,7 @@
 package bg.dnevnik.utility;
 
+import java.util.Scanner;
+
 import bg.dnevnik.exceptions.IncorrectInputException;
 
 public class Validation {
@@ -34,4 +36,19 @@ public class Validation {
 			}
 		}
 	}
+	
+	public static int readInt() throws IncorrectInputException {
+		Scanner s = new Scanner(System.in);
+		
+		try {
+			int num = Integer.parseInt(s.nextLine().trim());
+			return num;
+		} 
+		catch (NumberFormatException e) {
+			throw new IncorrectInputException();
+		}
+		
+		
+	}
+	
 }
