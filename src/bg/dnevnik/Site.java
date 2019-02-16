@@ -5,7 +5,6 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Comparator;
-import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -23,17 +22,14 @@ import bg.dnevnik.utility.UserComparatorByEmail;
 public class Site {
 	private static Site instance;
 	private String name;
-	private Collection<User> users;
+	private Set<User> users;
 	private Map<String, Set<Article>> articlesByCategory;
 	
-	static {
-		JsonDataHolder.uploadUsersInSite();
-	}
-
 	private Site() {
 		this.name = "Dnevnik";
 		this.users = new TreeSet<User>(new UserComparatorByEmail());
 		this.articlesByCategory = new ConcurrentHashMap<String, Set<Article>>();
+		JsonDataHolder.uploadUsersInSite(this.users);
 	}
 	
 	public static Site getInstance() {
@@ -217,9 +213,9 @@ public class Site {
 		return false;
 	}
 	
-	public void uploadUsers(Set<User> users) {
-		this.users.addAll(users);
-	}
+//	public void uploadUsers(Set<User> users) {
+//		this.users.addAll(users);
+//	}
 	
 	//temp method to see users
 	public void showUsersInSite() {

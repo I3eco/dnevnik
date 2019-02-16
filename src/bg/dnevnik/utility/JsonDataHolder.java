@@ -11,11 +11,9 @@ import java.util.Scanner;
 import java.util.Set;
 
 import com.google.gson.Gson;
-import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
-import com.google.gson.JsonParser;
+import com.google.gson.JsonArray;
 
-import bg.dnevnik.Site;
 import bg.dnevnik.User;
 
 public class JsonDataHolder {
@@ -25,7 +23,6 @@ public class JsonDataHolder {
 	private static Set<User> users = new HashSet<User>();
 	private static Set<User> authors = new HashSet<User>();
 	private static Set<User> admins = new HashSet<User>();
-	private static Set<User> usersToAddInSite = new HashSet<User>();
 
 	public static synchronized void saveUserToJson(User user) throws IOException {
 		File usersDir = new File ("." + File.separator + DATA_FOLDER_NAME + File.separator + USERS_DATA_FOLDER_NAME);
@@ -65,33 +62,42 @@ public class JsonDataHolder {
 	
 	public static void uploadFile (File file, Set<User> users) throws FileNotFoundException {
 		Gson gson = new Gson();
+		
 		StringBuilder jsonString = new StringBuilder();
 		try(Scanner reader = new Scanner(file)){
 			while(reader.hasNext()) {
 				jsonString.append(reader.nextLine());
 			}
 		}
-		JsonParser parser = new JsonParser();
-		JsonElement element = parser.parse(jsonString.toString());
 		
-		//TODO the problem is here!!!
-		JsonArray jsonArray = element.getAsJsonArray();
-		System.out.println(jsonArray);
-		
-		users = gson.fromJson(jsonArray, new HashSet<User>(){}.getClass());
+		JsonElement element = gson.fromJson(jsonString.toString(), JsonElement.class);
+		JsonArray jsonArray = null;
+
+		if(element != null) {
+			jsonArray = element.getAsJsonArray();
+		}
+		if(jsonArray != null) {
+			for (int index = 0; index < jsonArray.size(); index++) {
+				User user = gson.fromJson(jsonArray.get(index), User.class);
+				if(users != null) {
+					users.add(user);
+				}
+
+			}
+		}
 	}
 	
-	public static synchronized void uploadUsersInSite() {
+	public static synchronized void uploadUsersInSite(Set<User>usersInSite) {
 		File usersDir = new File("." + File.separator + DATA_FOLDER_NAME + File.separator + USERS_DATA_FOLDER_NAME);
 		usersDir.mkdirs();
 		File usersFile = new File(usersDir, "Users.data");
 		File authorsFile = new File(usersDir, "Authors.data");
-		File adminsDir = new File(usersDir, "Admins.data");
+		File adminsFile = new File(usersDir, "Admins.data");
 		
 		try {
 			usersFile.createNewFile();
 			authorsFile.createNewFile();
-			adminsDir.createNewFile();
+			adminsFile.createNewFile();
 		} catch (IOException e1) {
 			e1.printStackTrace();
 		}
@@ -99,13 +105,10 @@ public class JsonDataHolder {
 		try {
 			JsonDataHolder.uploadFile(usersFile, users);
 			JsonDataHolder.uploadFile(authorsFile, authors);
-			JsonDataHolder.uploadFile(adminsDir, admins);
-			JsonDataHolder.uploadFile(usersFile, usersToAddInSite);
-			JsonDataHolder.uploadFile(authorsFile, usersToAddInSite);
-			JsonDataHolder.uploadFile(adminsDir, usersToAddInSite);			
-			Site site = Site.getInstance();
-			site.uploadUsers(usersToAddInSite);
-			site.showUsersInSite();
+			JsonDataHolder.uploadFile(adminsFile, admins);
+			JsonDataHolder.uploadFile(usersFile, usersInSite);
+			JsonDataHolder.uploadFile(authorsFile, usersInSite);
+			JsonDataHolder.uploadFile(adminsFile, usersInSite);			
 			
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
