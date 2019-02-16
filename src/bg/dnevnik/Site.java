@@ -23,17 +23,14 @@ import bg.dnevnik.utility.UserComparatorByEmail;
 public class Site {
 	private static Site instance;
 	private String name;
-	private Collection<User> users;
+	private Set<User> users;
 	private Map<String, Collection<Article>> articlesByCategory;
-	
-	{
-		JsonDataHolder.uploadUsersInSite();
-	}
 
 	private Site() {
 		this.name = "Dnevnik";
 		this.users = new TreeSet<User>(new UserComparatorByEmail());
 		this.articlesByCategory = new ConcurrentHashMap<String, Collection<Article>>();
+		JsonDataHolder.uploadUsersInSite(this.users);
 	}
 	
 	public static Site getInstance() {
@@ -220,9 +217,9 @@ public class Site {
 		return false;
 	}
 	
-	public void uploadUsers(Set<User> users) {
-		this.users.addAll(users);
-	}
+//	public void uploadUsers(Set<User> users) {
+//		this.users.addAll(users);
+//	}
 	
 	//temp method to see users
 	public void showUsersInSite() {
