@@ -39,7 +39,7 @@ public class User {
 				e.printStackTrace();
 			}
 		}
-		
+
 		public void editArticle(Article article, String content) {
 			try {
 				article = Site.getInstance().getArticleByID(article.getID());

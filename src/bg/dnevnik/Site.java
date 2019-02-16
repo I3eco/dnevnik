@@ -16,6 +16,7 @@ import bg.dnevnik.User.Admin;
 import bg.dnevnik.User.Author;
 import bg.dnevnik.exceptions.NoSuchArticleException;
 import bg.dnevnik.exceptions.UserDoesNotExistException;
+import bg.dnevnik.utility.ArticleComparatorByID;
 import bg.dnevnik.utility.JsonDataHolder;
 import bg.dnevnik.utility.UserComparatorByEmail;
 
@@ -66,7 +67,7 @@ public class Site {
 		category = category.toUpperCase();
 		article.setCategory(category);
 		if (!this.articlesByCategory.containsKey(category)) {
-			this.articlesByCategory.put(category, new TreeSet<Article>());
+			this.articlesByCategory.put(category, new TreeSet<Article>(new ArticleComparatorByID()));
 		}
 		this.articlesByCategory.get(category).add(article);
 	}
