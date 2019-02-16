@@ -1,11 +1,11 @@
 package bg.dnevnik;
 
 import java.util.Arrays;
+import java.util.logging.ConsoleHandler;
 
 import bg.dnevnik.User.Author;
 import bg.dnevnik.exceptions.NoSuchArticleException;
 import bg.dnevnik.exceptions.UserDoesNotExistException;
-import bg.dnevnik.view.ConsoleCommandsView;
 
 public class Main {
 
@@ -41,6 +41,6 @@ public class Main {
 //
 //		a.writeComment(bestArticle, "wow, super qkoto", Article.CommentMood.ANGRY);
 		Site.getInstance().showUsersInSite();
-		new ConsoleCommandsView().start();
+
 	}
 }

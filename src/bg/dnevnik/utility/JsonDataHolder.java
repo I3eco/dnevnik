@@ -78,6 +78,7 @@ public class JsonDataHolder {
 		if(element != null) {
 			jsonArray = element.getAsJsonArray();
 		}
+		
 		if(jsonArray != null) {
 			String fileName = file.getName();
 			switch (fileName) {
