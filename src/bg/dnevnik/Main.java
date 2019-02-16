@@ -1,6 +1,7 @@
 package bg.dnevnik;
 
 import java.util.Arrays;
+import java.util.logging.ConsoleHandler;
 
 import bg.dnevnik.User.Author;
 import bg.dnevnik.exceptions.NoSuchArticleException;
@@ -40,6 +41,7 @@ public class Main {
 //		}
 //
 //		a.writeComment(bestArticle, "wow, super qkoto", Article.CommentMood.ANGRY);
+		Site.getInstance().createAdmin("veso", "veso@gmail.com", "nekazvam");
 		Site.getInstance().showUsersInSite();
 		new ConsoleCommandsView().start();
 	}

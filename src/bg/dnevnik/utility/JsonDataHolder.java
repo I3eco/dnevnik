@@ -32,26 +32,37 @@ public class JsonDataHolder {
 		File usersFile = new File(usersDir, user.getTypeOfUser() + "s.data");
 		usersFile.createNewFile();
 		
-		Gson userToJson = new Gson();
+		Gson gson = new Gson();
 		
 		String typeOfUser = user.getTypeOfUser();
+		System.out.println(typeOfUser);
 		String tempUserJson = "";
 		
 		switch (typeOfUser) {
 		case "User":
 			users.add(user);
-			tempUserJson = userToJson.toJson(users);
+			tempUserJson = gson.toJson(users);
 			System.out.println("=================" + users);
 			break;
 		case "Author":
-			authors.add(user);
-			tempUserJson = userToJson.toJson(authors);
+			authors.add((Author) user);
+			
+			//to make json save authors instead of users
+			Set<Author>tempAuthors = new HashSet<>();
+			admins.forEach(author -> tempAuthors.add((Author) author));
+			
+			tempUserJson = gson.toJson(tempAuthors);
 			System.out.println("=================" + authors);
 			break;
 		case "Admin":
 			admins.add(user);
-			tempUserJson = userToJson.toJson(admins);
-			System.out.println("=================" + admins);
+			
+			//to make json save admins instead of users
+			Set<Admin>tempAdmins = new HashSet<>();
+			admins.forEach(admin -> tempAdmins.add((Admin) admin));
+			
+			tempUserJson = gson.toJson(tempAdmins);
+			System.out.println("=================" + tempAdmins);
 			break;
 		
 		}
@@ -78,6 +89,7 @@ public class JsonDataHolder {
 		if(element != null) {
 			jsonArray = element.getAsJsonArray();
 		}
+		
 		if(jsonArray != null) {
 			String fileName = file.getName();
 			switch (fileName) {
