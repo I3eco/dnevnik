@@ -33,11 +33,11 @@ public class User {
 			catch (IncorrectInputException e) {
 				System.err.println("Incorrect input, could not write article!");
 			}
-			try {
-				JsonDataHolder.saveUserToJson(this);
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
+//			try {
+//				JsonDataHolder.saveUserToJson(this);
+//			} catch (IOException e) {
+//				e.printStackTrace();
+//			}
 		}
 
 		public void editArticle(Article article, String content) {
@@ -133,29 +133,34 @@ public class User {
 		this.name = name.trim();
 		this.password = password.trim();
 		this.commentHistory = new LinkedList<Comment>();
-
+		
 		try {
 			Logger.printUserToFile(this);
-			JsonDataHolder.saveUserToJson(this);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+
+//		try {
+//			Logger.printUserToFile(this);
+//			JsonDataHolder.saveUserToJson(this);
+//		} catch (IOException e) {
+//			e.printStackTrace();
+//		}
 		
 	}
 	
 	public static void createUser(String username, String email, String password, String rights) {
 		rights = rights.trim().toLowerCase();
-		User user = null;
+//		User user = null;
 		
 		try {
 			switch (rights) {
-				case "user": user = new User(username, email, password); break;
-				case "author": user = new Author(username, email, password); break;
-				case "admin": user = new Admin(username, email, password); break;
+				case "user": User user = new User(username, email, password); Site.getInstance().addUser(user); break;
+				case "author":Author author = new Author(username, email, password); Site.getInstance().addAuthor(author); break;
+				case "admin": Admin admin = new Admin(username, email, password); Site.getInstance().addAdmin(admin); break;
 				
 				default: System.err.println("The input for the rights is incorrect!"); break;
 			}
-			Site.getInstance().addUser(user);
 		} 
 		catch (IncorrectInputException e) {
 			System.err.println(e.getMessage());
@@ -173,12 +178,12 @@ public class User {
 		catch (IncorrectInputException e) {
 			System.err.println("Could not create comment!");
 		}
-		try {
-			JsonDataHolder.saveUserToJson(this);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+//		try {
+//			JsonDataHolder.saveUserToJson(this);
+//		} catch (IOException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
 	}
 	
 	public void addToCommentHistory(Article.Comment comment) {

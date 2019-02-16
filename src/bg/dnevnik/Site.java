@@ -24,18 +24,33 @@ public class Site {
 	private static Site instance;
 	private String name;
 	private Set<User> users;
+	private Set<Author> authors;
+	private Set<Admin> admins;
 	private Map<String, Set<Article>> articlesByCategory;
 	
 	private Site() {
 		this.name = "Dnevnik";
 		this.users = new TreeSet<User>(new UserComparatorByEmail());
+		this.authors = new TreeSet<Author>(new UserComparatorByEmail());
+		this.admins = new TreeSet<Admin>(new UserComparatorByEmail());
 		this.articlesByCategory = new ConcurrentHashMap<String, Set<Article>>();
-		JsonDataHolder.uploadUsersInSite(this.users);
+//		JsonDataHolder.uploadUsersInSite(this.users);
+		
+		//without the next line site cannot load data from json
+		instance = this;
 	}
 	
 	public static Site getInstance() {
 		if (instance == null) {
-			Site.instance = new Site();
+			try {
+				JsonDataHolder.loadSiteFromJson(Site.instance);
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			if (instance == null) {
+				instance = new Site();
+			}
 		}
 		return Site.instance;
 	}
@@ -48,13 +63,28 @@ public class Site {
 		this.users.remove(user);
 		this.users.add(user);
 	}
+	
+	public void addAuthor(Author author) {
+		this.authors.remove(author);
+		this.authors.add(author);
+	}
+	
+	public void addAdmin(Admin admin) {
+		this.admins.remove(admin);
+		this.admins.add(admin);
+	}
 
 	public void signUp(String username, String email, String password) {
 		User.createUser(username, email, password, "user");
 	}
 
 	public User signIn(String email, String password) throws UserDoesNotExistException {
-		for (User user : users) {
+		Collection<User> allUsers = new TreeSet<User>(new UserComparatorByEmail());
+		allUsers.addAll(this.users);
+		allUsers.addAll(this.authors);
+		allUsers.addAll(this.admins);
+		
+		for (User user : allUsers) {
 			if (user.loginInfoMatches(email, password)) {
 				user.goOnline();
 				return user;
@@ -78,11 +108,11 @@ public class Site {
 				Author author = (Author) article.getAuthor();
 				this.articlesByCategory.get(article.getCategory()).remove(article);
 				author.removeArticle(article);
-				try {
-					JsonDataHolder.saveUserToJson(author);
-				} catch (IOException e) {
-					e.printStackTrace();
-				}
+//				try {
+//					JsonDataHolder.saveUserToJson(author);
+//				} catch (IOException e) {
+//					e.printStackTrace();
+//				}
 			} else {
 				System.err.println("Incorret user for article author!");
 			}
@@ -223,11 +253,6 @@ public class Site {
 		System.out.println(this.users);
 	}
 	
-	public String getName() {
-		return this.name;
-	}
-
-	
 	public void showArticlesByFilter(Comparator<Article> comparator, int numArticlesToShow) {
 		Set<Article> sortedArticles = new TreeSet<Article>(comparator);
 		for (String category : articlesByCategory.keySet()) {
@@ -242,6 +267,13 @@ public class Site {
 			System.out.println(article.getSummary());
 		}
 	}
+	
+	@Override
+	public String toString() {
+		return "name=" + name + ", users=" + users + ", articlesByCategory=" + articlesByCategory;
+	}
 
-
+	public String getName() {
+		return this.name;
+	}
 }
