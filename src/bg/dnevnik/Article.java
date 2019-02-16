@@ -186,5 +186,15 @@ public class Article extends Post {
 		return "Article = title: " + this.title + ", category: " + this.category;
 	}
 	
+	public int getNumberOfViews() {
+		return numberOfViews;
+	}
 	
+	public int getCommentsCount() {
+		return comments.size();
+	}
+
+	public int calculateRating() {
+		return getUpvotesCount() - getDownvotesCount();
+	}
 }

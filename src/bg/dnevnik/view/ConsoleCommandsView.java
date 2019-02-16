@@ -1,10 +1,14 @@
-package bg.dnevnik;
+package bg.dnevnik.view;
 
+import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
 import java.util.function.Consumer;
 
+import bg.dnevnik.Article;
+import bg.dnevnik.Site;
+import bg.dnevnik.User;
 import bg.dnevnik.exceptions.IncorrectInputException;
 import bg.dnevnik.exceptions.NoSuchArticleException;
 import bg.dnevnik.exceptions.UserDoesNotExistException;
@@ -54,6 +58,10 @@ public class ConsoleCommandsView {
 				case "upvote comment": upvoteCommentCommand(); break;
 
 				case "show from today": Site.getInstance().showFromToday(); break;
+				case "show by date": showArticlesByFilter(new ArticleComparatorByDate()); break;
+				case "show by views": showArticlesByFilter(new ArticleComparatorByViews()); break;
+				case "show by comments": showArticlesByFilter(new ArticleComparatorByComments()); break;
+				case "show by rating": showArticlesByFilter(new ArticleComparatorByRating()); break;
 
 				case "exit": running = false; break;
 
@@ -61,6 +69,18 @@ public class ConsoleCommandsView {
 			}
 			System.out.println("\n____________________________________");
 		}
+	}
+	
+	private static void showArticlesByFilter(Comparator<Article> comparator) {
+		System.out.print("How many articles: ");
+		try {
+			Site.getInstance().showArticlesByFilter(comparator, Validation.readInt());
+		} 
+		catch (IncorrectInputException e) {
+			System.err.println("Not a number, try again!");
+			return;
+		}
+		
 	}
 
 	private void upvoteCommentCommand() {
@@ -271,7 +291,7 @@ public class ConsoleCommandsView {
 			return;
 		}
 		catch (IncorrectInputException e) {
-			System.err.println("Invalid input, try again!");
+			System.err.println("Not a number, try again!");
 			return;		
 		}
 	}
