@@ -88,6 +88,7 @@ public class Article extends Post {
 
 	private static int count;
 	private final int ID;
+	private String category;
 	private final String title;
 	private Collection<String> keywords;
 	private Picture mainPicture;
@@ -99,6 +100,7 @@ public class Article extends Post {
 		Validation.throwIfNull(keywords);
 		Validation.throwIfNullOrEmpty(title);
 		
+		this.category = "";
 		this.title = title;
 		this.keywords = keywords;
 		this.comments = new LinkedList<Comment>();
@@ -151,15 +153,6 @@ public class Article extends Post {
 		info.append(this.keywords.stream().collect(Collectors.joining(", ")));
 		System.out.println(info.toString());
 	}
-
-	public int getID() {
-		return this.ID;
-	}
-	
-	public String getTitle() {
-		return this.title;
-	}
-
 	
 	public void showComments() {
 		if (comments.size() == 0) {
@@ -171,5 +164,27 @@ public class Article extends Post {
 			System.out.println();
 		}
 	}
+	
+	public int getID() {
+		return this.ID;
+	}
+	
+	public String getTitle() {
+		return this.title;
+	}
+
+	public String getCategory() {
+		return category;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
+	}
+	
+	@Override
+	public String toString() {
+		return "Article = title: " + this.title + ", category: " + this.category;
+	}
+	
 	
 }

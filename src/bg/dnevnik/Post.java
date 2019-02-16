@@ -60,4 +60,6 @@ public abstract class Post {
 	public void downvote() {
 		this.downvotesCount++;
 	}
+	
+	
 }

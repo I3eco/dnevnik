@@ -1,5 +1,6 @@
 package bg.dnevnik;
 
+import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -12,8 +13,11 @@ import java.util.Set;
 import java.util.TreeSet;
 import java.util.concurrent.ConcurrentHashMap;
 
+import bg.dnevnik.User.Admin;
+import bg.dnevnik.User.Author;
 import bg.dnevnik.exceptions.NoSuchArticleException;
 import bg.dnevnik.exceptions.UserDoesNotExistException;
+import bg.dnevnik.utility.JsonDataHolder;
 import bg.dnevnik.utility.UserComparatorByEmail;
 
 public class Site {
@@ -21,6 +25,10 @@ public class Site {
 	private String name;
 	private Collection<User> users;
 	private Map<String, Collection<Article>> articlesByCategory;
+	
+	{
+		JsonDataHolder.uploadUsersInSite();
+	}
 
 	private Site() {
 		this.name = "Dnevnik";
@@ -64,10 +72,31 @@ public class Site {
 
 	public void addArticle(Article article, String category) {
 		category = category.toUpperCase();
+		article.setCategory(category);
 		if (!this.articlesByCategory.containsKey(category)) {
 			this.articlesByCategory.put(category, new HashSet<Article>());
 		}
 		this.articlesByCategory.get(category).add(article);
+	}
+	
+	public void removeArticle(Admin admin, String password, Article article) {
+		if (admin.loginInfoMatches(admin.getEmail(), password)) {
+			if(article.getAuthor().getTypeOfUser().equals("Author") || article.getAuthor().getTypeOfUser().equals("Admin")) {
+				Author author = (Author) article.getAuthor();
+				this.articlesByCategory.get(article.getCategory()).remove(article);
+				author.removeArticle(article);
+				try {
+					JsonDataHolder.saveUserToJson(author);
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			} else {
+				System.err.println("Incorret user for article author!");
+			}
+			
+		} else {
+			System.err.println("Invalid password!");
+		}
 	}
 
 	public void showCategories() {
@@ -189,6 +218,15 @@ public class Site {
 		}
 		
 		return false;
+	}
+	
+	public void uploadUsers(Set<User> users) {
+		this.users.addAll(users);
+	}
+	
+	//temp method to see users
+	public void showUsersInSite() {
+		System.out.println(this.users);
 	}
 	
 	public String getName() {

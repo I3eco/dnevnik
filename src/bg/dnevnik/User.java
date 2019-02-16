@@ -1,12 +1,15 @@
 package bg.dnevnik;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.LinkedList;
+import java.util.Scanner;
 
 import bg.dnevnik.Article.Comment;
 import bg.dnevnik.exceptions.IncorrectInputException;
 import bg.dnevnik.exceptions.NoSuchArticleException;
+import bg.dnevnik.utility.JsonDataHolder;
 import bg.dnevnik.utility.Logger;
 import bg.dnevnik.utility.Validation;
 
@@ -30,7 +33,11 @@ public class User {
 			catch (IncorrectInputException e) {
 				System.err.println("Incorrect input, could not write article!");
 			}
-			
+			try {
+				JsonDataHolder.saveUserToJson(this);
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
 		}
 		
 		public void editArticle(Article article, String content) {
@@ -42,10 +49,19 @@ public class User {
 			article.setContent(content);
 		}
 		
+		public void removeArticle(Article article) {
+			this.writtenArticles.remove(article);
+		}
+		
 			@Override
 		public String getTypeOfUser() {
 				return "Author";
-			}
+		}
+			
+		@Override
+		public String toString() {
+			return super.toString() + ", articles: " + this.writtenArticles;
+		}
 	}
 	
 	public static class Admin extends Author {
@@ -74,8 +90,12 @@ public class User {
 			article.setContent(content);
 		}
 		
-		public void deleteArticle() {
-			
+		public void deleteArticle(Article article) {
+			Site site = Site.getInstance();
+			Scanner sc = new Scanner(System.in);
+			System.out.println("Enter your password:");
+			String password = sc.nextLine().trim();
+			site.removeArticle(this, password, article);
 		}
 		
 		@Override
@@ -93,7 +113,7 @@ public class User {
 	// TODO this is just an idea, but instead of a boolean we could add a state enum ONLINE/OFFLINE/AWAY,
 	// and have a thread loop through all users, and if they haven't done anything in a few minutes,
 	// it sets their state to AWAY
-	private boolean isOnline;
+	private transient boolean isOnline;
 	
 	private User(String name, String email, String password) throws IncorrectInputException {
 		Validation.throwIfNull(name, email, password);
@@ -114,8 +134,13 @@ public class User {
 		this.password = password.trim();
 		this.commentHistory = new LinkedList<Comment>();
 
-		Logger.printToConsole(this.getTypeOfUser() + " with name: " + this.getName() + " and email: " + this.getEmail() + "was created.");
-
+		try {
+			Logger.printUserToFile(this);
+			JsonDataHolder.saveUserToJson(this);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
 	}
 	
 	public static void createUser(String username, String email, String password, String rights) {
@@ -147,6 +172,12 @@ public class User {
 		} 
 		catch (IncorrectInputException e) {
 			System.err.println("Could not create comment!");
+		}
+		try {
+			JsonDataHolder.saveUserToJson(this);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 	}
 	
