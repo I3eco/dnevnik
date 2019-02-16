@@ -58,10 +58,10 @@ public class ConsoleCommandsView {
 				case "upvote comment": upvoteCommentCommand(); break;
 
 				case "show from today": Site.getInstance().showFromToday(); break;
-				case "show by date": showArticlesByFilter(new ArticleComparatorByDate()); break;
-				case "show by views": showArticlesByFilter(new ArticleComparatorByViews()); break;
-				case "show by comments": showArticlesByFilter(new ArticleComparatorByComments()); break;
-				case "show by rating": showArticlesByFilter(new ArticleComparatorByRating()); break;
+				case "sort by date": sortArticlesByFilter(new ArticleComparatorByDate()); break;
+				case "sort by views": sortArticlesByFilter(new ArticleComparatorByViews()); break;
+				case "sort by comments": sortArticlesByFilter(new ArticleComparatorByComments()); break;
+				case "sort by rating": sortArticlesByFilter(new ArticleComparatorByRating()); break;
 
 				case "exit": running = false; break;
 
@@ -71,7 +71,7 @@ public class ConsoleCommandsView {
 		}
 	}
 	
-	private static void showArticlesByFilter(Comparator<Article> comparator) {
+	private static void sortArticlesByFilter(Comparator<Article> comparator) {
 		System.out.print("How many articles: ");
 		try {
 			Site.getInstance().showArticlesByFilter(comparator, Validation.readInt());
@@ -194,9 +194,9 @@ public class ConsoleCommandsView {
 	}
 
 	private void signOutCommand() {
-		if (isSignedIn()) {
-			currentUser = null;
+		if (currentUser != null) {
 			currentUser.goOffline();
+			currentUser = null;
 		}
 	}
 
