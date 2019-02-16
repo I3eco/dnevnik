@@ -15,6 +15,8 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonArray;
 
 import bg.dnevnik.User;
+import bg.dnevnik.User.Admin;
+import bg.dnevnik.User.Author;
 
 public class JsonDataHolder {
 	
@@ -77,12 +79,35 @@ public class JsonDataHolder {
 			jsonArray = element.getAsJsonArray();
 		}
 		if(jsonArray != null) {
-			for (int index = 0; index < jsonArray.size(); index++) {
-				User user = gson.fromJson(jsonArray.get(index), User.class);
-				if(users != null) {
-					users.add(user);
-				}
+			String fileName = file.getName();
+			switch (fileName) {
+			case "Users.data":
+				for (int index = 0; index < jsonArray.size(); index++) {
+					User user = gson.fromJson(jsonArray.get(index), User.class);
+					if(users != null) {
+						users.add(user);
+					}
 
+				}
+				break;
+			case "Authors.data":
+				for (int index = 0; index < jsonArray.size(); index++) {
+					Author user = gson.fromJson(jsonArray.get(index), Author.class);
+					if(users != null) {
+						users.add(user);
+					}
+
+				}
+				break;
+			case "Admins.data":
+				for (int index = 0; index < jsonArray.size(); index++) {
+					Admin user = gson.fromJson(jsonArray.get(index), Admin.class);
+					if(users != null) {
+						users.add(user);
+					}
+
+				}
+				break;
 			}
 		}
 	}

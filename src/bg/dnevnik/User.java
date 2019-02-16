@@ -218,7 +218,7 @@ public class User {
 
 	@Override
 	public String toString() {
-		return "USER: name=" + name + ", email=" + email + ", isOnline=" + isOnline;
+		return this.getTypeOfUser() + ": name=" + name + ", email=" + email + ", isOnline=" + isOnline;
 	}
 
 	public String getName() {
