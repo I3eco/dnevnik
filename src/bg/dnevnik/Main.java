@@ -5,6 +5,7 @@ import java.util.Arrays;
 import bg.dnevnik.User.Author;
 import bg.dnevnik.exceptions.NoSuchArticleException;
 import bg.dnevnik.exceptions.UserDoesNotExistException;
+import bg.dnevnik.view.ConsoleCommandsView;
 
 public class Main {
 

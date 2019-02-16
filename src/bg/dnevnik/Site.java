@@ -24,16 +24,16 @@ public class Site {
 	private static Site instance;
 	private String name;
 	private Collection<User> users;
-	private Map<String, Collection<Article>> articlesByCategory;
+	private Map<String, Set<Article>> articlesByCategory;
 	
-	{
+	static {
 		JsonDataHolder.uploadUsersInSite();
 	}
 
 	private Site() {
 		this.name = "Dnevnik";
 		this.users = new TreeSet<User>(new UserComparatorByEmail());
-		this.articlesByCategory = new ConcurrentHashMap<String, Collection<Article>>();
+		this.articlesByCategory = new ConcurrentHashMap<String, Set<Article>>();
 	}
 	
 	public static Site getInstance() {
@@ -70,7 +70,7 @@ public class Site {
 		category = category.toUpperCase();
 		article.setCategory(category);
 		if (!this.articlesByCategory.containsKey(category)) {
-			this.articlesByCategory.put(category, new HashSet<Article>());
+			this.articlesByCategory.put(category, new TreeSet<Article>());
 		}
 		this.articlesByCategory.get(category).add(article);
 	}
@@ -96,7 +96,7 @@ public class Site {
 	}
 
 	public void showCategories() {
-		for (Entry<String, Collection<Article>> entry : this.articlesByCategory.entrySet()) {
+		for (Entry<String, Set<Article>> entry : this.articlesByCategory.entrySet()) {
 			System.out.println(entry.getKey().toUpperCase() + " (" + entry.getValue().size() + " articles)");
 		}
 	}
@@ -104,7 +104,7 @@ public class Site {
 	public void showCategory(String input) {
 		boolean categoryFound = false;
 		input = input.toUpperCase();
-		for (Entry<String, Collection<Article>> entry : this.articlesByCategory.entrySet()) {
+		for (Entry<String, Set<Article>> entry : this.articlesByCategory.entrySet()) {
 			if (entry.getKey().equals(input)) {
 				categoryFound = true;
 				for (Article article : entry.getValue()) {
@@ -120,7 +120,7 @@ public class Site {
 	}
 
 	public Article getArticleByID(int id) throws NoSuchArticleException {
-		for (Entry<String, Collection<Article>> entry : this.articlesByCategory.entrySet()) {
+		for (Entry<String, Set<Article>> entry : this.articlesByCategory.entrySet()) {
 			for (Article article : entry.getValue()) {
 				if (article.getID() == id) {
 					return article;
@@ -144,7 +144,7 @@ public class Site {
 
 		Set<Category> topCategories = new TreeSet<Category>((c1, c2) -> c2.numberOfArticles - c1.numberOfArticles);
 
-		for (Entry<String, Collection<Article>> entry : this.articlesByCategory.entrySet()) {
+		for (Entry<String, Set<Article>> entry : this.articlesByCategory.entrySet()) {
 
 			int articlesInCategory = entry.getValue().size();
 			Category currentCategory = new Category(entry.getKey(), articlesInCategory);
@@ -170,16 +170,16 @@ public class Site {
 			return;
 		}
 
-		Comparator<Entry<String, Collection<Article>>> comparatorBySize = (a, b) -> a.getValue().size()
+		Comparator<Entry<String, Set<Article>>> comparatorBySize = (a, b) -> a.getValue().size()
 				- b.getValue().size();
-		Set<Entry<String, Collection<Article>>> topCategories = new TreeSet<Entry<String, Collection<Article>>>(
+		Set<Entry<String, Set<Article>>> topCategories = new TreeSet<Entry<String, Set<Article>>>(
 				comparatorBySize);
 
-		for (Entry<String, Collection<Article>> currentCategory : this.articlesByCategory.entrySet()) {
+		for (Entry<String, Set<Article>> currentCategory : this.articlesByCategory.entrySet()) {
 			if (topCategories.size() < numOfCategories) {
 				topCategories.add(currentCategory);
 			} else {
-				for (Entry<String, Collection<Article>> topCategory : topCategories) {
+				for (Entry<String, Set<Article>> topCategory : topCategories) {
 					if (currentCategory.getValue().size() > topCategory.getValue().size()) {
 						topCategories.remove(topCategory);
 						topCategories.add(currentCategory);
@@ -188,7 +188,7 @@ public class Site {
 			}
 		}
 
-		for (Entry<String, Collection<Article>> category : topCategories) {
+		for (Entry<String, Set<Article>> category : topCategories) {
 			System.out.println(category.getKey().toUpperCase() + " (" + category.getValue().size() + ")");
 		}
 
@@ -196,7 +196,7 @@ public class Site {
 
 	public void showFromToday() {
 		// TODO test this
-		Collection<Collection<Article>> articles = this.articlesByCategory.values();
+		Collection<Set<Article>> articles = this.articlesByCategory.values();
 		articles.forEach(Collection -> Collection.forEach(article -> {
 			if (article.getTimeOfPosting().isAfter(LocalDateTime.now().minusDays(1))) {
 				System.out.println(article.getSummary());
@@ -228,6 +228,22 @@ public class Site {
 	
 	public String getName() {
 		return this.name;
+	}
+
+	
+	public void showArticlesByFilter(Comparator<Article> comparator, int numArticlesToShow) {
+		Set<Article> sortedArticles = new TreeSet<Article>(comparator);
+		for (String category : articlesByCategory.keySet()) {
+			sortedArticles.addAll(articlesByCategory.get(category));
+		}
+		
+		int count = 0;
+		for (Article article : sortedArticles) {
+			if (count++ > numArticlesToShow) {
+				break;
+			}
+			System.out.println(article.getSummary());
+		}
 	}
 
 
