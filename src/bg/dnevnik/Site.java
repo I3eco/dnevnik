@@ -40,7 +40,7 @@ public class Site {
 		return Site.instance;
 	}
 
-	public static void createAdmin(String name, String email, String password) {
+	public void createAdmin(String name, String email, String password) {
 		User.createUser(name, email, password, "admin");
 	}
 
@@ -63,10 +63,6 @@ public class Site {
 		throw new UserDoesNotExistException("There is no user with that email or password!");
 	}
 	
-	public void unregister (String email, String password) {
-		
-	}
-
 	public void addArticle(Article article, String category) {
 		category = category.toUpperCase();
 		article.setCategory(category);
@@ -131,6 +127,7 @@ public class Site {
 		throw new NoSuchArticleException();
 	}
 
+	// TODO test the two methods when there is site data
 	public void showHotCategories(int numberOfCategories) {
 		class Category {
 			String name;

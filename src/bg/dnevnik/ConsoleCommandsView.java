@@ -26,72 +26,58 @@ public class ConsoleCommandsView {
 				Thread.sleep(100);
 			}
 			catch (InterruptedException e) {
+				System.err.println("Console view interrupted!");
 				return;
 			}
 			System.out.print("Enter a command, or write 'commands' for info: ");
 			String input = scanner.nextLine().trim().toLowerCase();
 
 			switch(input) {
-				case "exit":
-					running = false;
-					break;
-				case "commands":
-					showCommands();
-					break;
-				case "sign up":
-					signUpCommand();
-					break;
-				case "sign in":
-					signInCommand();
-					break;
-				case "sign out":
-					signOutCommand();
-					break;
-				case "write comment":
-					writeCommentCommand();
-					break;
-				case "write article":
-					writeArticleCommand();
-					break;
-				case "show categories":
-					Site.getInstance().showCategories();
-					break;
-				case "show article":
-					findArticleAndThen(Article::show);
-					break;
-				case "show category":
-					showCategoryCommand();
-					break;
-				case "upvote article":
-					upvoteArticleCommand();
-					break;
-				case "downvote article":
-					downvoteArticleCommand();
-					break;
-				case "show top categories":
-					showTopCategoriesCommand();
-					break;
-				case "show from today":
-					Site.getInstance().showFromToday();
-					break;
-				case "show comments":
-					showCommentsCommand();
-					break;
+				case "commands": showCommands(); break;
+				
+				case "sign up": signUpCommand(); break;
+				case "sign in": signInCommand(); break;
+				case "sign out": signOutCommand(); break;
+				
+				case "show categories": Site.getInstance().showCategories(); break;
+				case "show top categories": showTopCategoriesCommand(); break;
+				case "show category": showCategoryCommand(); break;
 
-				default:
+				case "write article": writeArticleCommand(); break;
+				case "show article": findArticleAndThen(Article::show); break;
+				case "upvote article": upvoteArticleCommand(); break;
+				case "downvote article": downvoteArticleCommand(); break;
 
-					System.err.println("That command does not exist!");
-					break;
+				case "write comment": writeCommentCommand(); break;
+				case "show comments": showCommentsCommand(); break;
+				case "downvote comment": downvoteCommentCommand(); break;
+				case "upvote comment": upvoteCommentCommand(); break;
+
+				case "show from today": Site.getInstance().showFromToday(); break;
+
+				case "exit": running = false; break;
+
+				default: System.err.println("That command does not exist!"); break;
 			}
 			System.out.println("\n____________________________________");
 		}
 	}
 
-	private void showCommentsCommand() {
+	private void upvoteCommentCommand() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private void downvoteCommentCommand() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private static void showCommentsCommand() {
 		findArticleAndThen(Article::showComments);
 	}
 
-	private void showTopCategoriesCommand() {
+	private static void showTopCategoriesCommand() {
 		System.out.print("How many: ");
 
 		try {
@@ -103,14 +89,14 @@ public class ConsoleCommandsView {
 	}
 
 	private void downvoteArticleCommand() {
-		if (!this.isSignedIn()) {
+		if (!isSignedIn()) {
 			return;
 		}
 		findArticleAndThen(Article::downvote);
 	}
 
 	private void upvoteArticleCommand() {
-		if (!this.isSignedIn()) {
+		if (!isSignedIn()) {
 			return;
 		}
 		findArticleAndThen(Article::upvote);
@@ -118,12 +104,12 @@ public class ConsoleCommandsView {
 
 	private void showCategoryCommand() {
 		System.out.print("Category name: ");
-		String category = this.scanner.nextLine().trim();
+		String category = scanner.nextLine().trim();
 		Site.getInstance().showCategory(category);
 	}
 
 	private void writeArticleCommand() {
-		if (!this.isSignedIn()) {
+		if (!isSignedIn()) {
 			return;
 		}
 
@@ -132,7 +118,7 @@ public class ConsoleCommandsView {
 		// But the problem with that is that you will learn that you don't have the rights
 		// only after you write the whole article, which will be annoying.
 		// So instead I just put an instanceof check before calling writeArticle()
-		if (!(this.currentUser instanceof User.Author)) {
+		if (!(currentUser instanceof User.Author)) {
 			System.err.println("Only authors have the right to write articles!");
 			return;
 		}
@@ -149,7 +135,7 @@ public class ConsoleCommandsView {
 
 		while (true) {
 			System.out.print("Keyword: ");
-			String keywordInput = this.scanner.nextLine().trim().toLowerCase();
+			String keywordInput = scanner.nextLine().trim().toLowerCase();
 			if (keywordInput.equals("")) {
 				break;
 			}
@@ -157,7 +143,7 @@ public class ConsoleCommandsView {
 			keywords.add(keywordInput);
 		}
 
-		User.Author author = (User.Author) this.currentUser;
+		User.Author author = (User.Author) currentUser;
 		author.writeArticle(title, category, content, keywords);
 	}
 
@@ -180,7 +166,7 @@ public class ConsoleCommandsView {
 		String password = scanner.nextLine();
 
 		try {
-			this.currentUser = Site.getInstance().signIn(email, password);
+			currentUser = Site.getInstance().signIn(email, password);
 		}
 		catch (UserDoesNotExistException e) {
 			System.err.println("User does not exist with that email or password!");
@@ -188,14 +174,14 @@ public class ConsoleCommandsView {
 	}
 
 	private void signOutCommand() {
-		if (this.isSignedIn()) {
-			this.currentUser = null;
-			this.currentUser.goOffline();
+		if (isSignedIn()) {
+			currentUser = null;
+			currentUser.goOffline();
 		}
 	}
 
 	private void writeCommentCommand() {
-		if (!this.isSignedIn()) {
+		if (!isSignedIn()) {
 			return;
 		}
 
@@ -210,7 +196,7 @@ public class ConsoleCommandsView {
 				try {
 					String moodInput = scanner.nextLine().trim().toUpperCase();
 					mood = Article.CommentMood.valueOf(moodInput);
-					this.currentUser.writeComment(article, content, mood);
+					currentUser.writeComment(article, content, mood);
 					inputIsIncorrent = false;
 				}
 				catch (IllegalArgumentException e) {
@@ -220,58 +206,61 @@ public class ConsoleCommandsView {
 		});
 	}
 
-	private void showCommands() {
-	//commands: 
-	//'sign up' 
-	//'sign in' 
-	//'sign out'
-	//
-	//'show categories'
-	//'show top categories'
-	//'show category'
-	//
-	//'write article'
-	//'show article'
-	//'upvote/downvote article'
-	//
-	//'write comment'
-	//'show comments'
-	//'upvote/downvote comment'
-	//
-	//'sort by new' 
-	//'sort by views' 
-	//'sort by comments' 
-	//'sort by votes'
-	//
-	//'exit' 
+	private static void showCommands() {
+		//commands: 
+		//'sign up' 
+		//'sign in' 
+		//'sign out'
+		//
+		//'show categories'
+		//'show top categories'
+		//'show category'
+		//
+		//'write article'
+		//'show article'
+		//'upvote/downvote article'
+		//
+		//'write comment'
+		//'show comments'
+		//'upvote/downvote comment'
+		//
+		//'sort by new' 
+		//'sort by views' 
+		//'sort by comments' 
+		//'sort by votes'
+		//
+		// 'show from today'
+		//
+		//'exit' 
 
-		String commandInfo = "commands: \r\n" + 
-				"'sign up' \r\n" + 
-				"'sign in' \r\n" + 
-				"'sign out'\r\n" + 
-				"\r\n" + 
-				"'show categories'\r\n" + 
-				"'show top categories'\r\n" + 
-				"'show category'\r\n" + 
-				"\r\n" + 
-				"'write article'\r\n" + 
-				"'show article'\r\n" + 
-				"'upvote/downvote article'\r\n" + 
-				"\r\n" + 
-				"'write comment'\r\n" + 
-				"'show comments'\r\n" + 
-				"'upvote/downvote comment'\r\n" + 
-				"\r\n" + 
-				"'sort by new' \r\n" + 
-				"'sort by views' \r\n" + 
-				"'sort by comments' \r\n" + 
-				"'sort by votes'\r\n" + 
-				"\r\n" + 
-				"'exit' ";
+		String commandInfo = 
+			"commands: \r\n" + 
+			"'sign up' \r\n" + 
+			"'sign in' \r\n" + 
+			"'sign out'\r\n" + 
+			"\r\n" + 
+			"'show categories'\r\n" + 
+			"'show top categories'\r\n" + 
+			"'show category'\r\n" + 
+			"\r\n" + 
+			"'write article'\r\n" + 
+			"'show article'\r\n" + 
+			"'upvote/downvote article'\r\n" + 
+			"\r\n" + 
+			"'write comment'\r\n" + 
+			"'show comments'\r\n" + 
+			"'upvote/downvote comment'\r\n" + 
+			"\r\n" + 
+			"'sort by new' \r\n" + 
+			"'sort by views' \r\n" + 
+			"'sort by comments' \r\n" + 
+			"'sort by votes'\r\n" + 
+			"\r\n" + 
+			"'exit' ";
 		System.out.println(commandInfo);
 	}
 	
-	private void findArticleAndThen(Consumer<Article> action) {
+	private static void findArticleAndThen(Consumer<Article> action) {
 		System.out.print("Choose an article by ID: ");
 
 		try {
@@ -288,7 +277,7 @@ public class ConsoleCommandsView {
 	}
 
 	private boolean isSignedIn() {
-		if (this.currentUser == null) {
+		if (currentUser == null) {
 			System.err.println("You are not signed in!");
 			return false;
 		}
