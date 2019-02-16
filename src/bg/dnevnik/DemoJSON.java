@@ -13,14 +13,15 @@ import com.google.gson.Gson;
 import bg.dnevnik.exceptions.UserDoesNotExistException;
 
 public class DemoJSON {
+
 	public static void main(String[] args) throws IOException {
 		Site site = Site.getInstance();
-		
-		//creating two users in Site
+
+		// creating two users in Site
 		User.createUser("Ivan", "ivan@abv.bg", "123456", "user");
 		User.createUser("Georgi", "georgi@abv.bg", "qwerty", "user");
-		
-		//getting the users from Site
+
+		// getting the users from Site
 		User ivan = null;
 		User georgi = null;
 		try {
@@ -29,50 +30,49 @@ public class DemoJSON {
 		} catch (UserDoesNotExistException e) {
 			e.printStackTrace();
 		}
-		
+
 		Gson gson = new Gson();
-		
-		//converting JSONs to Strings
+
+		// converting JSONs to Strings
 		String jsonIvan = gson.toJson(ivan);
 		String jsonGeorgi = gson.toJson(georgi);
-		
-		//creating file to store JSONs in
-		File jsonFile = new File ("jsonFile.txt");
-		
-		//delete and create the file if exists to clear it
+
+		// creating file to store JSONs in
+		File jsonFile = new File("jsonFile.txt");
+
+		// delete and create the file if exists to clear it
 		jsonFile.delete();
 		jsonFile.createNewFile();
-		
-		//creating a writer to the file by enabling the append option, since PrintWriter cannot append by default
-		try(PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter(jsonFile, true)))){
-			
-			//adding JSONs to the text file
+
+		// creating a writer to the file by enabling the append option, since
+		// PrintWriter cannot append by default
+		try (PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter(jsonFile, true)))) {
+
+			// adding JSONs to the text file
 			writer.println(jsonIvan);
 			writer.println(jsonGeorgi);
-			
 		}
-		
-		File fromJson = new File ("." + File.separator + "ExampleContent" + File.separator + "jsonFile.lajna");
-		
-		if(fromJson.length() > 0 && fromJson.canRead()) {
-			
-				try(Scanner readJson = new Scanner(fromJson)){
-					StringBuilder json = new StringBuilder();
-					while(readJson.hasNext()) {
-//						System.out.println(readJson.next());
-						json.append(readJson.next() + "\n");
-//						json.append("\n");
-//						User user = gson.fromJson(readJson.nextLine(), User.class);
-//						System.out.println(user);
-					}
-					System.out.println(json.toString());
-					
-				} catch (FileNotFoundException e) {
-					e.printStackTrace();
+
+		File fromJson = new File("." + File.separator + "ExampleContent" + File.separator + "jsonFile.lajna");
+
+		if (fromJson.length() > 0 && fromJson.canRead()) {
+
+			try (Scanner readJson = new Scanner(fromJson)) {
+				StringBuilder json = new StringBuilder();
+				while (readJson.hasNext()) {
+//					System.out.println(readJson.next());
+					json.append(readJson.next() + "\n");
+//					json.append("\n");
+//					User user = gson.fromJson(readJson.nextLine(), User.class);
+//					System.out.println(user);
 				}
-				
-				
+				System.out.println(json.toString());
+
+			} catch (FileNotFoundException e) {
+				e.printStackTrace();
+			}
+
 		}
-		
+
 	}
 }
