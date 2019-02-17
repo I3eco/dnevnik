@@ -9,9 +9,8 @@ import bg.dnevnik.view.ConsoleCommandsView;
 public class Main {
 
 	public static void main(String[] args) {
-		//Site.getInstance().createAdmin("veso", "veso@gmail.com", "nekazvam");
-		
 		new ContentGenerator(10, 3).start();
+//		Site.getInstance().createAdmin("veso", "veso@gmail.com", "nekazvam");
 		
 		new ConsoleCommandsView().start();
 		

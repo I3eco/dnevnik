@@ -1,9 +1,7 @@
 package bg.dnevnik;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Collection;
-import java.util.LinkedList;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -18,51 +16,28 @@ import bg.dnevnik.utility.Validation;
 public class User {
 	
 	public static class Author extends User {
-		private transient Collection<Article> writtenArticles;
 		
 		private Author(String name, String email, String password) throws IncorrectInputException {
 			super(name, email, password);
-			this.writtenArticles = new ArrayList<Article>();
 		}
 		
 		public void writeArticle(String title, String category, String content, Collection<String> keywords) {
 
-			Article article;
 			try {
-				article = new Article(this, category, title, content, keywords);
-				this.writtenArticles.add(article);
+				new Article(this, category, title, content, keywords);
 			} 
 			catch (IncorrectInputException e) {
 				System.err.println("Incorrect input, could not write article!");
 			}
-//			try {
-//				JsonDataHolder.saveUserToJson(this);
-//			} catch (IOException e) {
-//				e.printStackTrace();
-//			}
 		}
 
 		public void editArticle(Article article, String content) {
-			try {
-				article = Site.getInstance().getArticleByID(article.getID());
-			} catch (NoSuchArticleException e) {
-				System.out.println("No such article");
-			}
 			article.setContent(content);
-		}
-		
-		public void removeArticle(Article article) {
-			this.writtenArticles.remove(article);
 		}
 		
 			@Override
 		public String getTypeOfUser() {
 				return "Author";
-		}
-			
-		@Override
-		public String toString() {
-			return super.toString() + ", articles: " + this.writtenArticles;
 		}
 	
 		public void doRandomAction() {
@@ -137,7 +112,6 @@ public class User {
 	private String name;
 	private final String email;
 	private String password;
-	private transient Collection<Article.Comment> commentHistory;
 
 	private transient boolean isOnline;
 	
@@ -158,7 +132,6 @@ public class User {
 		this.email = email;
 		this.name = name.trim();
 		this.password = password.trim();
-		this.commentHistory = new LinkedList<Comment>();
 		
 		try {
 			Logger.printUserToFile(this);
@@ -177,7 +150,6 @@ public class User {
 	
 	public static void createUser(String username, String email, String password, String rights) {
 		rights = rights.trim().toLowerCase();
-//		User user = null;
 		
 		try {
 			switch (rights) {
@@ -196,25 +168,11 @@ public class User {
 	
 	public void writeComment(Article article, String content, Article.CommentMood mood) {
 		// just like writeArticle() is in Author, it would make sense for writeComment to be in User too
-		Comment comment = null;
 		try {
-			comment = article.new Comment(this, content, mood);
-			this.addToCommentHistory(comment);
+			article.new Comment(this, content, mood);
 		} 
 		catch (IncorrectInputException e) {
 			System.err.println("Could not create comment!");
-		}
-//		try {
-//			JsonDataHolder.saveUserToJson(this);
-//		} catch (IOException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-	}
-	
-	public void addToCommentHistory(Article.Comment comment) {
-		if (comment != null) {
-			this.commentHistory.add(comment);
 		}
 	}
 

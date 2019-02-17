@@ -38,9 +38,6 @@ public class Site {
 		this.authors = new TreeSet<Author>(new UserComparatorByEmail());
 		this.admins = new TreeSet<Admin>(new UserComparatorByEmail());
 		this.articlesByCategory = new ConcurrentHashMap<String, Set<Article>>();
-//		JsonDataHolder.uploadUsersInSite(this.users);
-
-		// without the next line site cannot load data from json
 		instance = this;
 	}
 
@@ -50,7 +47,6 @@ public class Site {
 				JsonDataHolder.loadSiteFromJson(Site.instance);
 			}
 			catch (IOException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			if (instance == null) {
@@ -109,18 +105,9 @@ public class Site {
 
 	public void removeArticle(Admin admin, String password, Article article) {
 		if (admin.loginInfoMatches(admin.getEmail(), password)) {
-			if (article.getAuthor().getTypeOfUser().equals("Author")
-					|| article.getAuthor().getTypeOfUser().equals("Admin")) {
-				Author author = (Author) article.getAuthor();
+			if(article.getAuthor().getTypeOfUser().equals("Author") || article.getAuthor().getTypeOfUser().equals("Admin")) {
 				this.articlesByCategory.get(article.getCategory()).remove(article);
-				author.removeArticle(article);
-//				try {
-//					JsonDataHolder.saveUserToJson(author);
-//				} catch (IOException e) {
-//					e.printStackTrace();
-//				}
-			}
-			else {
+			} else {
 				System.err.println("Incorret user for article author!");
 			}
 
@@ -164,7 +151,7 @@ public class Site {
 		}
 		throw new NoSuchArticleException();
 	}
-
+	
 	// TODO test the two methods when there is site data
 	public void showHotCategories(int numberOfCategories) {
 		class Category {
@@ -251,12 +238,7 @@ public class Site {
 
 		return false;
 	}
-
-//	public void uploadUsers(Set<User> users) {
-//		this.users.addAll(users);
-//	}
-
-	// temp method to see users
+	
 	public void showUsersInSite() {
 		System.out.println(this.users);
 	}

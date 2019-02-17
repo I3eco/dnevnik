@@ -15,12 +15,6 @@ public class Logger {
 	private static final String USERS_LOGS_FOLDER_NAME = "UsersLogs";
 	private static boolean isEnabled = true;
 	
-//	public static void printToConsole(String log) {
-//		if(isEnabled) {
-//			System.out.println(log);
-//		}
-//	}
-	
 	public static synchronized void printUserToFile(User user) throws IOException {
 		if(isEnabled) {
 			File usersDir = new File ("." + File.separator + LOGS_FOLDER_NAME + File.separator + USERS_LOGS_FOLDER_NAME);
