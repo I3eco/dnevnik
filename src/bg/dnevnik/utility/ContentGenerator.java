@@ -8,8 +8,6 @@ import java.util.Random;
 
 import bg.dnevnik.Site;
 import bg.dnevnik.User;
-import bg.dnevnik.User.Admin;
-import bg.dnevnik.exceptions.IncorrectInputException;
 import bg.dnevnik.exceptions.UserDoesNotExistException;
 
 public class ContentGenerator {
@@ -36,44 +34,32 @@ public class ContentGenerator {
 	private final int userCount;
 	private static final Random rnd = new Random();
 
-	public ContentGenerator(int articleCount, int userCount) {
+	public ContentGenerator(int userCount, int articleCount) {
 		this.articleCount = articleCount;
 		this.userCount = userCount;
+		
 	}
 
 	public void start() {
 		for (int count = 0; count < userCount; count++) {
 			try {
-				User user = generateRandomUser();
-
-//				if (rnd.nextInt(100) < 100) {
-//					User admin = Site.getInstance().signIn("veso@gmail.com", "nekazvam");
-//					if (admin instanceof Admin) {
-//						((Admin) admin).makeUserAuthor(user);
-//						System.out.println(user.getName() + " is now an author");
-//					}
-//					else {
-//						System.err.println("veso@gmail.com IS NOT AN ADMIN?! Aborted!");
-//						break;
-//					}
-//				} 
+				generateRandomUser();
 			}
-			// TODO temporary, until tested
 			catch (UserDoesNotExistException e) {
 				e.printStackTrace(); 
 			}
 		}
 
-		for (int i = 0; i < 100; i++) {
+		for (int i = 0; i < articleCount; i++) {
 			Site.getInstance().getRandomAuthor().doRandomAction();
-			Site.getInstance().getRandomUser().doRandomAction();
-			Site.getInstance().getRandomUser().doRandomAction();
-			Site.getInstance().getRandomUser().doRandomAction();
+			for (int userActions = 0; userActions < 3; userActions++) {
+				Site.getInstance().getRandomUser().doRandomAction();
+			}
 		}
 
 	}
 
-	private User generateRandomUser() throws UserDoesNotExistException {
+	private static User generateRandomUser() throws UserDoesNotExistException {
 		String username = getRandomName();
 
 		if (rnd.nextInt(100) < 60) {
@@ -88,7 +74,7 @@ public class ContentGenerator {
 		return Site.getInstance().signIn(email, password);
 	}
 
-	private String getRandomName() {
+	private static String getRandomName() {
 		return NAMES.get(rnd.nextInt(NAMES.size()));
 	}
 

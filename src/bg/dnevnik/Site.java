@@ -300,10 +300,6 @@ public class Site {
 		return users.size() + authors.size() + admins.size();
 	}
 
-	public int getArticleCount() {
-		return articleCount.get();
-	}
-	
 	public User getRandomUser() {
 		return getRandomUserFrom(users);
 	}
@@ -317,7 +313,6 @@ public class Site {
 	}
 
 	private User getRandomUserFrom(Set<? extends User> users) {
-		// TODO temporary, just for generation
 		Iterator<? extends User> i = users.iterator();
 		
 		if (users.size() <= 0) {

@@ -221,6 +221,7 @@ public class User {
 				if (randomComment != null) {
 					randomComment.downvote(this); break;
 				}
+				// TODO test this
 			case 6: writeComment(randomArticle, ContentGenerator.generateContent(100), CommentMood.randomMood()); break;
 			default: break;
 		}

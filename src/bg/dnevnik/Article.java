@@ -146,12 +146,22 @@ public class Article extends Post {
 		return summary.toString();
 	}
 
+	private static String seperateIntoLines(String content) {
+		int lineLength = 60;
+		StringBuilder sb = new StringBuilder(content);
+		
+		for (int index = lineLength; index < sb.length() - lineLength / 2; index += lineLength) {
+			sb.insert(index, "\n");
+		}
+		return sb.toString();
+	}
+	
 	public void show() {
 		this.numberOfViews++;
 		
 		StringBuilder info = new StringBuilder();
 		info.append(this.getSummary());
-		info.append("\n\n   " + this.getContent());
+		info.append("\n\n   " + seperateIntoLines(this.getContent()));
 		info.append("\n\n ^" + this.getUpvotesCount() + " v" + this.getDownvotesCount());
 		info.append(" / Keywords: ");
 		info.append(this.keywords.stream().collect(Collectors.joining(", ")));

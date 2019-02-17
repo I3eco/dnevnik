@@ -33,14 +33,15 @@ public class OldArticleCollector implements Runnable{
 	public void deleteOldArticles() throws UserDoesNotExistException {
 		Admin admin = null;
 		Scanner sc = new Scanner(System.in);
-		System.out.println("Enter your email!");
+		System.out.print("Email: ");
 		String email = sc.nextLine();
-		System.out.println("Enter your password!");
+		System.out.print("Password: ");
 		String password = sc.nextLine();
 		if (this.site.signIn(email, password).getTypeOfUser().equals("Admin")) {
 			admin = (Admin) this.site.signIn(email, password);
 		} else {
-			throw new UserDoesNotExistException("Incorrect admin.");
+			System.err.println("Only administrators have permission!");
+			return;
 		}
 		Map<String, Set<Article>> articles = site.getArticlesInSite();		
 		for(Entry<String, Set<Article>> entry : articles.entrySet()) {
