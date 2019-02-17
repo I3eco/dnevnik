@@ -11,6 +11,7 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.TreeSet;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.atomic.AtomicInteger;
 
 import bg.dnevnik.User.Admin;
 import bg.dnevnik.User.Author;
@@ -19,10 +20,10 @@ import bg.dnevnik.exceptions.UserDoesNotExistException;
 import bg.dnevnik.utility.ArticleComparatorByID;
 import bg.dnevnik.utility.JsonDataHolder;
 import bg.dnevnik.utility.UserComparatorByEmail;
-import bg.dnevnik.view.ArticleComparatorByDate;
 
 public class Site {
 	private static Site instance;
+	private volatile AtomicInteger articleCount;
 	private String name;
 	private Set<User> users;
 	private Set<Author> authors;
@@ -30,6 +31,7 @@ public class Site {
 	private Map<String, Set<Article>> articlesByCategory;
 	
 	private Site() {
+		this.articleCount = new AtomicInteger();
 		this.name = "Dnevnik";
 		this.users = new TreeSet<User>(new UserComparatorByEmail());
 		this.authors = new TreeSet<Author>(new UserComparatorByEmail());
@@ -272,6 +274,10 @@ public class Site {
 	@Override
 	public String toString() {
 		return "name=" + name + ", users=" + users + ", articlesByCategory=" + articlesByCategory;
+	}
+	
+	public synchronized int incrementArticleCount() {
+		return this.articleCount.incrementAndGet();
 	}
 
 	public String getName() {

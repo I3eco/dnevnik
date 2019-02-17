@@ -44,7 +44,7 @@ public class Main {
 //
 //		a.writeComment(bestArticle, "wow, super qkoto", Article.CommentMood.ANGRY);
 		
-//		Site.getInstance().createAdmin("veso", "veso@gmail.com", "nekazvam");
+		Site.getInstance().createAdmin("veso", "veso@gmail.com", "nekazvam");
 //		Site.getInstance().showUsersInSite();
 		
 		

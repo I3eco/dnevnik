@@ -86,7 +86,6 @@ public class Article extends Post {
 
 	}
 
-	private static int count;
 	private final int ID;
 	private String category;
 	private final String title;
@@ -104,7 +103,7 @@ public class Article extends Post {
 		this.title = title;
 		this.keywords = keywords;
 		this.comments = new LinkedList<Comment>();
-		this.ID = ++Article.count;
+		this.ID = Site.getInstance().incrementArticleCount();
 		Site.getInstance().addArticle(this, category);
 	}
 	

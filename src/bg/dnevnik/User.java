@@ -9,14 +9,13 @@ import java.util.Scanner;
 import bg.dnevnik.Article.Comment;
 import bg.dnevnik.exceptions.IncorrectInputException;
 import bg.dnevnik.exceptions.NoSuchArticleException;
-import bg.dnevnik.utility.JsonDataHolder;
 import bg.dnevnik.utility.Logger;
 import bg.dnevnik.utility.Validation;
 
 public class User {
 	
 	public static class Author extends User {
-		private Collection<Article> writtenArticles;
+		private transient Collection<Article> writtenArticles;
 		
 		private Author(String name, String email, String password) throws IncorrectInputException {
 			super(name, email, password);
@@ -96,6 +95,7 @@ public class User {
 			System.out.println("Enter your password:");
 			String password = sc.nextLine().trim();
 			site.removeArticle(this, password, article);
+			sc.close();
 		}
 		
 		@Override
@@ -108,7 +108,7 @@ public class User {
 	private String name;
 	private final String email;
 	private String password;
-	private Collection<Article.Comment> commentHistory;
+	private transient Collection<Article.Comment> commentHistory;
 
 	// TODO this is just an idea, but instead of a boolean we could add a state enum ONLINE/OFFLINE/AWAY,
 	// and have a thread loop through all users, and if they haven't done anything in a few minutes,

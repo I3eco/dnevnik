@@ -7,7 +7,7 @@ import bg.dnevnik.utility.Validation;
 
 public abstract class Post {
 
-	private final transient User author;
+	private final User author;
 	private final LocalDateTime timeOfPosting;
 	private String content;
 	private int upvotesCount;
