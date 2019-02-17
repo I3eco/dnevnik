@@ -13,6 +13,8 @@ import java.util.TreeSet;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
 
+import org.omg.Messaging.SyncScopeHelper;
+
 import bg.dnevnik.User.Admin;
 import bg.dnevnik.User.Author;
 import bg.dnevnik.exceptions.NoSuchArticleException;
@@ -258,6 +260,46 @@ public class Site {
 			}
 			System.out.println(article.getSummary());
 		}
+	}
+	
+	public void showArticlesByInputWords(String inputWords) {
+		String[] words = inputWords.trim().split(" ");
+		
+		for (Entry<String, Set<Article>> entry : this.articlesByCategory.entrySet()) {
+			entry.getValue()
+			.stream()
+			.filter(article -> this.isArticleContainWordsInTitle(article, words))
+			.sorted((article1, article2) -> {
+				if(this.numberOfWordsInArticleTitle(article1, words) - this.numberOfWordsInArticleTitle(article2, words) == 0) {
+					return article1.getID() - article2.getID();
+				}
+				return this.numberOfWordsInArticleTitle(article2, words) - this.numberOfWordsInArticleTitle(article1, words);
+			})
+			.map(article -> article.getSummary())
+			.forEach(System.out::println);
+		}
+	}
+	
+	public boolean isArticleContainWordsInTitle(Article article, String[] words) {
+		for(int index = 0; index < words.length; index++) {
+			if(article.getTitle().toLowerCase().contains(words[index].toLowerCase())) {
+				return true;
+			}
+		}
+		
+		return false;
+	}
+	
+	public int numberOfWordsInArticleTitle(Article article, String[] words) {
+		int count = 0;
+		
+		for(int index = 0; index < words.length; index++) {
+			if(article.getTitle().toLowerCase().contains(words[index].toLowerCase())) {
+				count++;
+			}
+		}
+		
+		return count;
 	}
 	
 	@Override
