@@ -11,7 +11,7 @@ public class ArticleComparatorByRating implements Comparator<Article> {
 		if(o1.calculateRating() - o2.calculateRating() == 0) {
 			return o1.getID() - o2.getID();
 		}
-		return o1.calculateRating() - o2.calculateRating();
+		return o2.calculateRating() - o1.calculateRating();
 	}
 
 }

@@ -11,7 +11,7 @@ public class ArticleComparatorByDate implements Comparator<Article> {
 		if(o1.getTimeOfPosting().compareTo(o2.getTimeOfPosting()) == 0) {
 			return o1.getID() - o2.getID();
 		}
-		return o1.getTimeOfPosting().compareTo(o2.getTimeOfPosting());
+		return o2.getTimeOfPosting().compareTo(o1.getTimeOfPosting());
 	}
 
 }
