@@ -13,7 +13,8 @@ public class Main {
 		long start = System.currentTimeMillis();
 		
 //		new ContentGenerator(10, 10).start();
-		System.out.println(System.currentTimeMillis() - start + "ms spent generating");
+
+//		System.out.println(System.currentTimeMillis() - start + "ms spent generating");
 		//Site.getInstance().createAdmin("veso", "veso@gmail.com", "nekazvam");
 //		new ContentGenerator(10, 3).start();
 		
