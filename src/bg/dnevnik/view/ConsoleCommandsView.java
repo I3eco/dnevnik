@@ -57,8 +57,8 @@ public class ConsoleCommandsView {
 
 				case "write comment": writeCommentCommand(); break;
 				case "show comments": showCommentsCommand(); break;
-				case "downvote comment": downvoteCommentCommand(); break;
-				case "upvote comment": upvoteCommentCommand(); break;
+//				case "downvote comment": downvoteCommentCommand(); break;
+//				case "upvote comment": upvoteCommentCommand(); break;
 
 				case "show from today": Site.getInstance().showFromToday(); break;
 				case "sort by date": sortArticlesByFilter(new ArticleComparatorByDate()); break;
