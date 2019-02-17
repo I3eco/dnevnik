@@ -11,7 +11,7 @@ public class ArticleComparatorByViews implements Comparator<Article> {
 		if(o1.getNumberOfViews() - o2.getNumberOfViews() == 0) {
 			return o1.getID() - o2.getID();
 		}
-		return o1.getNumberOfViews() - o2.getNumberOfViews();
+		return o2.getNumberOfViews() - o1.getNumberOfViews();
 	}
 
 }

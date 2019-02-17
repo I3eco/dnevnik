@@ -58,19 +58,22 @@ public abstract class Post {
 	}
 	
 	public void upvote(User user) {
-		//if(!this.votedUsers.contains(user.getEmail())) {
+		if(!this.votedUsers.contains(user.getEmail())) {
 			this.upvotesCount++;
-		//	this.votedUsers.add(user.getEmail());
-		//}
+			this.votedUsers.add(user.getEmail());
+		} else {
+			System.err.println("You've already voted for this article!");
+		}
 
 	}
 	
 	public void downvote(User user) {
-		// TODO comments should be removed after a new set of data, because the old one doesn't have the collection
-		//if(votedUsers != null && !this.votedUsers.contains(user.getEmail())) {
+		if(votedUsers != null && !this.votedUsers.contains(user.getEmail())) {
 			this.downvotesCount++;
-	    //this.votedUsers.add(user.getEmail());
-	//	}
+	    this.votedUsers.add(user.getEmail());
+		} else {
+			System.err.println("You've already voted for this article!");
+		}
 	}
 	
 	

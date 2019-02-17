@@ -209,19 +209,19 @@ public class User {
 			randomComment = randomArticle.getComment(r.nextInt(randomArticle.getCommentsCount()));
 		}
 		
-		int chance = r.nextInt(4);
+		int chance = r.nextInt(5);
 		switch(chance) {
-			case 2: randomArticle.upvote(this); break;
-			case 3: randomArticle.downvote(this); break;
-			case 4: 
+			case 0: randomArticle.upvote(this); break;
+			case 1: randomArticle.downvote(this); break;
+			case 2: 
 				if (randomComment != null) {
 					randomComment.upvote(this); break;
 				}
-			case 5: 
+			case 3: 
 				if (randomComment != null) {
 					randomComment.downvote(this); break;
 				}
-			case 6: writeComment(randomArticle, ContentGenerator.generateContent(100), CommentMood.randomMood()); break;
+			case 4: writeComment(randomArticle, ContentGenerator.generateContent(100), CommentMood.randomMood()); break;
 			default: break;
 		}
 	}

@@ -16,10 +16,12 @@ public class ContentGenerator {
 
 	private static final List<String> categories = Arrays.asList(
 			"news", "politics", "sport", "europe", "travel", "entertainment", "kids", 
-			"agriculture", "nature", "world", "culture", "business");
+			"agriculture", "nature", "world", "culture", "business", "stuff");
 	
 	private static final List<String> NAMES = Arrays.asList("baikiro", "domatite", "krastavica", "magdalenka", 
-			"kiler", "djordjano", "todorka", "silviq", "hlebche");
+			"kiler", "djordjano", "todorka", "silviq", "hlebche", "bahura", "golemiqNomerObuvki", "hitriqTigar", 
+			"pisanka", "mucunka", "palavotoZajche", "hitrataLisanka", "jenoTrepacha", "megaZdravPich", "golqmataRalta", 
+			"katoDveMalki", "piqniqMajstor", "jorkoRakijcata", "jeniSGolemiteOchi", "grishoLutenicata", "NIKiTALANTA", "zvezdioBicha");
 	
 	private static final String content = "Sigh view am high neat half to what. Sent late held than set why wife our. If an blessing building steepest. Agreement distrusts mrs six affection satisfied. Day blushes visitor end company old prevent chapter. Consider declared out expenses her concerns. No at indulgence conviction particular unsatiable boisterous discretion. Direct enough off others say eldest may exeter she. Possible all ignorant supplied get settling marriage recurred. " + 
 			 "Admiration we surrounded possession frequently he. Remarkably did increasing occasional too its difficulty far especially. Known tiled but sorry joy balls. Bed sudden manner indeed fat now feebly. Face do with in need of wife paid that be. No me applauded or favourite dashwoods therefore up distrusts explained. " + 
