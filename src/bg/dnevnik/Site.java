@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Comparator;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Random;
@@ -201,10 +202,13 @@ public class Site {
 				topCategories.add(currentCategory);
 			}
 			else {
-				for (Entry<String, Set<Article>> topCategory : topCategories) {
-					if (currentCategory.getValue().size() > topCategory.getValue().size()) {
-						topCategories.remove(topCategory);
-						topCategories.add(currentCategory);
+				Iterator<Entry<String, Set<Article>>> i = topCategories.iterator();
+				while (i.hasNext()) {
+					Entry<String, Set<Article>> entry = i.next();
+					
+					if (currentCategory.getValue().size() > entry.getValue().size()) {
+						i.remove();
+						topCategories.add(entry);
 					}
 				}
 			}
@@ -227,7 +231,6 @@ public class Site {
 	}
 
 	public boolean isUserInSite(String email) {
-
 		Iterator<User> userIterator = this.users.iterator();
 
 		while (userIterator.hasNext()) {
@@ -278,40 +281,52 @@ public class Site {
 	public int getArticleCount() {
 		return articleCount.get();
 	}
-
+	
 	public User getRandomUser() {
+		return getRandomUserFrom(users);
+	}
+	
+	public User getRandomAuthor() {
+		return getRandomUserFrom(authors);
+	}
+	
+	public User getRandomAdmin() {
+		return getRandomUserFrom(admins);
+	}
+
+	private User getRandomUserFrom(Set<? extends User> users) {
 		// TODO temporary, just for generation
-		Random r = new Random();
-		if (r.nextBoolean()) {
-			int index = r.nextInt(users.size() - 1);
-
-			Iterator<User> i = users.iterator();
-			for (int count = 0; count < index && i.hasNext(); count++) {
-				i.next();
-			}
-
+		Iterator<? extends User> i = users.iterator();
+		
+		if (users.size() <= 0) {
+			return null;
+		}
+		
+		if (users.size() == 1) {
 			return i.next();
 		}
+		
+		int index = new Random().nextInt(users.size() + 1) - 2;
 
-		if (r.nextBoolean()) {
-			int index = r.nextInt(authors.size() - 1);
-
-			Iterator<Author> i = authors.iterator();
-			for (int count = 0; count < index && i.hasNext(); count++) {
-				i.next();
-			}
-
-			return i.next();
-		}
-
-		int index = r.nextInt(admins.size() - 1);
-
-		Iterator<Admin> i = admins.iterator();
 		for (int count = 0; count < index && i.hasNext(); count++) {
 			i.next();
 		}
 
 		return i.next();
+	}
 
+	public Article getRandomArticle() {
+		
+		List<Article> allArticles = new ArrayList<Article>();
+		
+		for (String category : articlesByCategory.keySet()) {
+			allArticles.addAll(articlesByCategory.get(category));
+		}
+		
+		return allArticles.get(new Random().nextInt(allArticles.size()));
+	}
+
+	public void removeUser(User user) {
+		users.remove(user);
 	}
 }

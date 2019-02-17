@@ -40,14 +40,15 @@ public class User {
 				return "Author";
 		}
 	
+		@Override
 		public void doRandomAction() {
 			if (new Random().nextBoolean()) {
 				super.doRandomAction();
 			}
 			else {
-				writeArticle(ContentGenerator.getRandomTitle(), 
+				writeArticle(ContentGenerator.generateContent(50), 
 						ContentGenerator.getRandomCategory(), 
-						ContentGenerator.getRandomContent(), 
+						ContentGenerator.generateContent(400), 
 						ContentGenerator.getRandomKeywords());
 			}
 		}
@@ -63,16 +64,25 @@ public class User {
 			Site site = Site.getInstance();
 			Author author;
 			try {
-				author = new Author(user.name, user.email, user.password);
-				site.addUser(author);
+				String name = user.name;
+				String email = user.email;
+				String password = user.password;
+				Site.getInstance().removeUser(user);
+				author = new Author(name, email, password);
+				site.addAuthor(author);
 			}
 			catch (IncorrectInputException e) {
+				e.printStackTrace();
 			}			
 		}
 		
 		public void makeUserAdmin (User user) throws IncorrectInputException {
 			Site site = Site.getInstance();
-			Admin admin = new Admin(user.name, user.email, user.password);			
+			String name = user.name;
+			String email = user.email;
+			String password = user.password;
+			Site.getInstance().removeUser(user);
+			Admin admin = new Admin(name, email, password);			
 			site.addUser(admin);
 		}
 		
@@ -99,13 +109,10 @@ public class User {
 			return "Admin";
 		}
 		
+		@Override
 		public void doRandomAction() {
-			if (new Random().nextBoolean()) {
-				super.doRandomAction();
-			}
-			else {
-				makeUserAuthor(Site.getInstance().getRandomUser());
-			}
+			super.doRandomAction();
+			makeUserAuthor(Site.getInstance().getRandomUser());
 		}
 	}
 	
@@ -120,9 +127,7 @@ public class User {
 		Validation.throwIfNullOrEmpty(name, email, password);
 		
 		if(Site.getInstance().isUserInSite(email)) {
-			IncorrectInputException e = new IncorrectInputException ("User already exist!");
-			System.out.println(e.getMessage());
-			throw e;
+			throw new IncorrectInputException ("User already exists!");
 		}
 		
 		if (!email.trim().matches("[\\w-]+@([\\w-]+\\.)+[\\w-]+")) {
@@ -167,7 +172,6 @@ public class User {
 	}
 	
 	public void writeComment(Article article, String content, Article.CommentMood mood) {
-		// just like writeArticle() is in Author, it would make sense for writeComment to be in User too
 		try {
 			article.new Comment(this, content, mood);
 		} 
@@ -187,28 +191,30 @@ public class User {
 	}
 	
 	public void doRandomAction() {
-		// TODO probably temporary, just for generation
 		Random r = new Random();
 		
 		Article randomArticle = null;
 		Comment randomComment = null;
-		try {
-			randomArticle = Site.getInstance().getArticleByID(r.nextInt(Site.getInstance().getArticleCount()));
+		randomArticle = Site.getInstance().getRandomArticle();
+		randomArticle.addView();
+			
+		if (randomArticle.getCommentsCount() > 0) {
 			randomComment = randomArticle.getComment(r.nextInt(randomArticle.getCommentsCount()));
-		}
-		catch (NoSuchArticleException e) {
-			e.printStackTrace();
-			return;
 		}
 		
 		int chance = r.nextInt(4);
 		switch(chance) {
-			case 1: case 7: case 8: case 9: randomArticle.addView();
-			case 2: randomArticle.upvote(); break;
-			case 3: randomArticle.downvote(); break;
-			case 4: randomComment.upvote(); break;
-			case 5: randomComment.downvote(); break;
-			case 6: writeComment(randomArticle, ContentGenerator.generateCommentContent(), CommentMood.randomMood()); break;
+			case 2: randomArticle.upvote(this); break;
+			case 3: randomArticle.downvote(this); break;
+			case 4: 
+				if (randomComment != null) {
+					randomComment.upvote(this); break;
+				}
+			case 5: 
+				if (randomComment != null) {
+					randomComment.downvote(this); break;
+				}
+			case 6: writeComment(randomArticle, ContentGenerator.generateContent(100), CommentMood.randomMood()); break;
 			default: break;
 		}
 	}

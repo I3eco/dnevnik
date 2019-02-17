@@ -14,7 +14,7 @@ public abstract class Post {
 	private String content;
 	private int upvotesCount;
 	private int downvotesCount;
-	private Collection<String>votedUsers;
+	private Collection<String> votedUsers;
 	
 	protected Post(User author, String content) throws IncorrectInputException {
 		Validation.throwIfNull(author);
@@ -25,7 +25,7 @@ public abstract class Post {
 		this.author = author;
 		this.content = content;
 		this.timeOfPosting = LocalDateTime.now();
-		this.votedUsers = new HashSet<>();
+		this.votedUsers = new HashSet<String>();
 	}
 
 	public User getAuthor() {
@@ -57,33 +57,20 @@ public abstract class Post {
 		return this.downvotesCount;
 	}
 	
-	public void upvote() {
-		this.upvotesCount++;
-	}
-	
-	//method which will not allow voted user to vote again
 	public void upvote(User user) {
-		if(!this.votedUsers.contains(user.getEmail())) {
+		//if(!this.votedUsers.contains(user.getEmail())) {
 			this.upvotesCount++;
-			this.votedUsers.add(user.getEmail());
-		} else {
-			System.out.println("You already voted!");
-		}
+		//	this.votedUsers.add(user.getEmail());
+		//}
 
 	}
 	
-	public void downvote() {
-		this.downvotesCount++;
-	}
-	
-	//method which will not allow voted user to vote again
 	public void downvote(User user) {
-		if(!this.votedUsers.contains(user.getEmail())) {
+		// TODO comments should be removed after a new set of data, because the old one doesn't have the collection
+		//if(votedUsers != null && !this.votedUsers.contains(user.getEmail())) {
 			this.downvotesCount++;
-			this.votedUsers.add(user.getEmail());
-		} else {
-			System.out.println("You already voted!");
-		}
+	    //this.votedUsers.add(user.getEmail());
+	//	}
 	}
 	
 	

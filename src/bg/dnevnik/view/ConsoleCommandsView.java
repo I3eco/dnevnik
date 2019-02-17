@@ -4,9 +4,11 @@ import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 
 import bg.dnevnik.Article;
+import bg.dnevnik.Post;
 import bg.dnevnik.Site;
 import bg.dnevnik.User;
 import bg.dnevnik.exceptions.IncorrectInputException;
@@ -84,13 +86,11 @@ public class ConsoleCommandsView {
 	}
 
 	private void upvoteCommentCommand() {
-		// TODO Auto-generated method stub
-		
+		// TODO
 	}
 
 	private void downvoteCommentCommand() {
-		// TODO Auto-generated method stub
-		
+		// TODO
 	}
 
 	private static void showCommentsCommand() {
@@ -112,14 +112,14 @@ public class ConsoleCommandsView {
 		if (!isSignedIn()) {
 			return;
 		}
-		findArticleAndThen(Article::downvote);
+		findArticleAndThen(Post::downvote, currentUser);
 	}
 
 	private void upvoteArticleCommand() {
 		if (!isSignedIn()) {
 			return;
 		}
-		findArticleAndThen(Article::upvote);
+		findArticleAndThen(Post::upvote, currentUser);
 	}
 
 	private void showCategoryCommand() {
@@ -133,11 +133,6 @@ public class ConsoleCommandsView {
 			return;
 		}
 
-		// This could have been done with polymorphism, instead of casting,
-		// by adding an empty writeArticle() in user.
-		// But the problem with that is that you will learn that you don't have the rights
-		// only after you write the whole article, which will be annoying.
-		// So instead I just put an instanceof check before calling writeArticle()
 		if (!(currentUser instanceof User.Author)) {
 			System.err.println("Only authors have the right to write articles!");
 			return;
@@ -295,6 +290,24 @@ public class ConsoleCommandsView {
 			return;		
 		}
 	}
+	
+	private static void findArticleAndThen(BiConsumer<Post, User> action, User user) {
+		System.out.print("Choose an article by ID: ");
+
+		try {
+			action.accept(Site.getInstance().getArticleByID(Validation.readInt()), user);
+		}
+		catch (NoSuchArticleException e) {
+			System.err.println("An article with that ID does not exist!");
+			return;
+		}
+		catch (IncorrectInputException e) {
+			System.err.println("Not a number, try again!");
+			return;		
+		}
+	}
+	
+	
 
 	private boolean isSignedIn() {
 		if (currentUser == null) {
