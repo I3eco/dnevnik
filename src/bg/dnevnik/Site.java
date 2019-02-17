@@ -354,6 +354,10 @@ public class Site {
 	}
 	
 	public void startOldArticleCollector(){
+		if(this.thread != null && this.thread.isAlive()) {
+			System.out.println("You've already started the collector");
+			return;
+		}
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Login as admin:");
 		System.out.println("Enter email:");
@@ -363,7 +367,7 @@ public class Site {
 		Admin admin = null;
 		try {
 			if(!this.signIn(email, password).getTypeOfUser().equals("Admin")) {
-				System.out.println("Incorrect admin data!");
+				System.out.println("This user is not admin!");
 				return;
 			}
 			admin = (Admin) this.signIn(email, password);
@@ -378,6 +382,27 @@ public class Site {
 	}
 	
 	public void stopOldArticleCollector() {
+		if(this.thread == null || !this.thread.isAlive()) {
+			System.out.println("The collector is not started");
+			return;
+		}
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Login as admin:");
+		System.out.println("Enter email:");
+		String email = sc.nextLine();
+		System.out.println("Enter password:");
+		String password = sc.nextLine();
+		Admin admin = null;
+		try {
+			if(!this.signIn(email, password).getTypeOfUser().equals("Admin")) {
+				System.out.println("This user is not admin!");
+				return;
+			}
+			admin = (Admin) this.signIn(email, password);
+		} catch (UserDoesNotExistException e) {
+			System.out.println("No such user!");
+			return;
+		}
 		this.thread.interrupt();
 	}
 	
