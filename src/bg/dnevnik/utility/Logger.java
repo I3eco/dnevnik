@@ -19,7 +19,7 @@ public class Logger {
 		if(isEnabled) {
 			File usersDir = new File ("." + File.separator + LOGS_FOLDER_NAME + File.separator + USERS_LOGS_FOLDER_NAME);
 			usersDir.mkdirs();
-			File usersFile = new File(usersDir, user.getTypeOfUser() + "s.log");
+			File usersFile = new File(usersDir, user.getTypeOfUser() + "s.logger");
 			usersFile.createNewFile();
 			LocalDateTime currentDataTime = LocalDateTime.now();
 			DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd MMM uuuu - hh:mm");

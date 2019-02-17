@@ -50,6 +50,7 @@ public class ConsoleCommandsView {
 				case "show category": showCategoryCommand(); break;
 
 				case "write article": writeArticleCommand(); break;
+				case "search by title": searchByTitleCommand(); break; 
 				case "show article": findArticleAndThen(Article::show); break;
 				case "upvote article": upvoteArticleCommand(); break;
 				case "downvote article": downvoteArticleCommand(); break;
@@ -64,7 +65,8 @@ public class ConsoleCommandsView {
 				case "sort by views": sortArticlesByFilter(new ArticleComparatorByViews()); break;
 				case "sort by comments": sortArticlesByFilter(new ArticleComparatorByComments()); break;
 				case "sort by rating": sortArticlesByFilter(new ArticleComparatorByRating()); break;
-
+				
+				case "start article cleaning": Site.getInstance().startOldArticleCollector();
 				case "exit": running = false; break;
 
 				default: System.err.println("That command does not exist!"); break;
@@ -73,6 +75,12 @@ public class ConsoleCommandsView {
 		}
 	}
 	
+	private void searchByTitleCommand() {
+		System.out.print("Search: ");
+		String search = scanner.nextLine();
+		Site.getInstance().showArticlesByInputWords(search);
+	}
+
 	private static void sortArticlesByFilter(Comparator<Article> comparator) {
 		System.out.print("How many articles: ");
 		try {
