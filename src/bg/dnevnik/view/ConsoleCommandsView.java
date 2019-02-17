@@ -101,7 +101,7 @@ public class ConsoleCommandsView {
 		System.out.print("How many: ");
 
 		try {
-			Site.getInstance().showTopCategories(Validation.readInt());
+			Site.getInstance().showHotCategories(Validation.readInt());
 		}
 		catch (IncorrectInputException e) {
 			System.err.println("Invalid number, try again!");

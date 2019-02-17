@@ -167,16 +167,28 @@ public class Site {
 				this.name = name;
 				this.numberOfArticles = numberOfArticles;
 			}
+
+			@Override
+			public String toString() {
+				return "Category name=" + name + ", numberOfArticles=" + numberOfArticles;
+			}
+			
+			
 		}
 
-		Set<Category> topCategories = new TreeSet<Category>((c1, c2) -> c2.numberOfArticles - c1.numberOfArticles);
+		Set<Category> topCategories = new TreeSet<Category>((c1, c2) -> {
+			if(c2.numberOfArticles - c1.numberOfArticles == 0) {
+				return c1.name.compareTo(c2.name);
+			}
+			return c2.numberOfArticles - c1.numberOfArticles;
+		});
 
 		for (Entry<String, Set<Article>> entry : this.articlesByCategory.entrySet()) {
 
 			int articlesInCategory = entry.getValue().size();
 			Category currentCategory = new Category(entry.getKey(), articlesInCategory);
 
-			if ((topCategories.size() >= numberOfCategories)) {
+			if ((topCategories.size() > numberOfCategories)) {
 				ArrayList<Category> temp = new ArrayList<Category>(topCategories);
 				Category category = temp.get(numberOfCategories);
 
@@ -190,39 +202,40 @@ public class Site {
 			}
 
 		}
-		System.out.println(topCategories);
+//		System.out.println(topCategories);
+		topCategories.forEach(category -> System.out.println(category.name.toUpperCase() + " (" + category.numberOfArticles + " articles)"));
 	}
 
-	public void showTopCategories(int numOfCategories) {
-		if (numOfCategories <= 0) {
-			return;
-		}
-
-		Comparator<Entry<String, Set<Article>>> comparatorBySize = (a, b) -> a.getValue().size() - b.getValue().size();
-		Set<Entry<String, Set<Article>>> topCategories = new TreeSet<Entry<String, Set<Article>>>(comparatorBySize);
-
-		for (Entry<String, Set<Article>> currentCategory : this.articlesByCategory.entrySet()) {
-			if (topCategories.size() < numOfCategories) {
-				topCategories.add(currentCategory);
-			}
-			else {
-				Iterator<Entry<String, Set<Article>>> i = topCategories.iterator();
-				while (i.hasNext()) {
-					Entry<String, Set<Article>> entry = i.next();
-					
-					if (currentCategory.getValue().size() > entry.getValue().size()) {
-						i.remove();
-						topCategories.add(entry);
-					}
-				}
-			}
-		}
-
-		for (Entry<String, Set<Article>> category : topCategories) {
-			System.out.println(category.getKey().toUpperCase() + " (" + category.getValue().size() + ")");
-		}
-
-	}
+//	public void showTopCategories(int numOfCategories) {
+//		if (numOfCategories <= 0) {
+//			return;
+//		}
+//
+//		Comparator<Entry<String, Set<Article>>> comparatorBySize = (a, b) -> a.getValue().size() - b.getValue().size();
+//		Set<Entry<String, Set<Article>>> topCategories = new TreeSet<Entry<String, Set<Article>>>(comparatorBySize);
+//
+//		for (Entry<String, Set<Article>> currentCategory : this.articlesByCategory.entrySet()) {
+//			if (topCategories.size() < numOfCategories) {
+//				topCategories.add(currentCategory);
+//			}
+//			else {
+//				Iterator<Entry<String, Set<Article>>> i = topCategories.iterator();
+//				while (i.hasNext()) {
+//					Entry<String, Set<Article>> entry = i.next();
+//					
+//					if (currentCategory.getValue().size() > entry.getValue().size()) {
+//						i.remove();
+//						topCategories.add(entry);
+//					}
+//				}
+//			}
+//		}
+//
+//		for (Entry<String, Set<Article>> category : topCategories) {
+//			System.out.println(category.getKey().toUpperCase() + " (" + category.getValue().size() + ")");
+//		}
+//
+//	}
 
 	public void showFromToday() {
 		// TODO test this
