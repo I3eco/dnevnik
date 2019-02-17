@@ -11,6 +11,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Random;
+import java.util.Scanner;
 import java.util.Set;
 import java.util.TreeSet;
 import java.util.concurrent.ConcurrentHashMap;
@@ -34,6 +35,7 @@ public class Site {
 	private Set<Author> authors;
 	private Set<Admin> admins;
 	private Map<String, Set<Article>> articlesByCategory;
+	private Thread thread;
 
 	private Site() {
 		this.articleCount = new AtomicInteger();
@@ -352,9 +354,31 @@ public class Site {
 	}
 	
 	public void startOldArticleCollector(){
-		Thread thread = new Thread(new OldArticleCollector());
-		thread.setDaemon(true);
-		thread.start();
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Login as admin:");
+		System.out.println("Enter email:");
+		String email = sc.nextLine();
+		System.out.println("Enter password:");
+		String password = sc.nextLine();
+		Admin admin = null;
+		try {
+			if(!this.signIn(email, password).getTypeOfUser().equals("Admin")) {
+				System.out.println("Incorrect admin data!");
+				return;
+			}
+			admin = (Admin) this.signIn(email, password);
+		} catch (UserDoesNotExistException e) {
+			System.out.println("No such user!");
+			return;
+		}
+		this.thread = new Thread(new OldArticleCollector());
+		this.thread.start();
+		this.thread.setDaemon(true);
+		this.thread.start();
+	}
+	
+	public void stopOldArticleCollector() {
+		this.thread.interrupt();
 	}
 	
 }

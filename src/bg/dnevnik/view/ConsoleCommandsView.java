@@ -64,7 +64,7 @@ public class ConsoleCommandsView {
 				case "sort by comments": sortArticlesByFilter(new ArticleComparatorByComments()); break;
 				case "sort by rating": sortArticlesByFilter(new ArticleComparatorByRating()); break;
 				
-				case "start article cleaner": Site.getInstance().startOldArticleCollector();
+				case "start article cleaner": Site.getInstance().startOldArticleCollector(); break;
 				case "exit": running = false; break;
 
 				default: System.err.println("That command does not exist!"); break;
