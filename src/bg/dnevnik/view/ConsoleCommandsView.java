@@ -57,8 +57,6 @@ public class ConsoleCommandsView {
 
 				case "write comment": writeCommentCommand(); break;
 				case "show comments": showCommentsCommand(); break;
-//				case "downvote comment": downvoteCommentCommand(); break;
-//				case "upvote comment": upvoteCommentCommand(); break;
 
 				case "show from today": Site.getInstance().showFromToday(); break;
 				case "sort by date": sortArticlesByFilter(new ArticleComparatorByDate()); break;
@@ -66,7 +64,7 @@ public class ConsoleCommandsView {
 				case "sort by comments": sortArticlesByFilter(new ArticleComparatorByComments()); break;
 				case "sort by rating": sortArticlesByFilter(new ArticleComparatorByRating()); break;
 				
-				case "start article cleaning": Site.getInstance().startOldArticleCollector();
+				case "start article cleaner": Site.getInstance().startOldArticleCollector();
 				case "exit": running = false; break;
 
 				default: System.err.println("That command does not exist!"); break;
@@ -230,7 +228,6 @@ public class ConsoleCommandsView {
 	}
 
 	private static void showCommands() {
-		//commands: 
 		//'sign up' 
 		//'sign in' 
 		//'sign out'
@@ -241,23 +238,22 @@ public class ConsoleCommandsView {
 		//
 		//'write article'
 		//'show article'
+		//'search by title'
 		//'upvote/downvote article'
 		//
 		//'write comment'
 		//'show comments'
-		//'upvote/downvote comment'
 		//
+		//'show from today'
 		//'sort by new' 
 		//'sort by views' 
 		//'sort by comments' 
 		//'sort by votes'
 		//
-		// 'show from today'
-		//
+		//'start article cleaner'
 		//'exit' 
 
 		String commandInfo = 
-			"commands: \r\n" + 
 			"'sign up' \r\n" + 
 			"'sign in' \r\n" + 
 			"'sign out'\r\n" + 
@@ -268,18 +264,20 @@ public class ConsoleCommandsView {
 			"\r\n" + 
 			"'write article'\r\n" + 
 			"'show article'\r\n" + 
+			"'search by title'\r\n" + 
 			"'upvote/downvote article'\r\n" + 
 			"\r\n" + 
 			"'write comment'\r\n" + 
 			"'show comments'\r\n" + 
-			"'upvote/downvote comment'\r\n" + 
 			"\r\n" + 
+			"'show from today'\r\n" + 
 			"'sort by new' \r\n" + 
 			"'sort by views' \r\n" + 
 			"'sort by comments' \r\n" + 
 			"'sort by votes'\r\n" + 
 			"\r\n" + 
-			"'exit' ";
+			"'start article cleaner'\r\n" + 
+			"'exit'";
 		System.out.println(commandInfo);
 	}
 	
