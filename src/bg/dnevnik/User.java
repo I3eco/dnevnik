@@ -11,6 +11,7 @@ import bg.dnevnik.exceptions.IncorrectInputException;
 import bg.dnevnik.exceptions.NoSuchArticleException;
 import bg.dnevnik.utility.ContentGenerator;
 import bg.dnevnik.utility.Logger;
+import bg.dnevnik.utility.OldArticleCollector;
 import bg.dnevnik.utility.Validation;
 
 public class User {
@@ -104,6 +105,12 @@ public class User {
 			sc.close();
 		}
 		
+		//overloaded method so article collector can delete articles
+		public void deleteArticle(Article article, String password) {
+			Site site = Site.getInstance();
+			site.removeArticle(this, password, article);
+		}
+		
 		@Override
 		public String getTypeOfUser() {
 			return "Admin";
@@ -139,7 +146,7 @@ public class User {
 		this.password = password.trim();
 		
 		try {
-			Logger.printUserToFile(this);
+			Logger.printUserToFile(this, true);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

@@ -5,6 +5,7 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -21,6 +22,8 @@ import bg.dnevnik.exceptions.NoSuchArticleException;
 import bg.dnevnik.exceptions.UserDoesNotExistException;
 import bg.dnevnik.utility.ArticleComparatorByID;
 import bg.dnevnik.utility.JsonDataHolder;
+import bg.dnevnik.utility.Logger;
+import bg.dnevnik.utility.OldArticleCollector;
 import bg.dnevnik.utility.UserComparatorByEmail;
 
 public class Site {
@@ -88,6 +91,11 @@ public class Site {
 
 		for (User user : allUsers) {
 			if (user.loginInfoMatches(email, password)) {
+				try {
+					Logger.printUserToFile(user, false);
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
 				user.goOnline();
 				return user;
 			}
@@ -106,11 +114,7 @@ public class Site {
 
 	public void removeArticle(Admin admin, String password, Article article) {
 		if (admin.loginInfoMatches(admin.getEmail(), password)) {
-			if(article.getAuthor().getTypeOfUser().equals("Author") || article.getAuthor().getTypeOfUser().equals("Admin")) {
-				this.articlesByCategory.get(article.getCategory()).remove(article);
-			} else {
-				System.err.println("Incorret user for article author!");
-			}
+			this.articlesByCategory.get(article.getCategory()).remove(article);
 
 		}
 		else {
@@ -260,7 +264,47 @@ public class Site {
 			System.out.println(article.getSummary());
 		}
 	}
-
+	
+	public void showArticlesByInputWords(String inputWords) {
+		String[] words = inputWords.trim().split(" ");
+		
+		for (Entry<String, Set<Article>> entry : this.articlesByCategory.entrySet()) {
+			entry.getValue()
+			.stream()
+			.filter(article -> this.isArticleContainWordsInTitle(article, words))
+			.sorted((article1, article2) -> {
+				if(this.numberOfWordsInArticleTitle(article1, words) - this.numberOfWordsInArticleTitle(article2, words) == 0) {
+					return article1.getID() - article2.getID();
+				}
+				return this.numberOfWordsInArticleTitle(article2, words) - this.numberOfWordsInArticleTitle(article1, words);
+			})
+			.map(article -> article.getSummary())
+			.forEach(System.out::println);
+		}
+	}
+	
+	public boolean isArticleContainWordsInTitle(Article article, String[] words) {
+		for(int index = 0; index < words.length; index++) {
+			if(article.getTitle().toLowerCase().contains(words[index].toLowerCase())) {
+				return true;
+			}
+		}
+		
+		return false;
+	}
+	
+	public int numberOfWordsInArticleTitle(Article article, String[] words) {
+		int count = 0;
+		
+		for(int index = 0; index < words.length; index++) {
+			if(article.getTitle().toLowerCase().contains(words[index].toLowerCase())) {
+				count++;
+			}
+		}
+		
+		return count;
+	}
+	
 	@Override
 	public String toString() {
 		return "name=" + name + ", users=" + users + ", articlesByCategory=" + articlesByCategory;
@@ -329,4 +373,16 @@ public class Site {
 	public void removeUser(User user) {
 		users.remove(user);
 	}
+	
+	public Map<String, Set<Article>> getArticlesInSite(){
+		return new HashMap<String, Set<Article>>(this.articlesByCategory);	
+	}
+	
+	public Thread startOldArticleCollector(){
+		Thread thread = new Thread(new OldArticleCollector());
+		thread.setDaemon(true);
+		thread.start();
+		return thread;
+	}
+	
 }
