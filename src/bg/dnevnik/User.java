@@ -1,8 +1,8 @@
 package bg.dnevnik;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.Scanner;
 
@@ -15,52 +15,30 @@ import bg.dnevnik.utility.Validation;
 public class User {
 	
 	public static class Author extends User {
-		private transient Collection<Article> writtenArticles;
 		
 		private Author(String name, String email, String password) throws IncorrectInputException {
 			super(name, email, password);
-			this.writtenArticles = new ArrayList<Article>();
 		}
 		
 		public void writeArticle(String title, String category, String content, Collection<String> keywords) {
 
-			Article article;
 			try {
-				article = new Article(this, category, title, content, keywords);
-				this.writtenArticles.add(article);
+				new Article(this, category, title, content, keywords);
 			} 
 			catch (IncorrectInputException e) {
 				System.err.println("Incorrect input, could not write article!");
 			}
-//			try {
-//				JsonDataHolder.saveUserToJson(this);
-//			} catch (IOException e) {
-//				e.printStackTrace();
-//			}
 		}
 
 		public void editArticle(Article article, String content) {
-			try {
-				article = Site.getInstance().getArticleByID(article.getID());
-			} catch (NoSuchArticleException e) {
-				System.out.println("No such article");
-			}
 			article.setContent(content);
-		}
-		
-		public void removeArticle(Article article) {
-			this.writtenArticles.remove(article);
 		}
 		
 			@Override
 		public String getTypeOfUser() {
 				return "Author";
 		}
-			
-		@Override
-		public String toString() {
-			return super.toString() + ", articles: " + this.writtenArticles;
-		}
+
 	}
 	
 	public static class Admin extends Author {
@@ -151,7 +129,6 @@ public class User {
 	
 	public static void createUser(String username, String email, String password, String rights) {
 		rights = rights.trim().toLowerCase();
-//		User user = null;
 		
 		try {
 			switch (rights) {

@@ -196,4 +196,5 @@ public class Article extends Post {
 	public int calculateRating() {
 		return getUpvotesCount() - getDownvotesCount();
 	}
+
 }

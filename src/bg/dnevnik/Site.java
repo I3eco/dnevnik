@@ -13,6 +13,7 @@ import java.util.TreeSet;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
 
+import bg.dnevnik.Article.Comment;
 import bg.dnevnik.User.Admin;
 import bg.dnevnik.User.Author;
 import bg.dnevnik.exceptions.NoSuchArticleException;
@@ -37,7 +38,6 @@ public class Site {
 		this.authors = new TreeSet<Author>(new UserComparatorByEmail());
 		this.admins = new TreeSet<Admin>(new UserComparatorByEmail());
 		this.articlesByCategory = new ConcurrentHashMap<String, Set<Article>>();
-//		JsonDataHolder.uploadUsersInSite(this.users);
 		
 		//without the next line site cannot load data from json
 		instance = this;
@@ -47,6 +47,7 @@ public class Site {
 		if (instance == null) {
 			try {
 				JsonDataHolder.loadSiteFromJson(Site.instance);
+				
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -108,14 +109,7 @@ public class Site {
 	public void removeArticle(Admin admin, String password, Article article) {
 		if (admin.loginInfoMatches(admin.getEmail(), password)) {
 			if(article.getAuthor().getTypeOfUser().equals("Author") || article.getAuthor().getTypeOfUser().equals("Admin")) {
-				Author author = (Author) article.getAuthor();
 				this.articlesByCategory.get(article.getCategory()).remove(article);
-				author.removeArticle(article);
-//				try {
-//					JsonDataHolder.saveUserToJson(author);
-//				} catch (IOException e) {
-//					e.printStackTrace();
-//				}
 			} else {
 				System.err.println("Incorret user for article author!");
 			}
@@ -159,7 +153,7 @@ public class Site {
 		}
 		throw new NoSuchArticleException();
 	}
-
+	
 	// TODO test the two methods when there is site data
 	public void showHotCategories(int numberOfCategories) {
 		class Category {
@@ -246,10 +240,6 @@ public class Site {
 		
 		return false;
 	}
-	
-//	public void uploadUsers(Set<User> users) {
-//		this.users.addAll(users);
-//	}
 	
 	//temp method to see users
 	public void showUsersInSite() {
