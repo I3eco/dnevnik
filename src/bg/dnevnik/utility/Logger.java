@@ -15,7 +15,7 @@ public class Logger {
 	private static final String USERS_LOGS_FOLDER_NAME = "UsersLogs";
 	private static boolean isEnabled = true;
 	
-	public static synchronized void printUserToFile(User user) throws IOException {
+	public static void printUserToFile(User user, boolean isCreated) throws IOException {
 		if(isEnabled) {
 			File usersDir = new File ("." + File.separator + LOGS_FOLDER_NAME + File.separator + USERS_LOGS_FOLDER_NAME);
 			usersDir.mkdirs();
@@ -25,10 +25,16 @@ public class Logger {
 			DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd MMM uuuu - hh:mm");
 			
 			try(PrintWriter userWriter = new PrintWriter(new BufferedWriter(new FileWriter(usersFile, true)))){
-				userWriter.println(user.getTypeOfUser() + " with name: " + user.getName() + " and email: " + user.getEmail() + " was created on: " + currentDataTime.format(dateTimeFormatter));
+				if(isCreated) {
+					userWriter.println(user.getTypeOfUser() + " with name: " + user.getName() + " and email: " + user.getEmail() + " was created on: " + currentDataTime.format(dateTimeFormatter));
+				} else {
+					userWriter.println(user.getTypeOfUser() + " with name: " + user.getName() + " and email: " + user.getEmail() + " logged on: " + currentDataTime.format(dateTimeFormatter));
+				}
 			}
 		}
 	}
+	
+		
 
 	public static boolean isEnabled() {
 		return isEnabled;

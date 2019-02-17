@@ -147,7 +147,6 @@ public class Article extends Post {
 	}
 
 	public void show() {
-		// TODO find a good way to synchronize this
 		this.numberOfViews++;
 		
 		StringBuilder info = new StringBuilder();

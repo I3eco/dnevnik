@@ -5,6 +5,7 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -14,14 +15,14 @@ import java.util.TreeSet;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import org.omg.Messaging.SyncScopeHelper;
-
 import bg.dnevnik.User.Admin;
 import bg.dnevnik.User.Author;
 import bg.dnevnik.exceptions.NoSuchArticleException;
 import bg.dnevnik.exceptions.UserDoesNotExistException;
 import bg.dnevnik.utility.ArticleComparatorByID;
 import bg.dnevnik.utility.JsonDataHolder;
+import bg.dnevnik.utility.Logger;
+import bg.dnevnik.utility.OldArticleCollector;
 import bg.dnevnik.utility.UserComparatorByEmail;
 
 public class Site {
@@ -89,6 +90,11 @@ public class Site {
 
 		for (User user : allUsers) {
 			if (user.loginInfoMatches(email, password)) {
+				try {
+					Logger.printUserToFile(user, false);
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
 				user.goOnline();
 				return user;
 			}
@@ -107,11 +113,7 @@ public class Site {
 
 	public void removeArticle(Admin admin, String password, Article article) {
 		if (admin.loginInfoMatches(admin.getEmail(), password)) {
-			if(article.getAuthor().getTypeOfUser().equals("Author") || article.getAuthor().getTypeOfUser().equals("Admin")) {
-				this.articlesByCategory.get(article.getCategory()).remove(article);
-			} else {
-				System.err.println("Incorret user for article author!");
-			}
+			this.articlesByCategory.get(article.getCategory()).remove(article);
 
 		}
 		else {
@@ -356,4 +358,16 @@ public class Site {
 		return i.next();
 
 	}
+	
+	public Map<String, Set<Article>> getArticlesInSite(){
+		return new HashMap<String, Set<Article>>(this.articlesByCategory);	
+	}
+	
+	public Thread startOldArticleCollector(){
+		Thread thread = new Thread(new OldArticleCollector());
+		thread.setDaemon(true);
+		thread.start();
+		return thread;
+	}
+	
 }
