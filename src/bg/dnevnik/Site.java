@@ -157,7 +157,6 @@ public class Site {
 		throw new NoSuchArticleException();
 	}
 	
-	// TODO test the two methods when there is site data
 	public void showHotCategories(int numberOfCategories) {
 		class Category {
 			String name;
@@ -172,8 +171,6 @@ public class Site {
 			public String toString() {
 				return "Category name=" + name + ", numberOfArticles=" + numberOfArticles;
 			}
-			
-			
 		}
 
 		Set<Category> topCategories = new TreeSet<Category>((c1, c2) -> {
@@ -202,40 +199,8 @@ public class Site {
 			}
 
 		}
-//		System.out.println(topCategories);
 		topCategories.forEach(category -> System.out.println(category.name.toUpperCase() + " (" + category.numberOfArticles + " articles)"));
 	}
-
-//	public void showTopCategories(int numOfCategories) {
-//		if (numOfCategories <= 0) {
-//			return;
-//		}
-//
-//		Comparator<Entry<String, Set<Article>>> comparatorBySize = (a, b) -> a.getValue().size() - b.getValue().size();
-//		Set<Entry<String, Set<Article>>> topCategories = new TreeSet<Entry<String, Set<Article>>>(comparatorBySize);
-//
-//		for (Entry<String, Set<Article>> currentCategory : this.articlesByCategory.entrySet()) {
-//			if (topCategories.size() < numOfCategories) {
-//				topCategories.add(currentCategory);
-//			}
-//			else {
-//				Iterator<Entry<String, Set<Article>>> i = topCategories.iterator();
-//				while (i.hasNext()) {
-//					Entry<String, Set<Article>> entry = i.next();
-//					
-//					if (currentCategory.getValue().size() > entry.getValue().size()) {
-//						i.remove();
-//						topCategories.add(entry);
-//					}
-//				}
-//			}
-//		}
-//
-//		for (Entry<String, Set<Article>> category : topCategories) {
-//			System.out.println(category.getKey().toUpperCase() + " (" + category.getValue().size() + ")");
-//		}
-//
-//	}
 
 	public void showFromToday() {
 		// TODO test this
@@ -296,7 +261,7 @@ public class Site {
 		}
 	}
 	
-	public boolean isArticleContainWordsInTitle(Article article, String[] words) {
+	private boolean isArticleContainWordsInTitle(Article article, String[] words) {
 		for(int index = 0; index < words.length; index++) {
 			if(article.getTitle().toLowerCase().contains(words[index].toLowerCase())) {
 				return true;
@@ -306,7 +271,7 @@ public class Site {
 		return false;
 	}
 	
-	public int numberOfWordsInArticleTitle(Article article, String[] words) {
+	private int numberOfWordsInArticleTitle(Article article, String[] words) {
 		int count = 0;
 		
 		for(int index = 0; index < words.length; index++) {
@@ -391,11 +356,10 @@ public class Site {
 		return new HashMap<String, Set<Article>>(this.articlesByCategory);	
 	}
 	
-	public Thread startOldArticleCollector(){
+	public void startOldArticleCollector(){
 		Thread thread = new Thread(new OldArticleCollector());
 		thread.setDaemon(true);
 		thread.start();
-		return thread;
 	}
 	
 }
