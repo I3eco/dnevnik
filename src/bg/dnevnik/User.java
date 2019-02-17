@@ -4,11 +4,14 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.LinkedList;
+import java.util.Random;
 import java.util.Scanner;
 
 import bg.dnevnik.Article.Comment;
+import bg.dnevnik.Article.CommentMood;
 import bg.dnevnik.exceptions.IncorrectInputException;
 import bg.dnevnik.exceptions.NoSuchArticleException;
+import bg.dnevnik.utility.ContentGenerator;
 import bg.dnevnik.utility.Logger;
 import bg.dnevnik.utility.Validation;
 
@@ -61,6 +64,19 @@ public class User {
 		public String toString() {
 			return super.toString() + ", articles: " + this.writtenArticles;
 		}
+	
+		public void doRandomAction() {
+			if (new Random().nextBoolean()) {
+				super.doRandomAction();
+			}
+			else {
+				writeArticle(ContentGenerator.getRandomTitle(), 
+						ContentGenerator.getRandomCategory(), 
+						ContentGenerator.getRandomContent(), 
+						ContentGenerator.getRandomKeywords());
+			}
+		}
+	
 	}
 	
 	public static class Admin extends Author {
@@ -68,10 +84,15 @@ public class User {
 			super(name, email, password);
 		}
 		
-		public void makeUserAuthor (User user) throws IncorrectInputException {
+		public void makeUserAuthor (User user) {
 			Site site = Site.getInstance();
-			Author author = new Author(user.name, user.email, user.password);			
-			site.addUser(author);
+			Author author;
+			try {
+				author = new Author(user.name, user.email, user.password);
+				site.addUser(author);
+			}
+			catch (IncorrectInputException e) {
+			}			
 		}
 		
 		public void makeUserAdmin (User user) throws IncorrectInputException {
@@ -103,6 +124,14 @@ public class User {
 			return "Admin";
 		}
 		
+		public void doRandomAction() {
+			if (new Random().nextBoolean()) {
+				super.doRandomAction();
+			}
+			else {
+				makeUserAuthor(Site.getInstance().getRandomUser());
+			}
+		}
 	}
 	
 	private String name;
@@ -110,9 +139,6 @@ public class User {
 	private String password;
 	private transient Collection<Article.Comment> commentHistory;
 
-	// TODO this is just an idea, but instead of a boolean we could add a state enum ONLINE/OFFLINE/AWAY,
-	// and have a thread loop through all users, and if they haven't done anything in a few minutes,
-	// it sets their state to AWAY
 	private transient boolean isOnline;
 	
 	private User(String name, String email, String password) throws IncorrectInputException {
@@ -200,6 +226,33 @@ public class User {
 			return true;
 		}
 		return false;
+	}
+	
+	public void doRandomAction() {
+		// TODO probably temporary, just for generation
+		Random r = new Random();
+		
+		Article randomArticle = null;
+		Comment randomComment = null;
+		try {
+			randomArticle = Site.getInstance().getArticleByID(r.nextInt(Site.getInstance().getArticleCount()));
+			randomComment = randomArticle.getComment(r.nextInt(randomArticle.getCommentsCount()));
+		}
+		catch (NoSuchArticleException e) {
+			e.printStackTrace();
+			return;
+		}
+		
+		int chance = r.nextInt(4);
+		switch(chance) {
+			case 1: case 7: case 8: case 9: randomArticle.addView();
+			case 2: randomArticle.upvote(); break;
+			case 3: randomArticle.downvote(); break;
+			case 4: randomComment.upvote(); break;
+			case 5: randomComment.downvote(); break;
+			case 6: writeComment(randomArticle, ContentGenerator.generateCommentContent(), CommentMood.randomMood()); break;
+			default: break;
+		}
 	}
 	
 	public String getTypeOfUser() {

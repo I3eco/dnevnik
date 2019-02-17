@@ -3,7 +3,8 @@ package bg.dnevnik;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.LinkedList;
+import java.util.List;
+import java.util.Random;
 import java.util.stream.Collectors;
 
 import bg.dnevnik.User.Author;
@@ -41,6 +42,11 @@ public class Article extends Post {
 
 	public enum CommentMood {
 		NEUTRAL, CHEERFUL, CURIOUS, SAD, ANGRY;
+
+		public static CommentMood randomMood() {
+			CommentMood[] moods = CommentMood.values();
+			return moods[new Random().nextInt(moods.length)];
+		}
 	}
 	
 	public class Comment extends Post {
@@ -92,7 +98,7 @@ public class Article extends Post {
 	private Collection<String> keywords;
 	private Picture mainPicture;
 	private int numberOfViews;
-	private Collection<Comment> comments;
+	private List<Comment> comments;
 
 	public Article(Author author, String category, String title, String content, Collection<String> keywords) throws IncorrectInputException {
 		super(author, content);
@@ -102,7 +108,7 @@ public class Article extends Post {
 		this.category = "";
 		this.title = title;
 		this.keywords = keywords;
-		this.comments = new LinkedList<Comment>();
+		this.comments = new ArrayList<Comment>();
 		this.ID = Site.getInstance().incrementArticleCount();
 		Site.getInstance().addArticle(this, category);
 	}
@@ -195,5 +201,13 @@ public class Article extends Post {
 
 	public int calculateRating() {
 		return getUpvotesCount() - getDownvotesCount();
+	}
+
+	public void addView() {
+		numberOfViews++;
+	}
+	
+	public Comment getComment(int index) {
+		return comments.get(index);
 	}
 }

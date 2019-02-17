@@ -8,6 +8,7 @@ import java.util.Comparator;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Random;
 import java.util.Set;
 import java.util.TreeSet;
 import java.util.concurrent.ConcurrentHashMap;
@@ -29,7 +30,7 @@ public class Site {
 	private Set<Author> authors;
 	private Set<Admin> admins;
 	private Map<String, Set<Article>> articlesByCategory;
-	
+
 	private Site() {
 		this.articleCount = new AtomicInteger();
 		this.name = "Dnevnik";
@@ -38,16 +39,17 @@ public class Site {
 		this.admins = new TreeSet<Admin>(new UserComparatorByEmail());
 		this.articlesByCategory = new ConcurrentHashMap<String, Set<Article>>();
 //		JsonDataHolder.uploadUsersInSite(this.users);
-		
-		//without the next line site cannot load data from json
+
+		// without the next line site cannot load data from json
 		instance = this;
 	}
-	
+
 	public static Site getInstance() {
 		if (instance == null) {
 			try {
 				JsonDataHolder.loadSiteFromJson(Site.instance);
-			} catch (IOException e) {
+			}
+			catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
@@ -66,12 +68,12 @@ public class Site {
 		this.users.remove(user);
 		this.users.add(user);
 	}
-	
+
 	public void addAuthor(Author author) {
 		this.authors.remove(author);
 		this.authors.add(author);
 	}
-	
+
 	public void addAdmin(Admin admin) {
 		this.admins.remove(admin);
 		this.admins.add(admin);
@@ -86,7 +88,7 @@ public class Site {
 		allUsers.addAll(this.users);
 		allUsers.addAll(this.authors);
 		allUsers.addAll(this.admins);
-		
+
 		for (User user : allUsers) {
 			if (user.loginInfoMatches(email, password)) {
 				user.goOnline();
@@ -95,7 +97,7 @@ public class Site {
 		}
 		throw new UserDoesNotExistException("There is no user with that email or password!");
 	}
-	
+
 	public void addArticle(Article article, String category) {
 		category = category.toUpperCase();
 		article.setCategory(category);
@@ -104,10 +106,11 @@ public class Site {
 		}
 		this.articlesByCategory.get(category).add(article);
 	}
-	
+
 	public void removeArticle(Admin admin, String password, Article article) {
 		if (admin.loginInfoMatches(admin.getEmail(), password)) {
-			if(article.getAuthor().getTypeOfUser().equals("Author") || article.getAuthor().getTypeOfUser().equals("Admin")) {
+			if (article.getAuthor().getTypeOfUser().equals("Author")
+					|| article.getAuthor().getTypeOfUser().equals("Admin")) {
 				Author author = (Author) article.getAuthor();
 				this.articlesByCategory.get(article.getCategory()).remove(article);
 				author.removeArticle(article);
@@ -116,11 +119,13 @@ public class Site {
 //				} catch (IOException e) {
 //					e.printStackTrace();
 //				}
-			} else {
+			}
+			else {
 				System.err.println("Incorret user for article author!");
 			}
-			
-		} else {
+
+		}
+		else {
 			System.err.println("Invalid password!");
 		}
 	}
@@ -187,28 +192,28 @@ public class Site {
 					topCategories.remove(category);
 					topCategories.add(currentCategory);
 				}
-			} else {
+			}
+			else {
 				topCategories.add(currentCategory);
 			}
-			
+
 		}
 		System.out.println(topCategories);
 	}
-	
+
 	public void showTopCategories(int numOfCategories) {
 		if (numOfCategories <= 0) {
 			return;
 		}
 
-		Comparator<Entry<String, Set<Article>>> comparatorBySize = (a, b) -> a.getValue().size()
-				- b.getValue().size();
-		Set<Entry<String, Set<Article>>> topCategories = new TreeSet<Entry<String, Set<Article>>>(
-				comparatorBySize);
+		Comparator<Entry<String, Set<Article>>> comparatorBySize = (a, b) -> a.getValue().size() - b.getValue().size();
+		Set<Entry<String, Set<Article>>> topCategories = new TreeSet<Entry<String, Set<Article>>>(comparatorBySize);
 
 		for (Entry<String, Set<Article>> currentCategory : this.articlesByCategory.entrySet()) {
 			if (topCategories.size() < numOfCategories) {
 				topCategories.add(currentCategory);
-			} else {
+			}
+			else {
 				for (Entry<String, Set<Article>> topCategory : topCategories) {
 					if (currentCategory.getValue().size() > topCategory.getValue().size()) {
 						topCategories.remove(topCategory);
@@ -233,35 +238,35 @@ public class Site {
 			}
 		}));
 	}
-	
+
 	public boolean isUserInSite(String email) {
-		
+
 		Iterator<User> userIterator = this.users.iterator();
-		
-		while(userIterator.hasNext()) {
-			if(userIterator.next().getEmail().equals(email)) {
+
+		while (userIterator.hasNext()) {
+			if (userIterator.next().getEmail().equals(email)) {
 				return true;
 			}
 		}
-		
+
 		return false;
 	}
-	
+
 //	public void uploadUsers(Set<User> users) {
 //		this.users.addAll(users);
 //	}
-	
-	//temp method to see users
+
+	// temp method to see users
 	public void showUsersInSite() {
 		System.out.println(this.users);
 	}
-	
+
 	public void showArticlesByFilter(Comparator<Article> comparator, int numArticlesToShow) {
 		Set<Article> sortedArticles = new TreeSet<Article>(comparator);
 		for (String category : articlesByCategory.keySet()) {
 			sortedArticles.addAll(articlesByCategory.get(category));
 		}
-		
+
 		int count = 0;
 		for (Article article : sortedArticles) {
 			if (count++ > numArticlesToShow) {
@@ -270,17 +275,61 @@ public class Site {
 			System.out.println(article.getSummary());
 		}
 	}
-	
+
 	@Override
 	public String toString() {
 		return "name=" + name + ", users=" + users + ", articlesByCategory=" + articlesByCategory;
 	}
-	
+
 	public synchronized int incrementArticleCount() {
 		return this.articleCount.incrementAndGet();
 	}
 
 	public String getName() {
 		return this.name;
+	}
+
+	public int userCount() {
+		return users.size() + authors.size() + admins.size();
+	}
+
+	public int getArticleCount() {
+		return articleCount.get();
+	}
+
+	public User getRandomUser() {
+		// TODO temporary, just for generation
+		Random r = new Random();
+		if (r.nextBoolean()) {
+			int index = r.nextInt(users.size() - 1);
+
+			Iterator<User> i = users.iterator();
+			for (int count = 0; count < index && i.hasNext(); count++) {
+				i.next();
+			}
+
+			return i.next();
+		}
+
+		if (r.nextBoolean()) {
+			int index = r.nextInt(authors.size() - 1);
+
+			Iterator<Author> i = authors.iterator();
+			for (int count = 0; count < index && i.hasNext(); count++) {
+				i.next();
+			}
+
+			return i.next();
+		}
+
+		int index = r.nextInt(admins.size() - 1);
+
+		Iterator<Admin> i = admins.iterator();
+		for (int count = 0; count < index && i.hasNext(); count++) {
+			i.next();
+		}
+
+		return i.next();
+
 	}
 }
