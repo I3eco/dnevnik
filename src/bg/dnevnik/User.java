@@ -2,11 +2,8 @@ package bg.dnevnik;
 
 import java.io.IOException;
 import java.util.Collection;
-import java.util.HashSet;
-import java.util.LinkedList;
 import java.util.Scanner;
 
-import bg.dnevnik.Article.Comment;
 import bg.dnevnik.exceptions.IncorrectInputException;
 import bg.dnevnik.exceptions.NoSuchArticleException;
 import bg.dnevnik.utility.Logger;
@@ -86,7 +83,6 @@ public class User {
 	private String name;
 	private final String email;
 	private String password;
-	private transient Collection<Article.Comment> commentHistory;
 
 	// TODO this is just an idea, but instead of a boolean we could add a state enum ONLINE/OFFLINE/AWAY,
 	// and have a thread loop through all users, and if they haven't done anything in a few minutes,
@@ -110,7 +106,6 @@ public class User {
 		this.email = email;
 		this.name = name.trim();
 		this.password = password.trim();
-		this.commentHistory = new LinkedList<Comment>();
 		
 		try {
 			Logger.printUserToFile(this);
@@ -147,25 +142,11 @@ public class User {
 	
 	public void writeComment(Article article, String content, Article.CommentMood mood) {
 		// just like writeArticle() is in Author, it would make sense for writeComment to be in User too
-		Comment comment = null;
 		try {
-			comment = article.new Comment(this, content, mood);
-			this.addToCommentHistory(comment);
+			article.new Comment(this, content, mood);
 		} 
 		catch (IncorrectInputException e) {
 			System.err.println("Could not create comment!");
-		}
-//		try {
-//			JsonDataHolder.saveUserToJson(this);
-//		} catch (IOException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-	}
-	
-	public void addToCommentHistory(Article.Comment comment) {
-		if (comment != null) {
-			this.commentHistory.add(comment);
 		}
 	}
 

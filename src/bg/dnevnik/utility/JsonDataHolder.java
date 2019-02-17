@@ -2,22 +2,14 @@ package bg.dnevnik.utility;
 
 import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.HashSet;
 import java.util.Scanner;
-import java.util.Set;
 
 import com.google.gson.Gson;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonArray;
 
 import bg.dnevnik.Site;
-import bg.dnevnik.User;
-import bg.dnevnik.User.Admin;
-import bg.dnevnik.User.Author;
 
 public class JsonDataHolder {
 

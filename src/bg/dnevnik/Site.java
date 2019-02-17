@@ -13,7 +13,6 @@ import java.util.TreeSet;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import bg.dnevnik.Article.Comment;
 import bg.dnevnik.User.Admin;
 import bg.dnevnik.User.Author;
 import bg.dnevnik.exceptions.NoSuchArticleException;
