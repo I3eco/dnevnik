@@ -66,6 +66,8 @@ public class ConsoleCommandsView {
 				
 				case "start article cleaner": Site.getInstance().startOldArticleCollector(); break;
 				case "stop article cleaner": Site.getInstance().stopOldArticleCollector(); break;
+				case "promote to author": promoteUserCommand(false); break;
+				case "promote to admin": promoteUserCommand(true); break;
 				case "exit": running = false; break;
 
 				default: System.err.println("That command does not exist!"); break;
@@ -74,6 +76,21 @@ public class ConsoleCommandsView {
 		}
 	}
 	
+	private void promoteUserCommand(boolean b) {
+		System.out.print("Email of User: ");
+		String email = scanner.nextLine().trim();
+		
+		if (!(currentUser instanceof User.Admin)) {
+			System.err.println("You do not have permission!");
+			return;
+		}
+		try {
+			((User.Admin)currentUser).makeUserAuthorOrAdmin(email, b);
+		} catch (IncorrectInputException e) {
+			e.printStackTrace();
+		}
+	}
+
 	private void searchByTitleCommand() {
 		System.out.print("Search: ");
 		String search = scanner.nextLine();
@@ -270,6 +287,9 @@ public class ConsoleCommandsView {
 			"'sort by comments' \r\n" + 
 			"'sort by votes'\r\n" + 
 			"\r\n" + 
+			"Administrator: \r\n" + 
+			"'promote to author'\r\n" + 
+			"'promote to admin'\r\n" + 
 			"'start article cleaner'\r\n" + 
 			"'stop article cleaner'\r\n" + 
 			"'exit'";

@@ -53,8 +53,7 @@ public class Site {
 		if (instance == null) {
 			try {
 				JsonDataHolder.loadSiteFromJson(Site.instance);
-			}
-			catch (IOException e) {
+			} catch (IOException e) {
 				e.printStackTrace();
 			}
 			if (instance == null) {
@@ -120,8 +119,7 @@ public class Site {
 		if (admin.loginInfoMatches(admin.getEmail(), password)) {
 			this.articlesByCategory.get(article.getCategory()).remove(article);
 
-		}
-		else {
+		} else {
 			System.err.println("Invalid password!");
 		}
 	}
@@ -160,7 +158,7 @@ public class Site {
 		}
 		throw new NoSuchArticleException();
 	}
-	
+
 	public void showHotCategories(int numberOfCategories) {
 		class Category {
 			String name;
@@ -173,7 +171,7 @@ public class Site {
 		}
 
 		Set<Category> topCategories = new TreeSet<Category>((c1, c2) -> {
-			if(c2.numberOfArticles - c1.numberOfArticles == 0) {
+			if (c2.numberOfArticles - c1.numberOfArticles == 0) {
 				return c1.name.compareTo(c2.name);
 			}
 			return c2.numberOfArticles - c1.numberOfArticles;
@@ -192,13 +190,13 @@ public class Site {
 					topCategories.remove(category);
 					topCategories.add(currentCategory);
 				}
-			}
-			else {
+			} else {
 				topCategories.add(currentCategory);
 			}
 
 		}
-		topCategories.forEach(category -> System.out.println(category.name.toUpperCase() + " (" + category.numberOfArticles + " articles)"));
+		topCategories.forEach(category -> System.out
+				.println(category.name.toUpperCase() + " (" + category.numberOfArticles + " articles)"));
 	}
 
 	public void showFromToday() {
@@ -221,7 +219,7 @@ public class Site {
 
 		return false;
 	}
-	
+
 	public void showUsersInSite() {
 		System.out.println(this.users);
 	}
@@ -240,47 +238,45 @@ public class Site {
 			System.out.println(article.getSummary());
 		}
 	}
-	
+
 	public void showArticlesByInputWords(String inputWords) {
 		String[] words = inputWords.trim().split(" ");
-		
+
 		for (Entry<String, Set<Article>> entry : this.articlesByCategory.entrySet()) {
-			entry.getValue()
-			.stream()
-			.filter(article -> this.isArticleContainWordsInTitle(article, words))
-			.sorted((article1, article2) -> {
-				if(this.numberOfWordsInArticleTitle(article1, words) - this.numberOfWordsInArticleTitle(article2, words) == 0) {
-					return article1.getID() - article2.getID();
-				}
-				return this.numberOfWordsInArticleTitle(article2, words) - this.numberOfWordsInArticleTitle(article1, words);
-			})
-			.map(article -> article.getSummary())
-			.forEach(System.out::println);
+			entry.getValue().stream().filter(article -> this.isArticleContainWordsInTitle(article, words))
+					.sorted((article1, article2) -> {
+						if (this.numberOfWordsInArticleTitle(article1, words)
+								- this.numberOfWordsInArticleTitle(article2, words) == 0) {
+							return article1.getID() - article2.getID();
+						}
+						return this.numberOfWordsInArticleTitle(article2, words)
+								- this.numberOfWordsInArticleTitle(article1, words);
+					}).map(article -> article.getSummary()).forEach(System.out::println);
 		}
 	}
-	
+
 	private boolean isArticleContainWordsInTitle(Article article, String[] words) {
-		for(int index = 0; index < words.length; index++) {
-			if(article.getTitle().toLowerCase().contains(words[index].toLowerCase())) {
+		for (int index = 0; index < words.length; index++) {
+			if (article.getTitle().toLowerCase().contains(words[index].toLowerCase())) {
 				return true;
 			}
 		}
-		
+
 		return false;
 	}
-	
+
 	private int numberOfWordsInArticleTitle(Article article, String[] words) {
 		int count = 0;
-		
-		for(int index = 0; index < words.length; index++) {
-			if(article.getTitle().toLowerCase().contains(words[index].toLowerCase())) {
+
+		for (int index = 0; index < words.length; index++) {
+			if (article.getTitle().toLowerCase().contains(words[index].toLowerCase())) {
 				count++;
 			}
 		}
-		
+
 		return count;
 	}
-	
+
 	@Override
 	public String toString() {
 		return "name=" + name + ", users=" + users + ", articlesByCategory=" + articlesByCategory;
@@ -297,55 +293,54 @@ public class Site {
 	public User getRandomUser() {
 		return getRandomUserFrom(users);
 	}
-	
+
 	public User getRandomAuthor() {
 		return getRandomUserFrom(authors);
 	}
-	
+
 	public User getRandomAdmin() {
 		return getRandomUserFrom(admins);
 	}
-	
+
 	public User getUserOrAuthor(String email, boolean isMakeAdmin) throws UserDoesNotExistException {
 		User user = null;
-		
-		try{
-			user = this.users
-					.stream()
+
+		try {
+			user = this.users.stream()
 					.filter(siteUser -> siteUser.getEmail().equals(email))
 					.findFirst()
 					.get();
-		} catch (NoSuchElementException e){
-			if(!isMakeAdmin)
+			return user;
+		} catch (NoSuchElementException e) {
+			if (!isMakeAdmin)
 				throw new UserDoesNotExistException();
 		}
 		
-		if(isMakeAdmin) {
-			try{
-				user = this.admins
-						.stream()
-						.filter(siteUser -> siteUser.getEmail().equals(email))
-						.findFirst()
-						.get();
-			} catch (NoSuchElementException e){
-					throw new UserDoesNotExistException();
-			}
+		User author = null;
+		
+		try {
+			author = this.authors.stream()
+					.filter(siteUser -> siteUser.getEmail().equals(email))
+					.findFirst()
+					.get();
+		} catch (NoSuchElementException e) {
+			throw new UserDoesNotExistException();
 		}
 
-		return user;
+		return author;
 	}
 
 	private User getRandomUserFrom(Set<? extends User> users) {
 		Iterator<? extends User> i = users.iterator();
-		
+
 		if (users.size() <= 0) {
 			return null;
 		}
-		
+
 		if (users.size() == 1) {
 			return i.next();
 		}
-		
+
 		int index = new Random().nextInt(users.size() + 1) - 2;
 
 		for (int count = 0; count < index && i.hasNext(); count++) {
@@ -356,40 +351,40 @@ public class Site {
 	}
 
 	public Article getRandomArticle() {
-		
+
 		List<Article> allArticles = new ArrayList<Article>();
-		
+
 		for (String category : articlesByCategory.keySet()) {
 			allArticles.addAll(articlesByCategory.get(category));
 		}
-		
+
 		return allArticles.get(new Random().nextInt(allArticles.size()));
 	}
-	
+
 	public void removeUser(User user) {
 		this.users.remove(user);
 	}
 
 	public void removeUser(User user, String type) {
-		if(type.equals("User")) {
+		if (type.equals("User")) {
 			this.users.remove(user);
 			return;
 		}
-		if(type.equals("Author")) {
+		if (type.equals("Author")) {
 			this.authors.remove(user);
 		}
 	}
-	
-	public Map<String, Set<Article>> getArticlesInSite(){
-		return new HashMap<String, Set<Article>>(this.articlesByCategory);	
+
+	public Map<String, Set<Article>> getArticlesInSite() {
+		return new HashMap<String, Set<Article>>(this.articlesByCategory);
 	}
-	
-	public void deleteOldArticles() throws InterruptedException {	
-		for(Entry<String, Set<Article>> entry : this.articlesByCategory.entrySet()) {
+
+	public void deleteOldArticles() throws InterruptedException {
+		for (Entry<String, Set<Article>> entry : this.articlesByCategory.entrySet()) {
 			Iterator<Article> it = entry.getValue().iterator();
-			while(it.hasNext()) {
+			while (it.hasNext()) {
 				Article article = it.next();
-				if((LocalDateTime.now().compareTo(article.getTimeOfPosting())) > AGE_OF_ARTICLE_IN_DAYS) {
+				if ((LocalDateTime.now().compareTo(article.getTimeOfPosting())) > AGE_OF_ARTICLE_IN_DAYS) {
 					it.remove();
 					Thread.sleep(500);
 					try {
@@ -401,9 +396,9 @@ public class Site {
 			}
 		}
 	}
-	
-	public void startOldArticleCollector(){
-		if(this.thread != null && this.thread.isAlive()) {
+
+	public void startOldArticleCollector() {
+		if (this.thread != null && this.thread.isAlive()) {
 			System.out.println("You've already started the collector");
 			return;
 		}
@@ -415,7 +410,7 @@ public class Site {
 		System.out.println("Password:");
 		String password = sc.nextLine();
 		try {
-			if(!this.signIn(email, password).getTypeOfUser().equals("Admin")) {
+			if (!this.signIn(email, password).getTypeOfUser().equals("Admin")) {
 				System.out.println("This user is not admin!");
 				return;
 			}
@@ -428,9 +423,9 @@ public class Site {
 		this.thread.setDaemon(true);
 		this.thread.start();
 	}
-	
+
 	public void stopOldArticleCollector() {
-		if(this.thread == null || !this.thread.isAlive()) {
+		if (this.thread == null || !this.thread.isAlive()) {
 			System.out.println("The collector is not started");
 			return;
 		}
@@ -442,7 +437,7 @@ public class Site {
 		System.out.println("Password:");
 		String password = sc.nextLine();
 		try {
-			if(!this.signIn(email, password).getTypeOfUser().equals("Admin")) {
+			if (!this.signIn(email, password).getTypeOfUser().equals("Admin")) {
 				System.out.println("This user is not admin!");
 				return;
 			}
@@ -453,5 +448,5 @@ public class Site {
 		}
 		this.thread.interrupt();
 	}
-	
+
 }
