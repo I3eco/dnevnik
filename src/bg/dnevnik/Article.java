@@ -96,6 +96,7 @@ public class Article extends Post {
 	private String category;
 	private final String title;
 	private Collection<String> keywords;
+	@SuppressWarnings("unused")
 	private Picture mainPicture;
 	private int numberOfViews;
 	private List<Comment> comments;
@@ -193,11 +194,6 @@ public class Article extends Post {
 
 	public void setCategory(String category) {
 		this.category = category;
-	}
-	
-	@Override
-	public String toString() {
-		return "Article = title: " + this.title + ", category: " + this.category;
 	}
 	
 	public int getNumberOfViews() {

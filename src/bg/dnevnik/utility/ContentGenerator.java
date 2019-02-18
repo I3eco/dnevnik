@@ -53,7 +53,7 @@ public class ContentGenerator {
 		}
 
 		for (int i = 0; i < articleCount; i++) {
-			Site.getInstance().getRandomAuthor().doRandomAction();
+			//Site.getInstance().getRandomAuthor().doRandomAction();
 			for (int userActions = 0; userActions < 3; userActions++) {
 				Site.getInstance().getRandomUser().doRandomAction();
 			}

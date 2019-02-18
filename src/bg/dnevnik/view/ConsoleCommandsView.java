@@ -65,6 +65,7 @@ public class ConsoleCommandsView {
 				case "sort by rating": sortArticlesByFilter(new ArticleComparatorByRating()); break;
 				
 				case "start article cleaner": Site.getInstance().startOldArticleCollector(); break;
+				case "stop article cleaner": Site.getInstance().stopOldArticleCollector(); break;
 				case "exit": running = false; break;
 
 				default: System.err.println("That command does not exist!"); break;
@@ -89,14 +90,6 @@ public class ConsoleCommandsView {
 			return;
 		}
 		
-	}
-
-	private void upvoteCommentCommand() {
-		// TODO
-	}
-
-	private void downvoteCommentCommand() {
-		// TODO
 	}
 
 	private static void showCommentsCommand() {
@@ -251,6 +244,7 @@ public class ConsoleCommandsView {
 		//'sort by votes'
 		//
 		//'start article cleaner'
+		//'stop article cleaner'
 		//'exit' 
 
 		String commandInfo = 
@@ -277,6 +271,7 @@ public class ConsoleCommandsView {
 			"'sort by votes'\r\n" + 
 			"\r\n" + 
 			"'start article cleaner'\r\n" + 
+			"'stop article cleaner'\r\n" + 
 			"'exit'";
 		System.out.println(commandInfo);
 	}

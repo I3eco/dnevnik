@@ -64,7 +64,6 @@ public abstract class Post {
 		} else {
 			System.err.println("You've already voted for this article!");
 		}
-
 	}
 	
 	public void downvote(User user) {

@@ -3,7 +3,6 @@ package bg.dnevnik;
 import java.io.IOException;
 import java.util.Collection;
 import java.util.Random;
-import java.util.Scanner;
 
 import bg.dnevnik.Article.Comment;
 import bg.dnevnik.Article.CommentMood;
@@ -11,7 +10,6 @@ import bg.dnevnik.exceptions.IncorrectInputException;
 import bg.dnevnik.exceptions.NoSuchArticleException;
 import bg.dnevnik.utility.ContentGenerator;
 import bg.dnevnik.utility.Logger;
-import bg.dnevnik.utility.OldArticleCollector;
 import bg.dnevnik.utility.Validation;
 
 public class User {
@@ -96,21 +94,6 @@ public class User {
 			article.setContent(content);
 		}
 		
-		public void deleteArticle(Article article) {
-			Site site = Site.getInstance();
-			Scanner sc = new Scanner(System.in);
-			System.out.println("Enter your password:");
-			String password = sc.nextLine().trim();
-			site.removeArticle(this, password, article);
-			sc.close();
-		}
-		
-		//overloaded method so article collector can delete articles
-		public void deleteArticle(Article article, String password) {
-			Site site = Site.getInstance();
-			site.removeArticle(this, password, article);
-		}
-		
 		@Override
 		public String getTypeOfUser() {
 			return "Admin";
@@ -150,14 +133,6 @@ public class User {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-
-//		try {
-//			Logger.printUserToFile(this);
-//			JsonDataHolder.saveUserToJson(this);
-//		} catch (IOException e) {
-//			e.printStackTrace();
-//		}
-		
 	}
 	
 	public static void createUser(String username, String email, String password, String rights) {

@@ -38,6 +38,7 @@ public class Validation {
 	}
 	
 	public static int readInt() throws IncorrectInputException {
+		@SuppressWarnings("resource")
 		Scanner s = new Scanner(System.in);
 		
 		try {

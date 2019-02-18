@@ -5,13 +5,10 @@ import java.time.LocalDateTime;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Map.Entry;
-import java.util.Scanner;
 import java.util.Set;
 
 import bg.dnevnik.Article;
 import bg.dnevnik.Site;
-import bg.dnevnik.User.Admin;
-import bg.dnevnik.exceptions.UserDoesNotExistException;
 
 public class OldArticleCollector implements Runnable{
 	private static final int AGE_OF_ARTICLE_IN_DAYS = 3;
@@ -21,6 +18,7 @@ public class OldArticleCollector implements Runnable{
 		this.site = Site.getInstance();
 	}
 
+	
 	@Override
 	public void run() {
 		while(!Thread.interrupted()) {
@@ -52,3 +50,4 @@ public class OldArticleCollector implements Runnable{
 		}
 	}
 }
+

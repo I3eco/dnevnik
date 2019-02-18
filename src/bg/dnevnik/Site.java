@@ -168,11 +168,6 @@ public class Site {
 				this.name = name;
 				this.numberOfArticles = numberOfArticles;
 			}
-
-			@Override
-			public String toString() {
-				return "Category name=" + name + ", numberOfArticles=" + numberOfArticles;
-			}
 		}
 
 		Set<Category> topCategories = new TreeSet<Category>((c1, c2) -> {
@@ -205,7 +200,6 @@ public class Site {
 	}
 
 	public void showFromToday() {
-		// TODO test this
 		Collection<Set<Article>> articles = this.articlesByCategory.values();
 		articles.forEach(Collection -> Collection.forEach(article -> {
 			if (article.getTimeOfPosting().isAfter(LocalDateTime.now().minusDays(1))) {
@@ -298,10 +292,6 @@ public class Site {
 		return this.name;
 	}
 
-	public int userCount() {
-		return users.size() + authors.size() + admins.size();
-	}
-
 	public User getRandomUser() {
 		return getRandomUserFrom(users);
 	}
@@ -358,19 +348,19 @@ public class Site {
 			System.out.println("You've already started the collector");
 			return;
 		}
+		@SuppressWarnings("resource")
 		Scanner sc = new Scanner(System.in);
-		System.out.println("Login as admin:");
-		System.out.println("Enter email:");
+		System.out.println("Login as admin");
+		System.out.println("Email:");
 		String email = sc.nextLine();
-		System.out.println("Enter password:");
+		System.out.println("Password:");
 		String password = sc.nextLine();
-		Admin admin = null;
 		try {
 			if(!this.signIn(email, password).getTypeOfUser().equals("Admin")) {
 				System.out.println("This user is not admin!");
 				return;
 			}
-			admin = (Admin) this.signIn(email, password);
+			this.signIn(email, password);
 		} catch (UserDoesNotExistException e) {
 			System.out.println("No such user!");
 			return;
@@ -386,19 +376,19 @@ public class Site {
 			System.out.println("The collector is not started");
 			return;
 		}
+		@SuppressWarnings("resource")
 		Scanner sc = new Scanner(System.in);
-		System.out.println("Login as admin:");
-		System.out.println("Enter email:");
+		System.out.println("Login as admin");
+		System.out.println("Email:");
 		String email = sc.nextLine();
-		System.out.println("Enter password:");
+		System.out.println("Password:");
 		String password = sc.nextLine();
-		Admin admin = null;
 		try {
 			if(!this.signIn(email, password).getTypeOfUser().equals("Admin")) {
 				System.out.println("This user is not admin!");
 				return;
 			}
-			admin = (Admin) this.signIn(email, password);
+			this.signIn(email, password);
 		} catch (UserDoesNotExistException e) {
 			System.out.println("No such user!");
 			return;
