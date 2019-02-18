@@ -28,6 +28,7 @@ import bg.dnevnik.utility.OldArticleCollector;
 import bg.dnevnik.utility.UserComparatorByEmail;
 
 public class Site {
+	private static final int AGE_OF_ARTICLE_IN_DAYS = 3;
 	private static Site instance;
 	private volatile AtomicInteger articleCount;
 	private String name;
@@ -353,6 +354,24 @@ public class Site {
 		return new HashMap<String, Set<Article>>(this.articlesByCategory);	
 	}
 	
+	public void deleteOldArticles() throws InterruptedException {	
+		for(Entry<String, Set<Article>> entry : this.articlesByCategory.entrySet()) {
+			Iterator<Article> it = entry.getValue().iterator();
+			while(it.hasNext()) {
+				Article article = it.next();
+				if((LocalDateTime.now().compareTo(article.getTimeOfPosting())) > AGE_OF_ARTICLE_IN_DAYS) {
+					it.remove();
+					Thread.sleep(500);
+					try {
+						Logger.printDeletedArticlesToFile(article);
+					} catch (IOException e) {
+						e.printStackTrace();
+					}
+				}
+			}
+		}
+	}
+	
 	public void startOldArticleCollector(){
 		if(this.thread != null && this.thread.isAlive()) {
 			System.out.println("You've already started the collector");
@@ -376,7 +395,6 @@ public class Site {
 			return;
 		}
 		this.thread = new Thread(new OldArticleCollector());
-		this.thread.start();
 		this.thread.setDaemon(true);
 		this.thread.start();
 	}
