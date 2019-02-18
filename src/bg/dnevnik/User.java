@@ -8,6 +8,7 @@ import bg.dnevnik.Article.Comment;
 import bg.dnevnik.Article.CommentMood;
 import bg.dnevnik.exceptions.IncorrectInputException;
 import bg.dnevnik.exceptions.NoSuchArticleException;
+import bg.dnevnik.exceptions.UserDoesNotExistException;
 import bg.dnevnik.utility.ContentGenerator;
 import bg.dnevnik.utility.Logger;
 import bg.dnevnik.utility.Validation;
@@ -55,6 +56,7 @@ public class User {
 	}
 	
 	public static class Admin extends Author {
+		
 		private Admin(String name, String email, String password) throws IncorrectInputException {
 			super(name, email, password);
 		}
@@ -73,6 +75,31 @@ public class User {
 			catch (IncorrectInputException e) {
 				e.printStackTrace();
 			}			
+		}
+		
+		public void makeUserAuthorOrAdmin (String email, boolean isMakeAdmin) throws IncorrectInputException {
+			Site site = Site.getInstance();
+			User user = null;		
+			try {
+				user = site.getUserOrAuthor(email, isMakeAdmin);
+			} catch (UserDoesNotExistException e) {
+				System.out.println("No such user!");
+				return;
+			}		
+			String name = user.name;
+			String password = user.password;
+			
+			if(user.getTypeOfUser().equals("User")) {
+				Site.getInstance().removeUser(user, "User");
+				Author author = new Author(name, email, password);			
+				site.addAuthor(author);
+			} else {
+				Site.getInstance().removeUser(user, "Author");
+				Admin admin = new Admin(name, email, password);			
+				site.addAdmin(admin);
+			}
+
+
 		}
 		
 		public void makeUserAdmin (User user) throws IncorrectInputException {

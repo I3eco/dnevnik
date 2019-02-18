@@ -10,6 +10,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.NoSuchElementException;
 import java.util.Random;
 import java.util.Scanner;
 import java.util.Set;
@@ -304,6 +305,35 @@ public class Site {
 	public User getRandomAdmin() {
 		return getRandomUserFrom(admins);
 	}
+	
+	public User getUserOrAuthor(String email, boolean isMakeAdmin) throws UserDoesNotExistException {
+		User user = null;
+		
+		try{
+			user = this.users
+					.stream()
+					.filter(siteUser -> siteUser.getEmail().equals(email))
+					.findFirst()
+					.get();
+		} catch (NoSuchElementException e){
+			if(!isMakeAdmin)
+				throw new UserDoesNotExistException();
+		}
+		
+		if(isMakeAdmin) {
+			try{
+				user = this.admins
+						.stream()
+						.filter(siteUser -> siteUser.getEmail().equals(email))
+						.findFirst()
+						.get();
+			} catch (NoSuchElementException e){
+					throw new UserDoesNotExistException();
+			}
+		}
+
+		return user;
+	}
 
 	private User getRandomUserFrom(Set<? extends User> users) {
 		Iterator<? extends User> i = users.iterator();
@@ -335,9 +365,19 @@ public class Site {
 		
 		return allArticles.get(new Random().nextInt(allArticles.size()));
 	}
-
+	
 	public void removeUser(User user) {
-		users.remove(user);
+		this.users.remove(user);
+	}
+
+	public void removeUser(User user, String type) {
+		if(type.equals("User")) {
+			this.users.remove(user);
+			return;
+		}
+		if(type.equals("Author")) {
+			this.authors.remove(user);
+		}
 	}
 	
 	public Map<String, Set<Article>> getArticlesInSite(){
