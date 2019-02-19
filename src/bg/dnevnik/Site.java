@@ -82,8 +82,21 @@ public class Site {
 		this.admins.add(admin);
 	}
 
-	public void signUp(String username, String email, String password) {
+	public User signUp(String username, String email, String password) {
 		User.createUser(username, email, password, "user");
+		User signedUpUser = null;
+		
+		try {
+			signedUpUser = this.users
+					.stream()
+					.filter(user -> user.getEmail().equals(email))
+					.findFirst()
+					.get();
+		} catch (NoSuchElementException e){
+			System.err.println("No such user found!");
+		}
+
+		return signedUpUser;
 	}
 
 	public User signIn(String email, String password) throws UserDoesNotExistException {
