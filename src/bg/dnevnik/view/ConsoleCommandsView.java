@@ -237,7 +237,7 @@ public class ConsoleCommandsView {
 		});
 	}
 
-	private static void showCommands() {
+	private void showCommands() {
 		//'sign up' 
 		//'sign in' 
 		//'sign out'
@@ -265,34 +265,90 @@ public class ConsoleCommandsView {
 		//'exit' 
 
 		String commandInfo = 
-			"'sign up' \r\n" + 
-			"'sign in' \r\n" + 
-			"'sign out'\r\n" + 
-			"\r\n" + 
-			"'show categories'\r\n" + 
-			"'show top categories'\r\n" + 
-			"'show category'\r\n" + 
-			"\r\n" + 
-			"'write article'\r\n" + 
-			"'show article'\r\n" + 
-			"'search by title'\r\n" + 
-			"'upvote/downvote article'\r\n" + 
-			"\r\n" + 
-			"'write comment'\r\n" + 
-			"'show comments'\r\n" + 
-			"\r\n" + 
-			"'show from today'\r\n" + 
-			"'sort by new' \r\n" + 
-			"'sort by views' \r\n" + 
-			"'sort by comments' \r\n" + 
-			"'sort by votes'\r\n" + 
-			"\r\n" + 
-			"Administrator: \r\n" + 
-			"'promote to author'\r\n" + 
-			"'promote to admin'\r\n" + 
-			"'start article cleaner'\r\n" + 
-			"'stop article cleaner'\r\n" + 
-			"'exit'";
+				"'sign up' \r\n" + 
+				"'sign in' \r\n" + 
+				"'sign out'\r\n" + 
+				"\r\n" + 
+				"'show categories'\r\n" + 
+				"'show top categories'\r\n" + 
+				"'show category'\r\n" + 
+				"\r\n" + 
+				"'show article'\r\n" + 
+				"'search by title'\r\n" + 
+				"'upvote/downvote article'\r\n" + 
+				"\r\n" + 
+				"'write comment'\r\n" + 
+				"'show comments'\r\n" + 
+				"\r\n" + 
+				"'show from today'\r\n" + 
+				"'sort by new' \r\n" + 
+				"'sort by views' \r\n" + 
+				"'sort by comments' \r\n" + 
+				"'sort by votes'\r\n" + 
+				"\r\n" + 
+				"'exit'";
+
+		
+		if(this.currentUser != null) {
+			if(this.currentUser.getTypeOfUser().equals("Admin")) {
+				commandInfo = 
+						"'sign up' \r\n" + 
+						"'sign in' \r\n" + 
+						"'sign out'\r\n" + 
+						"\r\n" + 
+						"'show categories'\r\n" + 
+						"'show top categories'\r\n" + 
+						"'show category'\r\n" + 
+						"\r\n" + 
+						"'write article'\r\n" + 
+						"'show article'\r\n" + 
+						"'search by title'\r\n" + 
+						"'upvote/downvote article'\r\n" + 
+						"\r\n" + 
+						"'write comment'\r\n" + 
+						"'show comments'\r\n" + 
+						"\r\n" + 
+						"'show from today'\r\n" + 
+						"'sort by new' \r\n" + 
+						"'sort by views' \r\n" + 
+						"'sort by comments' \r\n" + 
+						"'sort by votes'\r\n" + 
+						"\r\n" + 
+						"Administrator: \r\n" + 
+						"'promote to author'\r\n" + 
+						"'promote to admin'\r\n" + 
+						"'start article cleaner'\r\n" + 
+						"'stop article cleaner'\r\n" + 
+						"'exit'";
+			} else if(this.currentUser.getTypeOfUser().equals("Author")) {
+				commandInfo = 
+						"'sign up' \r\n" + 
+						"'sign in' \r\n" + 
+						"'sign out'\r\n" + 
+						"\r\n" + 
+						"'show categories'\r\n" + 
+						"'show top categories'\r\n" + 
+						"'show category'\r\n" + 
+						"\r\n" + 
+						"'write article'\r\n" + 
+						"'show article'\r\n" + 
+						"'search by title'\r\n" + 
+						"'upvote/downvote article'\r\n" + 
+						"\r\n" + 
+						"'write comment'\r\n" + 
+						"'show comments'\r\n" + 
+						"\r\n" + 
+						"'show from today'\r\n" + 
+						"'sort by new' \r\n" + 
+						"'sort by views' \r\n" + 
+						"'sort by comments' \r\n" + 
+						"'sort by votes'\r\n" + 
+						"\r\n" + 
+						"'exit'";
+			}
+		}
+
+		
 		System.out.println(commandInfo);
 	}
 	
