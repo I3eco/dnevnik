@@ -48,6 +48,34 @@ public class User {
 						ContentGenerator.generateContent(400), ContentGenerator.getRandomKeywords());
 			}
 		}
+		
+		@Override
+		public String showPossibleCommands() {
+			String commands = 				
+					"'sign out'\r\n" + 
+					"\r\n" + 
+					"'show categories'\r\n" + 
+					"'show top categories'\r\n" + 
+					"'show category'\r\n" + 
+					"\r\n" + 
+					"'write article'\r\n" + 
+					"'show article'\r\n" + 
+					"'search by title'\r\n" + 
+					"'upvote/downvote article'\r\n" + 
+					"\r\n" + 
+					"'write comment'\r\n" + 
+					"'show comments'\r\n" + 
+					"\r\n" + 
+					"'show from today'\r\n" + 
+					"'sort by new' \r\n" + 
+					"'sort by views' \r\n" + 
+					"'sort by comments' \r\n" + 
+					"'sort by votes'\r\n" + 
+					"\r\n" + 
+					"'exit'";
+			
+			return commands;
+		}
 
 	}
 
@@ -130,6 +158,38 @@ public class User {
 		public void doRandomAction() {
 			super.doRandomAction();
 			makeUserAuthor(Site.getInstance().getRandomUser());
+		}
+		
+		@Override
+		public String showPossibleCommands() {
+			String commands =
+					"'sign out'\r\n" + 
+					"\r\n" + 
+					"'show categories'\r\n" + 
+					"'show top categories'\r\n" + 
+					"'show category'\r\n" + 
+					"\r\n" + 
+					"'write article'\r\n" + 
+					"'show article'\r\n" + 
+					"'search by title'\r\n" + 
+					"'upvote/downvote article'\r\n" + 
+					"\r\n" + 
+					"'write comment'\r\n" + 
+					"'show comments'\r\n" + 
+					"\r\n" + 
+					"'show from today'\r\n" + 
+					"'sort by new' \r\n" + 
+					"'sort by views' \r\n" + 
+					"'sort by comments' \r\n" + 
+					"'sort by votes'\r\n" + 
+					"\r\n" + 
+					"'promote to author'\r\n" + 
+					"'promote to admin'\r\n" + 
+					"'start article cleaner'\r\n" + 
+					"'stop article cleaner'\r\n" + 
+					"'exit'";
+			
+			return commands;
 		}
 	}
 
@@ -288,5 +348,31 @@ public class User {
 
 	public void goOffline() {
 		this.isOnline = false;
+	}
+	
+	public String showPossibleCommands() {
+		String commands = 				
+				"'sign out'\r\n" + 
+				"\r\n" + 
+				"'show categories'\r\n" + 
+				"'show top categories'\r\n" + 
+				"'show category'\r\n" + 
+				"\r\n" + 
+				"'show article'\r\n" + 
+				"'search by title'\r\n" + 
+				"'upvote/downvote article'\r\n" + 
+				"\r\n" + 
+				"'write comment'\r\n" + 
+				"'show comments'\r\n" + 
+				"\r\n" + 
+				"'show from today'\r\n" + 
+				"'sort by new' \r\n" + 
+				"'sort by views' \r\n" + 
+				"'sort by comments' \r\n" + 
+				"'sort by votes'\r\n" + 
+				"\r\n" + 
+				"'exit'";
+		
+		return commands;
 	}
 }
